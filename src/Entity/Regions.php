@@ -70,5 +70,94 @@ class Regions
      */
     private $majUser;
 
+    public function getReId(): ?int
+    {
+        return $this->reId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getReNom(): ?string
+    {
+        return $this->reNom;
+    }
+
+    public function setReNom(?string $reNom): self
+    {
+        $this->reNom = $reNom;
+
+        return $this;
+    }
+
+    public function getRePole(): ?string
+    {
+        return $this->rePole;
+    }
+
+    public function setRePole(?string $rePole): self
+    {
+        $this->rePole = $rePole;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

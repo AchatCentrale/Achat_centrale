@@ -70,5 +70,94 @@ class ProduitsPromo
      */
     private $insUser;
 
+    public function getPpId(): ?int
+    {
+        return $this->ppId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getPrId(): ?int
+    {
+        return $this->prId;
+    }
+
+    public function setPrId(?int $prId): self
+    {
+        $this->prId = $prId;
+
+        return $this;
+    }
+
+    public function getPpcId(): ?int
+    {
+        return $this->ppcId;
+    }
+
+    public function setPpcId(?int $ppcId): self
+    {
+        $this->ppcId = $ppcId;
+
+        return $this;
+    }
+
+    public function getPpOrdre(): ?int
+    {
+        return $this->ppOrdre;
+    }
+
+    public function setPpOrdre(?int $ppOrdre): self
+    {
+        $this->ppOrdre = $ppOrdre;
+
+        return $this;
+    }
+
+    public function getPpDate(): ?\DateTimeInterface
+    {
+        return $this->ppDate;
+    }
+
+    public function setPpDate(?\DateTimeInterface $ppDate): self
+    {
+        $this->ppDate = $ppDate;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
 
 }

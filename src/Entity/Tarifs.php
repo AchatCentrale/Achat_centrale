@@ -63,5 +63,82 @@ class Tarifs
      */
     private $taDate;
 
+    public function getTaId(): ?int
+    {
+        return $this->taId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getTaEffectif(): ?string
+    {
+        return $this->taEffectif;
+    }
+
+    public function setTaEffectif(?string $taEffectif): self
+    {
+        $this->taEffectif = $taEffectif;
+
+        return $this;
+    }
+
+    public function getTaUnite(): ?int
+    {
+        return $this->taUnite;
+    }
+
+    public function setTaUnite(?int $taUnite): self
+    {
+        $this->taUnite = $taUnite;
+
+        return $this;
+    }
+
+    public function getTaPrix(): ?float
+    {
+        return $this->taPrix;
+    }
+
+    public function setTaPrix(?float $taPrix): self
+    {
+        $this->taPrix = $taPrix;
+
+        return $this;
+    }
+
+    public function getTaPrixRemise(): ?float
+    {
+        return $this->taPrixRemise;
+    }
+
+    public function setTaPrixRemise(?float $taPrixRemise): self
+    {
+        $this->taPrixRemise = $taPrixRemise;
+
+        return $this;
+    }
+
+    public function getTaDate(): ?\DateTimeInterface
+    {
+        return $this->taDate;
+    }
+
+    public function setTaDate(?\DateTimeInterface $taDate): self
+    {
+        $this->taDate = $taDate;
+
+        return $this;
+    }
+
 
 }

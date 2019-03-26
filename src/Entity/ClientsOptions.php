@@ -48,5 +48,46 @@ class ClientsOptions
      */
     private $cl;
 
+    public function getCoId(): ?int
+    {
+        return $this->coId;
+    }
+
+    public function getCoReponse(): ?string
+    {
+        return $this->coReponse;
+    }
+
+    public function setCoReponse(?string $coReponse): self
+    {
+        $this->coReponse = $coReponse;
+
+        return $this;
+    }
+
+    public function getOp(): ?Options
+    {
+        return $this->op;
+    }
+
+    public function setOp(?Options $op): self
+    {
+        $this->op = $op;
+
+        return $this;
+    }
+
+    public function getCl(): ?Clients
+    {
+        return $this->cl;
+    }
+
+    public function setCl(?Clients $cl): self
+    {
+        $this->cl = $cl;
+
+        return $this;
+    }
+
 
 }

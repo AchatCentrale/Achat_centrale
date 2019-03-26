@@ -143,5 +143,214 @@ class CommandeEntete
      */
     private $me;
 
+    public function getCeId(): ?int
+    {
+        return $this->ceId;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getCeDate(): ?\DateTimeInterface
+    {
+        return $this->ceDate;
+    }
+
+    public function setCeDate(?\DateTimeInterface $ceDate): self
+    {
+        $this->ceDate = $ceDate;
+
+        return $this;
+    }
+
+    public function getCeDateLiv(): ?\DateTimeInterface
+    {
+        return $this->ceDateLiv;
+    }
+
+    public function setCeDateLiv(?\DateTimeInterface $ceDateLiv): self
+    {
+        $this->ceDateLiv = $ceDateLiv;
+
+        return $this;
+    }
+
+    public function getCePort(): ?float
+    {
+        return $this->cePort;
+    }
+
+    public function setCePort(?float $cePort): self
+    {
+        $this->cePort = $cePort;
+
+        return $this;
+    }
+
+    public function getCePortTva(): ?float
+    {
+        return $this->cePortTva;
+    }
+
+    public function setCePortTva(?float $cePortTva): self
+    {
+        $this->cePortTva = $cePortTva;
+
+        return $this;
+    }
+
+    public function getCeTotal(): ?float
+    {
+        return $this->ceTotal;
+    }
+
+    public function setCeTotal(?float $ceTotal): self
+    {
+        $this->ceTotal = $ceTotal;
+
+        return $this;
+    }
+
+    public function getCeEtiqCb(): ?int
+    {
+        return $this->ceEtiqCb;
+    }
+
+    public function setCeEtiqCb(?int $ceEtiqCb): self
+    {
+        $this->ceEtiqCb = $ceEtiqCb;
+
+        return $this;
+    }
+
+    public function getCeEtiqPv(): ?int
+    {
+        return $this->ceEtiqPv;
+    }
+
+    public function setCeEtiqPv(?int $ceEtiqPv): self
+    {
+        $this->ceEtiqPv = $ceEtiqPv;
+
+        return $this;
+    }
+
+    public function getCeEtiqImg(): ?string
+    {
+        return $this->ceEtiqImg;
+    }
+
+    public function setCeEtiqImg(?string $ceEtiqImg): self
+    {
+        $this->ceEtiqImg = $ceEtiqImg;
+
+        return $this;
+    }
+
+    public function getCeArlequin(): ?string
+    {
+        return $this->ceArlequin;
+    }
+
+    public function setCeArlequin(?string $ceArlequin): self
+    {
+        $this->ceArlequin = $ceArlequin;
+
+        return $this;
+    }
+
+    public function getCeTempo(): ?string
+    {
+        return $this->ceTempo;
+    }
+
+    public function setCeTempo(?string $ceTempo): self
+    {
+        $this->ceTempo = $ceTempo;
+
+        return $this;
+    }
+
+    public function getCeStatus(): ?int
+    {
+        return $this->ceStatus;
+    }
+
+    public function setCeStatus(?int $ceStatus): self
+    {
+        $this->ceStatus = $ceStatus;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
+    public function getMe(): ?MessageEntete
+    {
+        return $this->me;
+    }
+
+    public function setMe(?MessageEntete $me): self
+    {
+        $this->me = $me;
+
+        return $this;
+    }
+
 
 }

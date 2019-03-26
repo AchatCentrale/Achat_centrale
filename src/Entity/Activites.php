@@ -35,5 +35,34 @@ class Activites
      */
     private $acDescr;
 
+    public function getAcId(): ?int
+    {
+        return $this->acId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getAcDescr(): ?string
+    {
+        return $this->acDescr;
+    }
+
+    public function setAcDescr(?string $acDescr): self
+    {
+        $this->acDescr = $acDescr;
+
+        return $this;
+    }
+
 
 }

@@ -63,5 +63,82 @@ class ProfilsUsers
      */
     private $majUser;
 
+    public function getPuId(): ?int
+    {
+        return $this->puId;
+    }
+
+    public function getPuDescr(): ?string
+    {
+        return $this->puDescr;
+    }
+
+    public function setPuDescr(?string $puDescr): self
+    {
+        $this->puDescr = $puDescr;
+
+        return $this;
+    }
+
+    public function getPuPole(): ?string
+    {
+        return $this->puPole;
+    }
+
+    public function setPuPole(?string $puPole): self
+    {
+        $this->puPole = $puPole;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

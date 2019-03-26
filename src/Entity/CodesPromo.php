@@ -77,5 +77,106 @@ class CodesPromo
      */
     private $majUser;
 
+    public function getCpId(): ?int
+    {
+        return $this->cpId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getCpCode(): ?string
+    {
+        return $this->cpCode;
+    }
+
+    public function setCpCode(?string $cpCode): self
+    {
+        $this->cpCode = $cpCode;
+
+        return $this;
+    }
+
+    public function getCpRemise(): ?float
+    {
+        return $this->cpRemise;
+    }
+
+    public function setCpRemise(?float $cpRemise): self
+    {
+        $this->cpRemise = $cpRemise;
+
+        return $this;
+    }
+
+    public function getCpValidite(): ?\DateTimeInterface
+    {
+        return $this->cpValidite;
+    }
+
+    public function setCpValidite(?\DateTimeInterface $cpValidite): self
+    {
+        $this->cpValidite = $cpValidite;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

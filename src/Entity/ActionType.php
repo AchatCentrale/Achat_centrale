@@ -28,5 +28,22 @@ class ActionType
      */
     private $acNom;
 
+    public function getAcId(): ?int
+    {
+        return $this->acId;
+    }
+
+    public function getAcNom(): ?string
+    {
+        return $this->acNom;
+    }
+
+    public function setAcNom(?string $acNom): self
+    {
+        $this->acNom = $acNom;
+
+        return $this;
+    }
+
 
 }

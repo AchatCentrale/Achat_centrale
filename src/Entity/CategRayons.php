@@ -35,5 +35,34 @@ class CategRayons
      */
     private $catid;
 
+    public function getCrId(): ?int
+    {
+        return $this->crId;
+    }
+
+    public function getRaId(): ?int
+    {
+        return $this->raId;
+    }
+
+    public function setRaId(int $raId): self
+    {
+        $this->raId = $raId;
+
+        return $this;
+    }
+
+    public function getCatid(): ?int
+    {
+        return $this->catid;
+    }
+
+    public function setCatid(?int $catid): self
+    {
+        $this->catid = $catid;
+
+        return $this;
+    }
+
 
 }

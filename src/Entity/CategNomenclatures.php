@@ -35,5 +35,34 @@ class CategNomenclatures
      */
     private $catid;
 
+    public function getCnId(): ?int
+    {
+        return $this->cnId;
+    }
+
+    public function getNcId(): ?int
+    {
+        return $this->ncId;
+    }
+
+    public function setNcId(int $ncId): self
+    {
+        $this->ncId = $ncId;
+
+        return $this;
+    }
+
+    public function getCatid(): ?int
+    {
+        return $this->catid;
+    }
+
+    public function setCatid(?int $catid): self
+    {
+        $this->catid = $catid;
+
+        return $this;
+    }
+
 
 }

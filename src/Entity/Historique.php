@@ -77,5 +77,106 @@ class Historique
      */
     private $bodymessage;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getMailExp(): ?string
+    {
+        return $this->mailExp;
+    }
+
+    public function setMailExp(string $mailExp): self
+    {
+        $this->mailExp = $mailExp;
+
+        return $this;
+    }
+
+    public function getMailDest(): ?string
+    {
+        return $this->mailDest;
+    }
+
+    public function setMailDest(string $mailDest): self
+    {
+        $this->mailDest = $mailDest;
+
+        return $this;
+    }
+
+    public function getVdate(): ?\DateTimeInterface
+    {
+        return $this->vdate;
+    }
+
+    public function setVdate(\DateTimeInterface $vdate): self
+    {
+        $this->vdate = $vdate;
+
+        return $this;
+    }
+
+    public function getCodeRetour(): ?string
+    {
+        return $this->codeRetour;
+    }
+
+    public function setCodeRetour(?string $codeRetour): self
+    {
+        $this->codeRetour = $codeRetour;
+
+        return $this;
+    }
+
+    public function getIdCodeRetour(): ?int
+    {
+        return $this->idCodeRetour;
+    }
+
+    public function setIdCodeRetour(?int $idCodeRetour): self
+    {
+        $this->idCodeRetour = $idCodeRetour;
+
+        return $this;
+    }
+
+    public function getCodeErreur(): ?string
+    {
+        return $this->codeErreur;
+    }
+
+    public function setCodeErreur(?string $codeErreur): self
+    {
+        $this->codeErreur = $codeErreur;
+
+        return $this;
+    }
+
+    public function getSubjectmessage(): ?string
+    {
+        return $this->subjectmessage;
+    }
+
+    public function setSubjectmessage(?string $subjectmessage): self
+    {
+        $this->subjectmessage = $subjectmessage;
+
+        return $this;
+    }
+
+    public function getBodymessage(): ?string
+    {
+        return $this->bodymessage;
+    }
+
+    public function setBodymessage(?string $bodymessage): self
+    {
+        $this->bodymessage = $bodymessage;
+
+        return $this;
+    }
+
 
 }

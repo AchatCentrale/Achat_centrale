@@ -63,5 +63,82 @@ class ProduitsPromoCat
      */
     private $majUser;
 
+    public function getPpcId(): ?int
+    {
+        return $this->ppcId;
+    }
+
+    public function getPpcDescr(): ?string
+    {
+        return $this->ppcDescr;
+    }
+
+    public function setPpcDescr(?string $ppcDescr): self
+    {
+        $this->ppcDescr = $ppcDescr;
+
+        return $this;
+    }
+
+    public function getPpcOrdre(): ?int
+    {
+        return $this->ppcOrdre;
+    }
+
+    public function setPpcOrdre(?int $ppcOrdre): self
+    {
+        $this->ppcOrdre = $ppcOrdre;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

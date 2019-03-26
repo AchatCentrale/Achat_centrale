@@ -119,5 +119,178 @@ class Presse
      */
     private $majUser;
 
+    public function getPpId(): ?int
+    {
+        return $this->ppId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getPpTitre(): ?string
+    {
+        return $this->ppTitre;
+    }
+
+    public function setPpTitre(?string $ppTitre): self
+    {
+        $this->ppTitre = $ppTitre;
+
+        return $this;
+    }
+
+    public function getPpLogo(): ?string
+    {
+        return $this->ppLogo;
+    }
+
+    public function setPpLogo(?string $ppLogo): self
+    {
+        $this->ppLogo = $ppLogo;
+
+        return $this;
+    }
+
+    public function getPpImage(): ?string
+    {
+        return $this->ppImage;
+    }
+
+    public function setPpImage(?string $ppImage): self
+    {
+        $this->ppImage = $ppImage;
+
+        return $this;
+    }
+
+    public function getPpDate(): ?\DateTimeInterface
+    {
+        return $this->ppDate;
+    }
+
+    public function setPpDate(?\DateTimeInterface $ppDate): self
+    {
+        $this->ppDate = $ppDate;
+
+        return $this;
+    }
+
+    public function getPpPage(): ?string
+    {
+        return $this->ppPage;
+    }
+
+    public function setPpPage(?string $ppPage): self
+    {
+        $this->ppPage = $ppPage;
+
+        return $this;
+    }
+
+    public function getPpDescr(): ?string
+    {
+        return $this->ppDescr;
+    }
+
+    public function setPpDescr(?string $ppDescr): self
+    {
+        $this->ppDescr = $ppDescr;
+
+        return $this;
+    }
+
+    public function getPpOrdre(): ?int
+    {
+        return $this->ppOrdre;
+    }
+
+    public function setPpOrdre(?int $ppOrdre): self
+    {
+        $this->ppOrdre = $ppOrdre;
+
+        return $this;
+    }
+
+    public function getPpTempo(): ?string
+    {
+        return $this->ppTempo;
+    }
+
+    public function setPpTempo(?string $ppTempo): self
+    {
+        $this->ppTempo = $ppTempo;
+
+        return $this;
+    }
+
+    public function getPpStatus(): ?int
+    {
+        return $this->ppStatus;
+    }
+
+    public function setPpStatus(?int $ppStatus): self
+    {
+        $this->ppStatus = $ppStatus;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

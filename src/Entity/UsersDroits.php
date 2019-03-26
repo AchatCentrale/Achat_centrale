@@ -164,5 +164,250 @@ class UsersDroits
      */
     private $us;
 
+    public function getUdId(): ?int
+    {
+        return $this->udId;
+    }
+
+    public function getUdExtranet(): ?int
+    {
+        return $this->udExtranet;
+    }
+
+    public function setUdExtranet(?int $udExtranet): self
+    {
+        $this->udExtranet = $udExtranet;
+
+        return $this;
+    }
+
+    public function getUdInstutionnel(): ?int
+    {
+        return $this->udInstutionnel;
+    }
+
+    public function setUdInstutionnel(?int $udInstutionnel): self
+    {
+        $this->udInstutionnel = $udInstutionnel;
+
+        return $this;
+    }
+
+    public function getUdProduit(): ?int
+    {
+        return $this->udProduit;
+    }
+
+    public function setUdProduit(?int $udProduit): self
+    {
+        $this->udProduit = $udProduit;
+
+        return $this;
+    }
+
+    public function getUdOptions(): ?int
+    {
+        return $this->udOptions;
+    }
+
+    public function setUdOptions(?int $udOptions): self
+    {
+        $this->udOptions = $udOptions;
+
+        return $this;
+    }
+
+    public function getUdCommission(): ?int
+    {
+        return $this->udCommission;
+    }
+
+    public function setUdCommission(?int $udCommission): self
+    {
+        $this->udCommission = $udCommission;
+
+        return $this;
+    }
+
+    public function getUdRfaSup(): ?int
+    {
+        return $this->udRfaSup;
+    }
+
+    public function setUdRfaSup(?int $udRfaSup): self
+    {
+        $this->udRfaSup = $udRfaSup;
+
+        return $this;
+    }
+
+    public function getUdClientIns(): ?int
+    {
+        return $this->udClientIns;
+    }
+
+    public function setUdClientIns(?int $udClientIns): self
+    {
+        $this->udClientIns = $udClientIns;
+
+        return $this;
+    }
+
+    public function getUdClientMaj(): ?int
+    {
+        return $this->udClientMaj;
+    }
+
+    public function setUdClientMaj(?int $udClientMaj): self
+    {
+        $this->udClientMaj = $udClientMaj;
+
+        return $this;
+    }
+
+    public function getUdClientSup(): ?int
+    {
+        return $this->udClientSup;
+    }
+
+    public function setUdClientSup(?int $udClientSup): self
+    {
+        $this->udClientSup = $udClientSup;
+
+        return $this;
+    }
+
+    public function getUdUserIns(): ?int
+    {
+        return $this->udUserIns;
+    }
+
+    public function setUdUserIns(?int $udUserIns): self
+    {
+        $this->udUserIns = $udUserIns;
+
+        return $this;
+    }
+
+    public function getUdUserMaj(): ?int
+    {
+        return $this->udUserMaj;
+    }
+
+    public function setUdUserMaj(?int $udUserMaj): self
+    {
+        $this->udUserMaj = $udUserMaj;
+
+        return $this;
+    }
+
+    public function getUdUserSup(): ?int
+    {
+        return $this->udUserSup;
+    }
+
+    public function setUdUserSup(?int $udUserSup): self
+    {
+        $this->udUserSup = $udUserSup;
+
+        return $this;
+    }
+
+    public function getUdExtraction(): ?int
+    {
+        return $this->udExtraction;
+    }
+
+    public function setUdExtraction(?int $udExtraction): self
+    {
+        $this->udExtraction = $udExtraction;
+
+        return $this;
+    }
+
+    public function getUdFournisseur(): ?int
+    {
+        return $this->udFournisseur;
+    }
+
+    public function setUdFournisseur(?int $udFournisseur): self
+    {
+        $this->udFournisseur = $udFournisseur;
+
+        return $this;
+    }
+
+    public function getUdCopieTicket(): ?int
+    {
+        return $this->udCopieTicket;
+    }
+
+    public function setUdCopieTicket(?int $udCopieTicket): self
+    {
+        $this->udCopieTicket = $udCopieTicket;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
+    public function getUs(): ?Users
+    {
+        return $this->us;
+    }
+
+    public function setUs(?Users $us): self
+    {
+        $this->us = $us;
+
+        return $this;
+    }
+
 
 }

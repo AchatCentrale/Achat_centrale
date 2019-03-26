@@ -175,5 +175,274 @@ class MessageEntete
      */
     private $majUser;
 
+    public function getMeId(): ?int
+    {
+        return $this->meId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getCcId(): ?int
+    {
+        return $this->ccId;
+    }
+
+    public function setCcId(?int $ccId): self
+    {
+        $this->ccId = $ccId;
+
+        return $this;
+    }
+
+    public function getFoId(): ?int
+    {
+        return $this->foId;
+    }
+
+    public function setFoId(?int $foId): self
+    {
+        $this->foId = $foId;
+
+        return $this;
+    }
+
+    public function getFcId(): ?int
+    {
+        return $this->fcId;
+    }
+
+    public function setFcId(?int $fcId): self
+    {
+        $this->fcId = $fcId;
+
+        return $this;
+    }
+
+    public function getPrId(): ?int
+    {
+        return $this->prId;
+    }
+
+    public function setPrId(?int $prId): self
+    {
+        $this->prId = $prId;
+
+        return $this;
+    }
+
+    public function getMeDate(): ?\DateTimeInterface
+    {
+        return $this->meDate;
+    }
+
+    public function setMeDate(?\DateTimeInterface $meDate): self
+    {
+        $this->meDate = $meDate;
+
+        return $this;
+    }
+
+    public function getMeSujet(): ?string
+    {
+        return $this->meSujet;
+    }
+
+    public function setMeSujet(?string $meSujet): self
+    {
+        $this->meSujet = $meSujet;
+
+        return $this;
+    }
+
+    public function getMeNote(): ?string
+    {
+        return $this->meNote;
+    }
+
+    public function setMeNote(?string $meNote): self
+    {
+        $this->meNote = $meNote;
+
+        return $this;
+    }
+
+    public function getMeStatus(): ?int
+    {
+        return $this->meStatus;
+    }
+
+    public function setMeStatus(?int $meStatus): self
+    {
+        $this->meStatus = $meStatus;
+
+        return $this;
+    }
+
+    public function getMeLuC(): ?int
+    {
+        return $this->meLuC;
+    }
+
+    public function setMeLuC(?int $meLuC): self
+    {
+        $this->meLuC = $meLuC;
+
+        return $this;
+    }
+
+    public function getMeLuF(): ?int
+    {
+        return $this->meLuF;
+    }
+
+    public function setMeLuF(?int $meLuF): self
+    {
+        $this->meLuF = $meLuF;
+
+        return $this;
+    }
+
+    public function getMeRelance(): ?int
+    {
+        return $this->meRelance;
+    }
+
+    public function setMeRelance(?int $meRelance): self
+    {
+        $this->meRelance = $meRelance;
+
+        return $this;
+    }
+
+    public function getMeAdrFac(): ?int
+    {
+        return $this->meAdrFac;
+    }
+
+    public function setMeAdrFac(?int $meAdrFac): self
+    {
+        $this->meAdrFac = $meAdrFac;
+
+        return $this;
+    }
+
+    public function getMeAdrLiv(): ?int
+    {
+        return $this->meAdrLiv;
+    }
+
+    public function setMeAdrLiv(?int $meAdrLiv): self
+    {
+        $this->meAdrLiv = $meAdrLiv;
+
+        return $this;
+    }
+
+    public function getMeCmde(): ?int
+    {
+        return $this->meCmde;
+    }
+
+    public function setMeCmde(?int $meCmde): self
+    {
+        $this->meCmde = $meCmde;
+
+        return $this;
+    }
+
+    public function getMeMessVal(): ?string
+    {
+        return $this->meMessVal;
+    }
+
+    public function setMeMessVal(?string $meMessVal): self
+    {
+        $this->meMessVal = $meMessVal;
+
+        return $this;
+    }
+
+    public function getMeTempo(): ?string
+    {
+        return $this->meTempo;
+    }
+
+    public function setMeTempo(?string $meTempo): self
+    {
+        $this->meTempo = $meTempo;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

@@ -66,5 +66,82 @@ class ProfilsFourn
      */
     private $pu;
 
+    public function getPfId(): ?int
+    {
+        return $this->pfId;
+    }
+
+    public function getFoId(): ?int
+    {
+        return $this->foId;
+    }
+
+    public function setFoId(?int $foId): self
+    {
+        $this->foId = $foId;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
+    public function getPu(): ?ProfilsUsers
+    {
+        return $this->pu;
+    }
+
+    public function setPu(?ProfilsUsers $pu): self
+    {
+        $this->pu = $pu;
+
+        return $this;
+    }
+
 
 }

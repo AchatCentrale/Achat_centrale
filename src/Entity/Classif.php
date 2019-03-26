@@ -35,5 +35,34 @@ class Classif
      */
     private $clDescr;
 
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getClDescr(): ?string
+    {
+        return $this->clDescr;
+    }
+
+    public function setClDescr(?string $clDescr): self
+    {
+        $this->clDescr = $clDescr;
+
+        return $this;
+    }
+
 
 }

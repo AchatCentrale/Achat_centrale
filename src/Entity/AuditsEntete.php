@@ -119,5 +119,178 @@ class AuditsEntete
      */
     private $majUser;
 
+    public function getAeId(): ?int
+    {
+        return $this->aeId;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getCcId(): ?int
+    {
+        return $this->ccId;
+    }
+
+    public function setCcId(?int $ccId): self
+    {
+        $this->ccId = $ccId;
+
+        return $this;
+    }
+
+    public function getUsId(): ?int
+    {
+        return $this->usId;
+    }
+
+    public function setUsId(?int $usId): self
+    {
+        $this->usId = $usId;
+
+        return $this;
+    }
+
+    public function getAeDate(): ?\DateTimeInterface
+    {
+        return $this->aeDate;
+    }
+
+    public function setAeDate(?\DateTimeInterface $aeDate): self
+    {
+        $this->aeDate = $aeDate;
+
+        return $this;
+    }
+
+    public function getAeTotalEur(): ?float
+    {
+        return $this->aeTotalEur;
+    }
+
+    public function setAeTotalEur(?float $aeTotalEur): self
+    {
+        $this->aeTotalEur = $aeTotalEur;
+
+        return $this;
+    }
+
+    public function getAeTotalPct(): ?float
+    {
+        return $this->aeTotalPct;
+    }
+
+    public function setAeTotalPct(?float $aeTotalPct): self
+    {
+        $this->aeTotalPct = $aeTotalPct;
+
+        return $this;
+    }
+
+    public function getAeAnEur(): ?float
+    {
+        return $this->aeAnEur;
+    }
+
+    public function setAeAnEur(?float $aeAnEur): self
+    {
+        $this->aeAnEur = $aeAnEur;
+
+        return $this;
+    }
+
+    public function getAeAnPct(): ?float
+    {
+        return $this->aeAnPct;
+    }
+
+    public function setAeAnPct(?float $aeAnPct): self
+    {
+        $this->aeAnPct = $aeAnPct;
+
+        return $this;
+    }
+
+    public function getAeTempo(): ?string
+    {
+        return $this->aeTempo;
+    }
+
+    public function setAeTempo(?string $aeTempo): self
+    {
+        $this->aeTempo = $aeTempo;
+
+        return $this;
+    }
+
+    public function getAeStatus(): ?int
+    {
+        return $this->aeStatus;
+    }
+
+    public function setAeStatus(?int $aeStatus): self
+    {
+        $this->aeStatus = $aeStatus;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

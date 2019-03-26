@@ -49,5 +49,58 @@ class ClientsEtat
      */
     private $ceDate;
 
+    public function getCeId(): ?int
+    {
+        return $this->ceId;
+    }
+
+    public function getCeCode(): ?string
+    {
+        return $this->ceCode;
+    }
+
+    public function setCeCode(?string $ceCode): self
+    {
+        $this->ceCode = $ceCode;
+
+        return $this;
+    }
+
+    public function getCeDescr(): ?string
+    {
+        return $this->ceDescr;
+    }
+
+    public function setCeDescr(?string $ceDescr): self
+    {
+        $this->ceDescr = $ceDescr;
+
+        return $this;
+    }
+
+    public function getCeOrdre(): ?int
+    {
+        return $this->ceOrdre;
+    }
+
+    public function setCeOrdre(?int $ceOrdre): self
+    {
+        $this->ceOrdre = $ceOrdre;
+
+        return $this;
+    }
+
+    public function getCeDate(): ?\DateTimeInterface
+    {
+        return $this->ceDate;
+    }
+
+    public function setCeDate(?\DateTimeInterface $ceDate): self
+    {
+        $this->ceDate = $ceDate;
+
+        return $this;
+    }
+
 
 }

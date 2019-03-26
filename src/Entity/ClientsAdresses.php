@@ -112,5 +112,166 @@ class ClientsAdresses
      */
     private $majUser;
 
+    public function getCaId(): ?int
+    {
+        return $this->caId;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getCaType(): ?string
+    {
+        return $this->caType;
+    }
+
+    public function setCaType(?string $caType): self
+    {
+        $this->caType = $caType;
+
+        return $this;
+    }
+
+    public function getCaRaisonsoc(): ?string
+    {
+        return $this->caRaisonsoc;
+    }
+
+    public function setCaRaisonsoc(?string $caRaisonsoc): self
+    {
+        $this->caRaisonsoc = $caRaisonsoc;
+
+        return $this;
+    }
+
+    public function getCaAdresse1(): ?string
+    {
+        return $this->caAdresse1;
+    }
+
+    public function setCaAdresse1(?string $caAdresse1): self
+    {
+        $this->caAdresse1 = $caAdresse1;
+
+        return $this;
+    }
+
+    public function getCaAdresse2(): ?string
+    {
+        return $this->caAdresse2;
+    }
+
+    public function setCaAdresse2(?string $caAdresse2): self
+    {
+        $this->caAdresse2 = $caAdresse2;
+
+        return $this;
+    }
+
+    public function getCaCp(): ?string
+    {
+        return $this->caCp;
+    }
+
+    public function setCaCp(?string $caCp): self
+    {
+        $this->caCp = $caCp;
+
+        return $this;
+    }
+
+    public function getCaVille(): ?string
+    {
+        return $this->caVille;
+    }
+
+    public function setCaVille(?string $caVille): self
+    {
+        $this->caVille = $caVille;
+
+        return $this;
+    }
+
+    public function getCaPays(): ?string
+    {
+        return $this->caPays;
+    }
+
+    public function setCaPays(?string $caPays): self
+    {
+        $this->caPays = $caPays;
+
+        return $this;
+    }
+
+    public function getCaPrincipale(): ?int
+    {
+        return $this->caPrincipale;
+    }
+
+    public function setCaPrincipale(?int $caPrincipale): self
+    {
+        $this->caPrincipale = $caPrincipale;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

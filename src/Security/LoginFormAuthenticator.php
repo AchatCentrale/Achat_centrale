@@ -2,11 +2,9 @@
 
 namespace App\Security;
 
-use App\Entity\Users;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -23,18 +21,15 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
     use TargetPathTrait;
 
-    private $urlGenerator;
+    private $router;
     private $csrfTokenManager;
     private $passwordEncoder;
-    private $entityManager;
 
-    public function __construct(EntityManagerInterface $entityManager,UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
     {
-        $this->urlGenerator = $urlGenerator;
+        $this->router = $router;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
-        $this->entityManager = $entityManager;
-
     }
 
     public function supports(Request $request)
@@ -67,14 +62,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
         // Load / create our user however you need.
         // You can do this by calling the user provider, or with custom logic here.
-
-        $user = $this->entityManager->getRepository(Users::class)->findOneBy(['usMail' => $credentials['usMail']]);
-
-
+        $user = $userProvider->loadUserByUsername($credentials['usMail']);
 
         if (!$user) {
             // fail authentication with a custom error
-            throw new CustomUserMessageAuthenticationException('UsMail could not be found.');
+            throw new CustomUserMessageAuthenticationException('Us Mail could not be found.');
         }
 
         return $user;
@@ -82,6 +74,9 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 
     public function checkCredentials($credentials, UserInterface $user)
     {
+
+        dump($credentials);
+
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
     }
 
@@ -91,11 +86,11 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('home'));
+        return new RedirectResponse($this->router->generate('home'));
     }
 
     protected function getLoginUrl()
     {
-        return $this->urlGenerator->generate('login');
+        return $this->router->generate('app_login');
     }
 }

@@ -45,5 +45,46 @@ class ContratsCat
      */
     private $so;
 
+    public function getCcId(): ?int
+    {
+        return $this->ccId;
+    }
+
+    public function getCcDescr(): ?string
+    {
+        return $this->ccDescr;
+    }
+
+    public function setCcDescr(?string $ccDescr): self
+    {
+        $this->ccDescr = $ccDescr;
+
+        return $this;
+    }
+
+    public function getCcDate(): ?\DateTimeInterface
+    {
+        return $this->ccDate;
+    }
+
+    public function setCcDate(?\DateTimeInterface $ccDate): self
+    {
+        $this->ccDate = $ccDate;
+
+        return $this;
+    }
+
+    public function getSo(): ?Societes
+    {
+        return $this->so;
+    }
+
+    public function setSo(?Societes $so): self
+    {
+        $this->so = $so;
+
+        return $this;
+    }
+
 
 }

@@ -49,5 +49,58 @@ class ClientsTag
      */
     private $insUser;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getTag(): ?string
+    {
+        return $this->tag;
+    }
+
+    public function setTag(?string $tag): self
+    {
+        $this->tag = $tag;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
 
 }

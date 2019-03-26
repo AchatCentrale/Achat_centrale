@@ -94,5 +94,130 @@ class Panier
      */
     private $cl;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getMeId(): ?int
+    {
+        return $this->meId;
+    }
+
+    public function setMeId(?int $meId): self
+    {
+        $this->meId = $meId;
+
+        return $this;
+    }
+
+    public function getIdCommande(): ?int
+    {
+        return $this->idCommande;
+    }
+
+    public function setIdCommande(?int $idCommande): self
+    {
+        $this->idCommande = $idCommande;
+
+        return $this;
+    }
+
+    public function getPrId(): ?int
+    {
+        return $this->prId;
+    }
+
+    public function setPrId(?int $prId): self
+    {
+        $this->prId = $prId;
+
+        return $this;
+    }
+
+    public function getQuantite(): ?int
+    {
+        return $this->quantite;
+    }
+
+    public function setQuantite(?int $quantite): self
+    {
+        $this->quantite = $quantite;
+
+        return $this;
+    }
+
+    public function getPrixUht(): ?float
+    {
+        return $this->prixUht;
+    }
+
+    public function setPrixUht(?float $prixUht): self
+    {
+        $this->prixUht = $prixUht;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
+    public function getCl(): ?Clients
+    {
+        return $this->cl;
+    }
+
+    public function setCl(?Clients $cl): self
+    {
+        $this->cl = $cl;
+
+        return $this;
+    }
+
 
 }

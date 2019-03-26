@@ -88,22 +88,16 @@ doctrine:
                     ansi_warnings: on
                     20: false
     orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
-        default_entity_manager:  achat_centrale
-        entity_managers:
-            centrale_produits:
-                connection: centrale_produits
-            centrale_funecap:
-                connection: centrale_funecap
-            achat_centrale:
-                connection: achat_centrale
-            roc_eclerc:
-                connection: roc_eclerc
-            centrale_gccp:
-                connection: centrale_gccp
-            centrale_pascal_leclerc:
-                connection: centrale_pascal_leclerc
-            ac_produits:
-                connection: ac_produits
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+        mappings:
+            App:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/Entity'
+                prefix: 'App\Entity'
+                alias: App
+
 
 

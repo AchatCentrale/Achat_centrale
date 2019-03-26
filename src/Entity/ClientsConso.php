@@ -77,5 +77,106 @@ class ClientsConso
      */
     private $insUser;
 
+    public function getClcId(): ?int
+    {
+        return $this->clcId;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getCcId(): ?int
+    {
+        return $this->ccId;
+    }
+
+    public function setCcId(?int $ccId): self
+    {
+        $this->ccId = $ccId;
+
+        return $this;
+    }
+
+    public function getFoId(): ?int
+    {
+        return $this->foId;
+    }
+
+    public function setFoId(?int $foId): self
+    {
+        $this->foId = $foId;
+
+        return $this;
+    }
+
+    public function getClcDate(): ?\DateTimeInterface
+    {
+        return $this->clcDate;
+    }
+
+    public function setClcDate(?\DateTimeInterface $clcDate): self
+    {
+        $this->clcDate = $clcDate;
+
+        return $this;
+    }
+
+    public function getClcPrixPublic(): ?float
+    {
+        return $this->clcPrixPublic;
+    }
+
+    public function setClcPrixPublic(?float $clcPrixPublic): self
+    {
+        $this->clcPrixPublic = $clcPrixPublic;
+
+        return $this;
+    }
+
+    public function getClcPrixCentrale(): ?float
+    {
+        return $this->clcPrixCentrale;
+    }
+
+    public function setClcPrixCentrale(?float $clcPrixCentrale): self
+    {
+        $this->clcPrixCentrale = $clcPrixCentrale;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
 
 }

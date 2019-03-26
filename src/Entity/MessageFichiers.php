@@ -66,5 +66,82 @@ class MessageFichiers
      */
     private $me;
 
+    public function getMfId(): ?int
+    {
+        return $this->mfId;
+    }
+
+    public function getMdId(): ?int
+    {
+        return $this->mdId;
+    }
+
+    public function setMdId(?int $mdId): self
+    {
+        $this->mdId = $mdId;
+
+        return $this;
+    }
+
+    public function getMfFichier(): ?string
+    {
+        return $this->mfFichier;
+    }
+
+    public function setMfFichier(?string $mfFichier): self
+    {
+        $this->mfFichier = $mfFichier;
+
+        return $this;
+    }
+
+    public function getMfTaille(): ?float
+    {
+        return $this->mfTaille;
+    }
+
+    public function setMfTaille(?float $mfTaille): self
+    {
+        $this->mfTaille = $mfTaille;
+
+        return $this;
+    }
+
+    public function getMfDate(): ?\DateTimeInterface
+    {
+        return $this->mfDate;
+    }
+
+    public function setMfDate(?\DateTimeInterface $mfDate): self
+    {
+        $this->mfDate = $mfDate;
+
+        return $this;
+    }
+
+    public function getMfTempo(): ?string
+    {
+        return $this->mfTempo;
+    }
+
+    public function setMfTempo(?string $mfTempo): self
+    {
+        $this->mfTempo = $mfTempo;
+
+        return $this;
+    }
+
+    public function getMe(): ?MessageEntete
+    {
+        return $this->me;
+    }
+
+    public function setMe(?MessageEntete $me): self
+    {
+        $this->me = $me;
+
+        return $this;
+    }
+
 
 }

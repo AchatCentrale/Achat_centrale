@@ -56,5 +56,70 @@ class Faq
      */
     private $qfDate;
 
+    public function getQfId(): ?int
+    {
+        return $this->qfId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getQfQuestion(): ?string
+    {
+        return $this->qfQuestion;
+    }
+
+    public function setQfQuestion(?string $qfQuestion): self
+    {
+        $this->qfQuestion = $qfQuestion;
+
+        return $this;
+    }
+
+    public function getQfReponse(): ?string
+    {
+        return $this->qfReponse;
+    }
+
+    public function setQfReponse(?string $qfReponse): self
+    {
+        $this->qfReponse = $qfReponse;
+
+        return $this;
+    }
+
+    public function getQfOrdre(): ?int
+    {
+        return $this->qfOrdre;
+    }
+
+    public function setQfOrdre(?int $qfOrdre): self
+    {
+        $this->qfOrdre = $qfOrdre;
+
+        return $this;
+    }
+
+    public function getQfDate(): ?\DateTimeInterface
+    {
+        return $this->qfDate;
+    }
+
+    public function setQfDate(?\DateTimeInterface $qfDate): self
+    {
+        $this->qfDate = $qfDate;
+
+        return $this;
+    }
+
 
 }

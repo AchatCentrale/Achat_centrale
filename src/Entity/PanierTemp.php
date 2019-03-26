@@ -154,5 +154,238 @@ class PanierTemp
      */
     private $majUser;
 
+    public function getPtId(): ?int
+    {
+        return $this->ptId;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getCcId(): ?int
+    {
+        return $this->ccId;
+    }
+
+    public function setCcId(?int $ccId): self
+    {
+        $this->ccId = $ccId;
+
+        return $this;
+    }
+
+    public function getFoId(): ?int
+    {
+        return $this->foId;
+    }
+
+    public function setFoId(?int $foId): self
+    {
+        $this->foId = $foId;
+
+        return $this;
+    }
+
+    public function getPrId(): ?int
+    {
+        return $this->prId;
+    }
+
+    public function setPrId(?int $prId): self
+    {
+        $this->prId = $prId;
+
+        return $this;
+    }
+
+    public function getMeId(): ?int
+    {
+        return $this->meId;
+    }
+
+    public function setMeId(?int $meId): self
+    {
+        $this->meId = $meId;
+
+        return $this;
+    }
+
+    public function getNcId(): ?int
+    {
+        return $this->ncId;
+    }
+
+    public function setNcId(?int $ncId): self
+    {
+        $this->ncId = $ncId;
+
+        return $this;
+    }
+
+    public function getPtDate(): ?\DateTimeInterface
+    {
+        return $this->ptDate;
+    }
+
+    public function setPtDate(?\DateTimeInterface $ptDate): self
+    {
+        $this->ptDate = $ptDate;
+
+        return $this;
+    }
+
+    public function getPtQte(): ?int
+    {
+        return $this->ptQte;
+    }
+
+    public function setPtQte(?int $ptQte): self
+    {
+        $this->ptQte = $ptQte;
+
+        return $this;
+    }
+
+    public function getPtDetail(): ?string
+    {
+        return $this->ptDetail;
+    }
+
+    public function setPtDetail(?string $ptDetail): self
+    {
+        $this->ptDetail = $ptDetail;
+
+        return $this;
+    }
+
+    public function getPtPrixVc(): ?float
+    {
+        return $this->ptPrixVc;
+    }
+
+    public function setPtPrixVc(?float $ptPrixVc): self
+    {
+        $this->ptPrixVc = $ptPrixVc;
+
+        return $this;
+    }
+
+    public function getPtDecl1(): ?int
+    {
+        return $this->ptDecl1;
+    }
+
+    public function setPtDecl1(?int $ptDecl1): self
+    {
+        $this->ptDecl1 = $ptDecl1;
+
+        return $this;
+    }
+
+    public function getPtDecl2(): ?int
+    {
+        return $this->ptDecl2;
+    }
+
+    public function setPtDecl2(?int $ptDecl2): self
+    {
+        $this->ptDecl2 = $ptDecl2;
+
+        return $this;
+    }
+
+    public function getPtDecl3(): ?int
+    {
+        return $this->ptDecl3;
+    }
+
+    public function setPtDecl3(?int $ptDecl3): self
+    {
+        $this->ptDecl3 = $ptDecl3;
+
+        return $this;
+    }
+
+    public function getPtDecl4(): ?int
+    {
+        return $this->ptDecl4;
+    }
+
+    public function setPtDecl4(?int $ptDecl4): self
+    {
+        $this->ptDecl4 = $ptDecl4;
+
+        return $this;
+    }
+
+    public function getPtDecl5(): ?int
+    {
+        return $this->ptDecl5;
+    }
+
+    public function setPtDecl5(?int $ptDecl5): self
+    {
+        $this->ptDecl5 = $ptDecl5;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

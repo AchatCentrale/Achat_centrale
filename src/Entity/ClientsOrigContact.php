@@ -42,5 +42,46 @@ class ClientsOrigContact
      */
     private $cocDate;
 
+    public function getCocId(): ?int
+    {
+        return $this->cocId;
+    }
+
+    public function getCocDescr(): ?string
+    {
+        return $this->cocDescr;
+    }
+
+    public function setCocDescr(?string $cocDescr): self
+    {
+        $this->cocDescr = $cocDescr;
+
+        return $this;
+    }
+
+    public function getCocOrdre(): ?int
+    {
+        return $this->cocOrdre;
+    }
+
+    public function setCocOrdre(?int $cocOrdre): self
+    {
+        $this->cocOrdre = $cocOrdre;
+
+        return $this;
+    }
+
+    public function getCocDate(): ?\DateTimeInterface
+    {
+        return $this->cocDate;
+    }
+
+    public function setCocDate(?\DateTimeInterface $cocDate): self
+    {
+        $this->cocDate = $cocDate;
+
+        return $this;
+    }
+
 
 }

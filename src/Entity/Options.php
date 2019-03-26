@@ -42,5 +42,46 @@ class Options
      */
     private $opFormat;
 
+    public function getOpId(): ?int
+    {
+        return $this->opId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getOpDescr(): ?string
+    {
+        return $this->opDescr;
+    }
+
+    public function setOpDescr(?string $opDescr): self
+    {
+        $this->opDescr = $opDescr;
+
+        return $this;
+    }
+
+    public function getOpFormat(): ?string
+    {
+        return $this->opFormat;
+    }
+
+    public function setOpFormat(?string $opFormat): self
+    {
+        $this->opFormat = $opFormat;
+
+        return $this;
+    }
+
 
 }

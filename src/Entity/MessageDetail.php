@@ -87,5 +87,118 @@ class MessageDetail
      */
     private $me;
 
+    public function getMdId(): ?int
+    {
+        return $this->mdId;
+    }
+
+    public function getCcId(): ?int
+    {
+        return $this->ccId;
+    }
+
+    public function setCcId(?int $ccId): self
+    {
+        $this->ccId = $ccId;
+
+        return $this;
+    }
+
+    public function getFcId(): ?int
+    {
+        return $this->fcId;
+    }
+
+    public function setFcId(?int $fcId): self
+    {
+        $this->fcId = $fcId;
+
+        return $this;
+    }
+
+    public function getUsId(): ?int
+    {
+        return $this->usId;
+    }
+
+    public function setUsId(?int $usId): self
+    {
+        $this->usId = $usId;
+
+        return $this;
+    }
+
+    public function getMdDate(): ?\DateTimeInterface
+    {
+        return $this->mdDate;
+    }
+
+    public function setMdDate(?\DateTimeInterface $mdDate): self
+    {
+        $this->mdDate = $mdDate;
+
+        return $this;
+    }
+
+    public function getMdCorps(): ?string
+    {
+        return $this->mdCorps;
+    }
+
+    public function setMdCorps(?string $mdCorps): self
+    {
+        $this->mdCorps = $mdCorps;
+
+        return $this;
+    }
+
+    public function getMdTempo(): ?string
+    {
+        return $this->mdTempo;
+    }
+
+    public function setMdTempo(?string $mdTempo): self
+    {
+        $this->mdTempo = $mdTempo;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMe(): ?MessageEntete
+    {
+        return $this->me;
+    }
+
+    public function setMe(?MessageEntete $me): self
+    {
+        $this->me = $me;
+
+        return $this;
+    }
+
 
 }

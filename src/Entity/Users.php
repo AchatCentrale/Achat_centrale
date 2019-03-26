@@ -9,6 +9,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
  * Users
  *
  * @ORM\Table(name="USERS")
+ * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  * @ORM\Entity
  */
 class Users implements UserInterface
@@ -85,164 +86,117 @@ class Users implements UserInterface
      */
     private $majUser;
 
-    /**
-     * @return int
-     */
-    public function getUsId(): int
+    public function getUsId(): ?int
     {
         return $this->usId;
     }
 
-    /**
-     * @param int $usId
-     */
-    public function setUsId(int $usId): void
-    {
-        $this->usId = $usId;
-    }
-
-    /**
-     * @return string|null
-     */
     public function getUsPrenom(): ?string
     {
         return $this->usPrenom;
     }
 
-    /**
-     * @param string|null $usPrenom
-     */
-    public function setUsPrenom(?string $usPrenom): void
+    public function setUsPrenom(?string $usPrenom): self
     {
         $this->usPrenom = $usPrenom;
+
+        return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUsNom(): ?string
     {
         return $this->usNom;
     }
 
-    /**
-     * @param string|null $usNom
-     */
-    public function setUsNom(?string $usNom): void
+    public function setUsNom(?string $usNom): self
     {
         $this->usNom = $usNom;
+
+        return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUsMail(): ?string
     {
         return $this->usMail;
     }
 
-    /**
-     * @param string|null $usMail
-     */
-    public function setUsMail(?string $usMail): void
+    public function setUsMail(?string $usMail): self
     {
         $this->usMail = $usMail;
+
+        return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getUsPass(): ?string
     {
         return $this->usPass;
     }
 
-    /**
-     * @param string|null $usPass
-     */
-    public function setUsPass(?string $usPass): void
+    public function setUsPass(?string $usPass): self
     {
         $this->usPass = $usPass;
+
+        return $this;
     }
 
-    /**
-     * @return int|null
-     */
     public function getUsNiveau(): ?int
     {
         return $this->usNiveau;
     }
 
-    /**
-     * @param int|null $usNiveau
-     */
-    public function setUsNiveau(?int $usNiveau): void
+    public function setUsNiveau(?int $usNiveau): self
     {
         $this->usNiveau = $usNiveau;
+
+        return $this;
     }
 
-    /**
-     * @return \DateTime|null
-     */
-    public function getInsDate(): ?\DateTime
+    public function getInsDate(): ?\DateTimeInterface
     {
         return $this->insDate;
     }
 
-    /**
-     * @param \DateTime|null $insDate
-     */
-    public function setInsDate(?\DateTime $insDate): void
+    public function setInsDate(?\DateTimeInterface $insDate): self
     {
         $this->insDate = $insDate;
+
+        return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getInsUser(): ?string
     {
         return $this->insUser;
     }
 
-    /**
-     * @param string|null $insUser
-     */
-    public function setInsUser(?string $insUser): void
+    public function setInsUser(?string $insUser): self
     {
         $this->insUser = $insUser;
+
+        return $this;
     }
 
-    /**
-     * @return \DateTime|null
-     */
-    public function getMajDate(): ?\DateTime
+    public function getMajDate(): ?\DateTimeInterface
     {
         return $this->majDate;
     }
 
-    /**
-     * @param \DateTime|null $majDate
-     */
-    public function setMajDate(?\DateTime $majDate): void
+    public function setMajDate(?\DateTimeInterface $majDate): self
     {
         $this->majDate = $majDate;
+
+        return $this;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMajUser(): ?string
     {
         return $this->majUser;
     }
 
-    /**
-     * @param string|null $majUser
-     */
-    public function setMajUser(?string $majUser): void
+    public function setMajUser(?string $majUser): self
     {
         $this->majUser = $majUser;
+
+        return $this;
     }
 
 
@@ -287,7 +241,7 @@ class Users implements UserInterface
      */
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
+        return null;
     }
 
     /**

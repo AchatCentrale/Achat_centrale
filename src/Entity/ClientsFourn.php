@@ -52,5 +52,58 @@ class ClientsFourn
      */
     private $cl;
 
+    public function getCfId(): ?int
+    {
+        return $this->cfId;
+    }
+
+    public function getFoId(): ?int
+    {
+        return $this->foId;
+    }
+
+    public function setFoId(?int $foId): self
+    {
+        $this->foId = $foId;
+
+        return $this;
+    }
+
+    public function getCfUser(): ?string
+    {
+        return $this->cfUser;
+    }
+
+    public function setCfUser(?string $cfUser): self
+    {
+        $this->cfUser = $cfUser;
+
+        return $this;
+    }
+
+    public function getCfPass(): ?string
+    {
+        return $this->cfPass;
+    }
+
+    public function setCfPass(?string $cfPass): self
+    {
+        $this->cfPass = $cfPass;
+
+        return $this;
+    }
+
+    public function getCl(): ?Clients
+    {
+        return $this->cl;
+    }
+
+    public function setCl(?Clients $cl): self
+    {
+        $this->cl = $cl;
+
+        return $this;
+    }
+
 
 }

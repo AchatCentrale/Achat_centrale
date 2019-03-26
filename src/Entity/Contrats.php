@@ -195,5 +195,298 @@ class Contrats
      */
     private $cl;
 
+    public function getCoId(): ?int
+    {
+        return $this->coId;
+    }
+
+    public function getCoUser(): ?int
+    {
+        return $this->coUser;
+    }
+
+    public function setCoUser(?int $coUser): self
+    {
+        $this->coUser = $coUser;
+
+        return $this;
+    }
+
+    public function getCoTier(): ?string
+    {
+        return $this->coTier;
+    }
+
+    public function setCoTier(?string $coTier): self
+    {
+        $this->coTier = $coTier;
+
+        return $this;
+    }
+
+    public function getCoDescr(): ?string
+    {
+        return $this->coDescr;
+    }
+
+    public function setCoDescr(?string $coDescr): self
+    {
+        $this->coDescr = $coDescr;
+
+        return $this;
+    }
+
+    public function getCoDebut(): ?\DateTimeInterface
+    {
+        return $this->coDebut;
+    }
+
+    public function setCoDebut(?\DateTimeInterface $coDebut): self
+    {
+        $this->coDebut = $coDebut;
+
+        return $this;
+    }
+
+    public function getCoRenouv(): ?\DateTimeInterface
+    {
+        return $this->coRenouv;
+    }
+
+    public function setCoRenouv(?\DateTimeInterface $coRenouv): self
+    {
+        $this->coRenouv = $coRenouv;
+
+        return $this;
+    }
+
+    public function getCoDuree(): ?int
+    {
+        return $this->coDuree;
+    }
+
+    public function setCoDuree(?int $coDuree): self
+    {
+        $this->coDuree = $coDuree;
+
+        return $this;
+    }
+
+    public function getCoPreavis(): ?int
+    {
+        return $this->coPreavis;
+    }
+
+    public function setCoPreavis(?int $coPreavis): self
+    {
+        $this->coPreavis = $coPreavis;
+
+        return $this;
+    }
+
+    public function getCoContact(): ?string
+    {
+        return $this->coContact;
+    }
+
+    public function setCoContact(?string $coContact): self
+    {
+        $this->coContact = $coContact;
+
+        return $this;
+    }
+
+    public function getCoContTel(): ?string
+    {
+        return $this->coContTel;
+    }
+
+    public function setCoContTel(?string $coContTel): self
+    {
+        $this->coContTel = $coContTel;
+
+        return $this;
+    }
+
+    public function getCoContMail(): ?string
+    {
+        return $this->coContMail;
+    }
+
+    public function setCoContMail(?string $coContMail): self
+    {
+        $this->coContMail = $coContMail;
+
+        return $this;
+    }
+
+    public function getCoConfident(): ?int
+    {
+        return $this->coConfident;
+    }
+
+    public function setCoConfident(?int $coConfident): self
+    {
+        $this->coConfident = $coConfident;
+
+        return $this;
+    }
+
+    public function getCoMontant(): ?float
+    {
+        return $this->coMontant;
+    }
+
+    public function setCoMontant(?float $coMontant): self
+    {
+        $this->coMontant = $coMontant;
+
+        return $this;
+    }
+
+    public function getCoEcheance(): ?string
+    {
+        return $this->coEcheance;
+    }
+
+    public function setCoEcheance(?string $coEcheance): self
+    {
+        $this->coEcheance = $coEcheance;
+
+        return $this;
+    }
+
+    public function getCoModePaie(): ?string
+    {
+        return $this->coModePaie;
+    }
+
+    public function setCoModePaie(?string $coModePaie): self
+    {
+        $this->coModePaie = $coModePaie;
+
+        return $this;
+    }
+
+    public function getCoComment(): ?string
+    {
+        return $this->coComment;
+    }
+
+    public function setCoComment(?string $coComment): self
+    {
+        $this->coComment = $coComment;
+
+        return $this;
+    }
+
+    public function getCoStatus(): ?int
+    {
+        return $this->coStatus;
+    }
+
+    public function setCoStatus(?int $coStatus): self
+    {
+        $this->coStatus = $coStatus;
+
+        return $this;
+    }
+
+    public function getCoAlert(): ?int
+    {
+        return $this->coAlert;
+    }
+
+    public function setCoAlert(?int $coAlert): self
+    {
+        $this->coAlert = $coAlert;
+
+        return $this;
+    }
+
+    public function getCoTempo(): ?string
+    {
+        return $this->coTempo;
+    }
+
+    public function setCoTempo(?string $coTempo): self
+    {
+        $this->coTempo = $coTempo;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
+    public function getCoCategorie(): ?ContratsCat
+    {
+        return $this->coCategorie;
+    }
+
+    public function setCoCategorie(?ContratsCat $coCategorie): self
+    {
+        $this->coCategorie = $coCategorie;
+
+        return $this;
+    }
+
+    public function getCl(): ?Clients
+    {
+        return $this->cl;
+    }
+
+    public function setCl(?Clients $cl): self
+    {
+        $this->cl = $cl;
+
+        return $this;
+    }
+
 
 }

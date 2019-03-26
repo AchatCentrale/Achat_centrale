@@ -115,5 +115,166 @@ class AuditsDetail
      */
     private $ae;
 
+    public function getAdId(): ?int
+    {
+        return $this->adId;
+    }
+
+    public function getPrId(): ?int
+    {
+        return $this->prId;
+    }
+
+    public function setPrId(?int $prId): self
+    {
+        $this->prId = $prId;
+
+        return $this;
+    }
+
+    public function getAdRef(): ?string
+    {
+        return $this->adRef;
+    }
+
+    public function setAdRef(?string $adRef): self
+    {
+        $this->adRef = $adRef;
+
+        return $this;
+    }
+
+    public function getAdDescr(): ?string
+    {
+        return $this->adDescr;
+    }
+
+    public function setAdDescr(?string $adDescr): self
+    {
+        $this->adDescr = $adDescr;
+
+        return $this;
+    }
+
+    public function getAdPrixActu(): ?float
+    {
+        return $this->adPrixActu;
+    }
+
+    public function setAdPrixActu(?float $adPrixActu): self
+    {
+        $this->adPrixActu = $adPrixActu;
+
+        return $this;
+    }
+
+    public function getAdPrixCa(): ?float
+    {
+        return $this->adPrixCa;
+    }
+
+    public function setAdPrixCa(?float $adPrixCa): self
+    {
+        $this->adPrixCa = $adPrixCa;
+
+        return $this;
+    }
+
+    public function getAdQte(): ?int
+    {
+        return $this->adQte;
+    }
+
+    public function setAdQte(?int $adQte): self
+    {
+        $this->adQte = $adQte;
+
+        return $this;
+    }
+
+    public function getAdEcoEur(): ?float
+    {
+        return $this->adEcoEur;
+    }
+
+    public function setAdEcoEur(?float $adEcoEur): self
+    {
+        $this->adEcoEur = $adEcoEur;
+
+        return $this;
+    }
+
+    public function getAdEcoPct(): ?float
+    {
+        return $this->adEcoPct;
+    }
+
+    public function setAdEcoPct(?float $adEcoPct): self
+    {
+        $this->adEcoPct = $adEcoPct;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
+    public function getAe(): ?AuditsEntete
+    {
+        return $this->ae;
+    }
+
+    public function setAe(?AuditsEntete $ae): self
+    {
+        $this->ae = $ae;
+
+        return $this;
+    }
+
 
 }

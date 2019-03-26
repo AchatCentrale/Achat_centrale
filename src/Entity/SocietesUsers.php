@@ -70,5 +70,94 @@ class SocietesUsers
      */
     private $majUser;
 
+    public function getSuId(): ?int
+    {
+        return $this->suId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getUsId(): ?int
+    {
+        return $this->usId;
+    }
+
+    public function setUsId(?int $usId): self
+    {
+        $this->usId = $usId;
+
+        return $this;
+    }
+
+    public function getSuNiveau(): ?int
+    {
+        return $this->suNiveau;
+    }
+
+    public function setSuNiveau(?int $suNiveau): self
+    {
+        $this->suNiveau = $suNiveau;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }

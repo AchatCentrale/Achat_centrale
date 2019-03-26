@@ -35,5 +35,34 @@ class Groupe
      */
     private $grDescr;
 
+    public function getGrId(): ?int
+    {
+        return $this->grId;
+    }
+
+    public function getSoId(): ?int
+    {
+        return $this->soId;
+    }
+
+    public function setSoId(?int $soId): self
+    {
+        $this->soId = $soId;
+
+        return $this;
+    }
+
+    public function getGrDescr(): ?string
+    {
+        return $this->grDescr;
+    }
+
+    public function setGrDescr(?string $grDescr): self
+    {
+        $this->grDescr = $grDescr;
+
+        return $this;
+    }
+
 
 }

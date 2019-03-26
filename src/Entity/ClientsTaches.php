@@ -112,5 +112,166 @@ class ClientsTaches
      */
     private $majUser;
 
+    public function getClaId(): ?int
+    {
+        return $this->claId;
+    }
+
+    public function getClId(): ?int
+    {
+        return $this->clId;
+    }
+
+    public function setClId(?int $clId): self
+    {
+        $this->clId = $clId;
+
+        return $this;
+    }
+
+    public function getUsId(): ?int
+    {
+        return $this->usId;
+    }
+
+    public function setUsId(?int $usId): self
+    {
+        $this->usId = $usId;
+
+        return $this;
+    }
+
+    public function getClaType(): ?int
+    {
+        return $this->claType;
+    }
+
+    public function setClaType(?int $claType): self
+    {
+        $this->claType = $claType;
+
+        return $this;
+    }
+
+    public function getClaNom(): ?string
+    {
+        return $this->claNom;
+    }
+
+    public function setClaNom(?string $claNom): self
+    {
+        $this->claNom = $claNom;
+
+        return $this;
+    }
+
+    public function getClaDescr(): ?string
+    {
+        return $this->claDescr;
+    }
+
+    public function setClaDescr(?string $claDescr): self
+    {
+        $this->claDescr = $claDescr;
+
+        return $this;
+    }
+
+    public function getClaEcheance(): ?\DateTimeInterface
+    {
+        return $this->claEcheance;
+    }
+
+    public function setClaEcheance(?\DateTimeInterface $claEcheance): self
+    {
+        $this->claEcheance = $claEcheance;
+
+        return $this;
+    }
+
+    public function getClaPriorite(): ?int
+    {
+        return $this->claPriorite;
+    }
+
+    public function setClaPriorite(?int $claPriorite): self
+    {
+        $this->claPriorite = $claPriorite;
+
+        return $this;
+    }
+
+    public function getClaNotifRef(): ?int
+    {
+        return $this->claNotifRef;
+    }
+
+    public function setClaNotifRef(?int $claNotifRef): self
+    {
+        $this->claNotifRef = $claNotifRef;
+
+        return $this;
+    }
+
+    public function getClaStatus(): ?int
+    {
+        return $this->claStatus;
+    }
+
+    public function setClaStatus(?int $claStatus): self
+    {
+        $this->claStatus = $claStatus;
+
+        return $this;
+    }
+
+    public function getInsDate(): ?\DateTimeInterface
+    {
+        return $this->insDate;
+    }
+
+    public function setInsDate(?\DateTimeInterface $insDate): self
+    {
+        $this->insDate = $insDate;
+
+        return $this;
+    }
+
+    public function getInsUser(): ?string
+    {
+        return $this->insUser;
+    }
+
+    public function setInsUser(?string $insUser): self
+    {
+        $this->insUser = $insUser;
+
+        return $this;
+    }
+
+    public function getMajDate(): ?\DateTimeInterface
+    {
+        return $this->majDate;
+    }
+
+    public function setMajDate(?\DateTimeInterface $majDate): self
+    {
+        $this->majDate = $majDate;
+
+        return $this;
+    }
+
+    public function getMajUser(): ?string
+    {
+        return $this->majUser;
+    }
+
+    public function setMajUser(?string $majUser): self
+    {
+        $this->majUser = $majUser;
+
+        return $this;
+    }
+
 
 }
