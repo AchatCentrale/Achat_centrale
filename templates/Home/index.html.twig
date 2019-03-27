@@ -5,8 +5,7 @@
 
 
 {% block body %}
-    {% include 'Home/partials/header.html.twig' %}
+    {% include 'Home/partials/header.html.twig' with {'catParent' : catParent, 'rayons' : rayons} %}
 
-    <h1>contenu</h1>
 
 {% endblock %}
