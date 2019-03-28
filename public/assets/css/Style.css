@@ -301,7 +301,8 @@ ul.liste-rayon {
     color: white;
     text-decoration: none;
     vertical-align: baseline;
-    font-weight: 500;
+    font-family: 'Calibre-medium';
+    letter-spacing: -0.4px;
 }
 
 
@@ -356,7 +357,7 @@ a.sub-menu-link {
     color: black !important;
     cursor: auto;
     font-weight: 800 !important;
-    font-family: 'Calibre';
+    font-family: 'Calibre-Bold';
     font-size: 16pt;
     letter-spacing: 1px;
 }
