@@ -5,7 +5,11 @@
 
 
 {% block body %}
-    {% include 'Home/partials/header.html.twig' with {'catParent' : catParent, 'rayons' : rayons} %}
+    {% include 'Home/partials/header.html.twig' with {'rayons' : rayons, 'espacePrive' : espacePrive} %}
 
+    <div class="site-content">
+        <p>contenu</p>
+
+    </div>
 
 {% endblock %}

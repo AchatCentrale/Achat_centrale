@@ -1,13 +1,24 @@
 $( document ).ready(function() {
     $( ".menu_item" ).mouseenter( openMenu ).mouseleave( closeMenu );
+
+
+
     function openMenu() {
-        $(this).toggleClass( "open" );
+        let key = $(this).data("key");
+        $("#"+key).show();
+        $('.site-content').toggleClass('mask-drop-down-menu');
+        $('li[data-key="'+ key +'"] ').css("background-color", "#e54b0d");
 
-        $(this).find('.commercial-tree-content').show();
     }
-    function closeMenu() {
-        $(this).toggleClass( "open" );
 
-        $(this).find('.commercial-tree-content').hide();
+
+    function closeMenu() {
+        let key = $(this).data("key");
+        $("#" + key).hide();
+        $('.site-content').toggleClass('mask-drop-down-menu');
+
+        $('li[data-key="'+ key +'"] ').css("background-color", "unset");
+
     }
 });
+

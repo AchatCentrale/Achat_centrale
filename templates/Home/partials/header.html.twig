@@ -37,26 +37,57 @@
 
         </div>
     </div>
-    </div>
 
 
 
     <div class="nav-bar">
         <div class="menu-general">
             <ul class="menu-general-range">
-                {% for r in rayons %}
+                {% for r in espacePrive %}
                     <li><a href="">{{ r["CatTitre"] }}</a></li>
+
 
                 {% endfor %}
             </ul>
         </div>
         <div class="menu-rayon">
             <ul class="liste-rayon" >
-                {% for c in catParent %}
-                    <li><a href="">{{ c["CatTitre"] }}</a></li>
 
+
+
+                {% for c in rayons %}
+                    <li class="menu_item" data-key="rayons-{{ loop.index }}" >
+                        <a href="">{{ c["CatTitre"] }}</a>
+                        <div id="rayons-{{ loop.index }}" class="rayons-content" style="display: none;">
+                            <div class="columns">
+                                <div class="column is-four-fifths">
+                                    <div class="columns sub-menu">
+
+
+                                        {% for sc in c["sousCategories"] %}
+                                            <div class="column">
+                                                <h3>
+                                                    <a class="sub-menu-link" href="">{{ sc["CatTitre"] }}</a>
+                                                </h3>
+                                                <ul class="sub-cat" >
+                                                    {% for ra in sc["rayon"] %}
+                                                        <li><a href="{{ ra["URL"] }}">{{ ra["CatTitre"] }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="column banners">
+                                    <a href="">
+                                        <img src="https://fakeimg.pl/200x350/">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 {% endfor %}
-
             </ul>
         </div>
     </div>
