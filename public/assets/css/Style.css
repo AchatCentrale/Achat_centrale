@@ -467,7 +467,7 @@ template {
 #header-account-button,
 #header-cart-button {
     line-height: 0;
-    padding-top: 32px;
+    padding-top: 46px;
     text-align: center;
     font-size: 11px;
     width: 96px;
@@ -506,7 +506,7 @@ template {
     line-height: 19px;
     text-align: center;
     padding: 2px;
-    top: 29px;
+    top: 42px;
     right: 20px;
 }
 

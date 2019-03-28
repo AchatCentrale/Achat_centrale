@@ -10,78 +10,12 @@ doctrine:
     dbal:
         default_connection:     achat_centrale
         connections:
-            centrale_produits:
-                driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:           "185.29.149.144"
-                user:           "AC_JBAGOSTIN"
-                password:       "35H7Hjvy"
-                dbname:         "CENTRALE_PRODUITS_JB"
-                charset:  UTF-8
-                options:
-                    ansi_nulls: on
-                    ansi_warnings: on
-                    20: false
-            centrale_funecap:
-                driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:           "185.29.149.144"
-                user:           "AC_JBAGOSTIN"
-                password:       "35H7Hjvy"
-                dbname:         "CENTRALE_FUNECAP"
-                charset:  UTF-8
-                options:
-                    ansi_nulls: on
-                    ansi_warnings: on
-                    20: false
             achat_centrale:
                 driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:         "185.29.149.144"
-                user:         "AC_JBAGOSTIN"
-                password:     "35H7Hjvy"
+                host:         '%env(DATABASE_IP)%'
+                user:         '%env(DATABASE_USER)%'
+                password:     '%env(DATABASE_PWD)%'
                 dbname:       "CENTRALE_ACHAT"
-                charset:  UTF-8
-                options:
-                    ansi_nulls: on
-                    ansi_warnings: on
-                    20: false
-            roc_eclerc:
-                driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:         "185.29.149.144"
-                user:         "AC_JBAGOSTIN"
-                password:     "35H7Hjvy"
-                dbname:       "CENTRALE_ROC_ECLERC"
-                charset:  UTF-8
-                options:
-                    ansi_nulls: on
-                    ansi_warnings: on
-                    20: false
-            centrale_gccp:
-                driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:         "185.29.149.144"
-                user:         "AC_JBAGOSTIN"
-                password:     "35H7Hjvy"
-                dbname:       "CENTRALE_GCCP"
-                charset:  UTF-8
-                options:
-                    ansi_nulls: on
-                    ansi_warnings: on
-                    20: false
-            centrale_pascal_leclerc:
-                driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:         "185.29.149.144"
-                user:         "AC_JBAGOSTIN"
-                password:     "35H7Hjvy"
-                dbname:       "CENTRALE_PFPL"
-                charset:  UTF-8
-                options:
-                    ansi_nulls: on
-                    ansi_warnings: on
-                    20: false
-            ac_produits:
-                driver_class:   Lsw\DoctrinePdoDblib\Doctrine\DBAL\Driver\PDODblib\Driver
-                host:         "185.29.149.144"
-                user:         "AC_JBAGOSTIN"
-                password:     "35H7Hjvy"
-                dbname:       "CENTRALE_PRODUITS"
                 charset:  UTF-8
                 options:
                     ansi_nulls: on
