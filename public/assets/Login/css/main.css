@@ -7,12 +7,12 @@
 
 @font-face {
   font-family: Ubuntu-Regular;
-  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+  src: url('../../fonts/ubuntu/Ubuntu-Regular.ttf');
 }
 
 @font-face {
   font-family: Ubuntu-Bold;
-  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+  src: url('../../fonts/ubuntu/Ubuntu-Bold.ttf');
 }
 
 /*//////////////////////////////////////////////////////////////////
@@ -170,15 +170,15 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Ubuntu-Bold;
-  font-size: 30px;
+  font-family: Calibre;
+  font-size: 50px;
   color: #403866;
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
-
   width: 100%;
   display: block;
+  font-weight: 900;
 }
 
 

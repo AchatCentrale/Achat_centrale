@@ -1,3 +1,66 @@
+/*FONT*/
+
+@font-face {
+    font-family: Calibre;
+    src: url('../fonts/Calibre/Calibre-Regular.otf');
+}
+
+@font-face {
+    font-family: Calibre-Black;
+    src: url('../fonts/Calibre/Calibre-Black.otf');
+}
+
+@font-face {
+    font-family: Calibre-BlackItalic;
+    src: url('../fonts/Calibre/Calibre-BlackItalic.otf');
+}
+
+@font-face {
+    font-family: Calibre-Bold;
+    src: url('../fonts/Calibre/Calibre-Bold.otf');
+}
+
+@font-face {
+    font-family: Calibre-BoldItalic;
+    src: url('../fonts/Calibre/Calibre-BoldItalic.otf');
+}
+
+@font-face {
+    font-family: Calibre-Light;
+    src: url('../fonts/Calibre/Calibre-Light.otf');
+}
+
+@font-face {
+    font-family: Calibre-LightItalic;
+    src: url('../fonts/Calibre/Calibre-LightItalic.otf');
+}
+
+@font-face {
+    font-family: Calibre-Medium;
+    src: url('../fonts/Calibre/Calibre-Medium.otf');
+}
+
+@font-face {
+    font-family: Calibre-MediumItalic;
+    src: url('../fonts/Calibre/Calibre-MediumItalic.otf');
+}
+
+@font-face {
+    font-family: Calibre-RegularItalic;
+    src: url('../fonts/Calibre/Calibre-RegularItalic.otf');
+}
+
+@font-face {
+    font-family: Calibre-Semibold;
+    src: url('../fonts/Calibre/Calibre-Semibold.otf');
+}
+
+@font-face {
+    font-family: Calibre-SemiboldItalic;
+    src: url('../fonts/Calibre/Calibre-SemiboldItalic.otf');
+}
+
+
 
 
 
@@ -293,7 +356,7 @@ a.sub-menu-link {
     color: black !important;
     cursor: auto;
     font-weight: 800 !important;
-    font-family: Calibre;
+    font-family: 'Calibre';
     font-size: 16pt;
     letter-spacing: 1px;
 }
