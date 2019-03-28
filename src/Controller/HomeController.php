@@ -16,6 +16,12 @@ class HomeController extends AbstractController
     public function index(Connection $connection)
     {
 
+
+        ini_set('mssql.charset', 'UTF-8');
+
+        mb_internal_encoding("UTF-8");
+
+
         $sqlCatParent = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT.dbo.Categories WHERE CatSort > 0 AND CatIDParent = 0 ORDER BY CatSort";
 
         $conn = $connection->prepare($sqlCatParent);
