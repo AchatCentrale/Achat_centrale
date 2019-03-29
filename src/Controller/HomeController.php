@@ -73,9 +73,19 @@ class HomeController extends AbstractController
 
 
 
+        $sqlSlider = "SELECT *  FROM CENTRALE_ACHAT.dbo.SLIDERS  WHERE SL_STATUS = 0  ORDER BY SL_ORDRE";
+
+        $conn = $connection->prepare($sqlSlider);
+        $conn->execute();
+        $slider = $conn->fetchAll();
+
+
+
+
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
             "espacePrive" => $espacesPrive,
+            "slider" => $slider,
 
         ]);
     }

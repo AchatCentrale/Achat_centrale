@@ -316,11 +316,16 @@ ul.liste-rayon {
 
 .rayons-content{
     position: absolute;
-    width: 1380px;
-    top: 38px;
+    width: 1210px;
+    top: 40px;
     height: 500px;
     z-index: 99999 !important;
     background-color: white;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .sub-menu {
@@ -339,8 +344,6 @@ ul.liste-rayon {
 .banners {
     padding-top: 45px;
 }
-
-
 
 .sub-cat li {
     display: list-item !important;
@@ -365,15 +368,67 @@ a.sub-menu-link {
 
 .mask-drop-down-menu {
     background-color: #000;
-    position: absolute;
-    top: 246px;
-    left: 0;
-    right: 0;
-    bottom: 0;
     -ms-filter: "alpha(opacity=@filter-opacity)";
     filter: alpha(opacity=40);
     -moz-opacity: .4;
     opacity: .4;
-    padding-top: 13%;
     z-index: 1;
+    height: 100vh;
+}
+
+
+.site-content {
+    width: 74%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.site-content h1 {
+    font-size: 25pt;
+    font-family: 'Calibre-Medium';
+}
+
+.mask-menu{
+    background-color: #000;
+    -ms-filter: "alpha(opacity=@filter-opacity)";
+    filter: alpha(opacity=40);
+    -moz-opacity: .4;
+    opacity: .4;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+
+
+.your-class {
+    height: 260px;
+    margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.slider-promo {
+    margin: 50px 10px;
+}
+
+.ligne{
+    background: url("http://v2.achatcentrale.fr/Images/Picto_LignePromo.jpg");
+    background-position: center;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100px;
+}
+
+.Promo_Mot1{
+    font-family: 'Calibre-Light';
+    text-transform: uppercase;
+    color: #E1734B;
+    font-size: 30px;
+}
+
+.Promo_Mot2 {
+    font-family: 'Tangerine';
+    color: #888888;
+    font-size: 60px;
 }

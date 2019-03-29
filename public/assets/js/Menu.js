@@ -6,7 +6,7 @@ $( document ).ready(function() {
     function openMenu() {
         let key = $(this).data("key");
         $("#"+key).show();
-        $('.site-content').toggleClass('mask-drop-down-menu');
+        $(".mask-menu").show();
         $('li[data-key="'+ key +'"] ').css("background-color", "#e54b0d");
 
     }
@@ -15,7 +15,7 @@ $( document ).ready(function() {
     function closeMenu() {
         let key = $(this).data("key");
         $("#" + key).hide();
-        $('.site-content').toggleClass('mask-drop-down-menu');
+        $(".mask-menu").hide();
 
         $('li[data-key="'+ key +'"] ').css("background-color", "unset");
 

@@ -4,12 +4,81 @@
 {% block title %}Home{% endblock %}
 
 
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+{% endblock %}
+
+
 {% block body %}
     {% include 'Home/partials/header.html.twig' with {'rayons' : rayons, 'espacePrive' : espacePrive} %}
 
+
+
     <div class="site-content">
-        <p>contenu</p>
+
+        <div class="welcome-container">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <h1>Bienvenue <b>Laurent Guiochet</b></h1>
+                </div>
+                <div class="column">
+                    <img src="http://v2.achatcentrale.fr/UploadFichiers/Uploads/CLIENT_1260/a-and-a-logo-1.png" alt="Logo" width="50px" height="50" style="margin-left: 55%;">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="slider-promo">
+            <div class="your-class">
+                {% for s in slider %}
+                    <div>
+                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/SLIDERS/{{ s["SL_SLIDE"] }}" alt="">
+                    </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+
+        <div class="container-promo">
+
+            <div class="promo">
+
+                <div class="title-promo">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="ligne"></div>
+                        </div>
+                        <div class="column has-text-centered	">
+                            <div align="center">
+                                <span class="Promo_Mot1">Vos  </span>
+                                <span class="Promo_Mot2"> Offres Négociées</span>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="ligne"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
 
     </div>
 
+{% endblock %}
+
+
+{% block javascripts %}
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="{{ asset('assets/js/Slider.js') }}"></script>
 {% endblock %}

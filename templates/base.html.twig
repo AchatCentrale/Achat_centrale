@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}ACHAT CENTRALE{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/Style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/Responsive.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
-        <link rel="stylesheet" href="{{ asset('assets/css/Style.css') }}">
+{#        <link rel="stylesheet" href="{{ asset('assets/css/Alibaba.css') }}">#}
     {% endblock %}
 </head>
 <body>
@@ -13,9 +16,9 @@
 
 
 {% endblock %}
-{% block javascripts %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" ></script>
     <script src="{{ asset('assets/js/Menu.js') }}" ></script>
+{% block javascripts %}
 {% endblock %}
 </body>
 </html>
