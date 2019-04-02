@@ -1,4 +1,79 @@
-<header class="container_header" >
+<header class="container_header">
+    <div class="subHeader ">
+        <div class="columns" style="width: 90%;margin: auto;">
+            <div class="column is-4" style="border-right: 1px solid;height: 55px;">
+                <div class="container-economie">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <p style="font-size: 13pt;padding-top: 5px;">Vos économies sont de</p>
+                        </div>
+                        <div class="column is-3">
+                            <p class="value-economie">39 €</p>
+                        </div>
+                        <div class="column is-3" style="padding: 18px 12px;">
+                            <a href="">Voir détail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <div class="columns">
+                    <div class="column is-4" style="padding-top: 8px;">
+                        <img class="picto_commande" src="http://www.centrale-funecap.fr/Images/Charte/Picto_MesCommandes.png" alt="">
+                    </div>
+                    <div class="column is-8 messageCommande" style="border-right: 1px solid;height: 55px;">
+                        <a href="">Messages & Commandes</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <div class="columns">
+                    <div class="column is-3">
+                        <img alt="" src="http://www.centrale-funecap.fr/Images/Charte/Picto_ContactCentrale.png">
+                    </div>
+                    <div class="column is-9" style="border-right: 1px solid;height: 55px;">
+                        <a href="">Contacter la centrale</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-1">
+                <div class="columns">
+                    <div class="column is-5 ">
+                        <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_Autres.png" alt="">
+                    </div>
+                    <div class="column is-7 " style="border-right: 1px solid;height: 55px;padding: 13px 0px;">
+                        <a href="">Autres</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <div class="container-user-avatar">
+                    <div class="columns">
+                        <div class="column">
+                            <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_TeteUser.png" alt="" style="float: right;">
+                        </div>
+                        <div class="column">
+                            <p class="pseudo_user" >{{ app.user.ccNom }} {{ app.user.ccPrenom }}</p>
+                        </div>
+                        <div class="column" style="border-right: 1px solid;height: 55px;padding-top: 20px;">
+                            <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_FlecheBasOrange.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-1">
+               <div class="columns">
+                   <div class="column">
+                       <img src="http://www.centrale-funecap.fr/Images/euro_barre.png" alt="">
+                   </div>
+                   <div class="column">
+                       <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_SeDeconnecter.png" alt="">
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div>
+
     <div class="first-level">
         <div id="header-logo">
             <h1>
@@ -11,7 +86,8 @@
         </div>
         <div id="header-search">
             <form class="header-search-form">
-                <input type="text" class="header-search-text" autocomplete="off" placeholder="Je cherche un produit, une référence..." value="">
+                <input type="text" class="header-search-text" autocomplete="off"
+                       placeholder="Je cherche un produit, une référence..." value="">
                 <button type="submit" class="header-search-button">
                     <span class="img-header-loupe"></span>
                 </button>
@@ -39,7 +115,6 @@
     </div>
 
 
-
     <div class="nav-bar">
         <div class="menu-general">
             <ul class="menu-general-range">
@@ -51,12 +126,11 @@
             </ul>
         </div>
         <div class="menu-rayon">
-            <ul class="liste-rayon" >
-
+            <ul class="liste-rayon">
 
 
                 {% for c in rayons %}
-                    <li class="menu_item" data-key="rayons-{{ loop.index }}" >
+                    <li class="menu_item" data-key="rayons-{{ loop.index }}">
                         <a href="">{{ c["CatTitre"] }}</a>
                         <div id="rayons-{{ loop.index }}" class="rayons-content" style="display: none;">
                             <div class="columns">
@@ -69,7 +143,7 @@
                                                 <h3>
                                                     <a class="sub-menu-link" href="">{{ sc["CatTitre"] }}</a>
                                                 </h3>
-                                                <ul class="sub-cat" >
+                                                <ul class="sub-cat">
                                                     {% for ra in sc["rayon"] %}
                                                         <li><a href="{{ ra["URL"] }}">{{ ra["CatTitre"] }}</a></li>
                                                     {% endfor %}
@@ -81,7 +155,7 @@
                                 </div>
                                 <div class="column banners">
                                     <a href="">
-                                        <img src="https://fakeimg.pl/200x350/">
+                                        {#                                        <img src="https://fakeimg.pl/200x350/">#}
                                     </a>
                                 </div>
                             </div>

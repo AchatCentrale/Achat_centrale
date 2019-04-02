@@ -15,14 +15,7 @@ class HomeController extends AbstractController
      */
     public function index(Connection $connection)
     {
-
-
-        ini_set('mssql.charset', 'UTF-8');
-
-        mb_internal_encoding("UTF-8");
-
-
-        $sqlCatParent = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT.dbo.Categories WHERE CatSort > 0 AND CatIDParent = 0 ORDER BY CatSort";
+        $sqlCatParent = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT_V2.dbo.Categories WHERE CatSort > 0 AND CatIDParent = 0 ORDER BY CatSort";
 
         $conn = $connection->prepare($sqlCatParent);
         $conn->execute();
@@ -32,7 +25,7 @@ class HomeController extends AbstractController
 
         foreach ($Categories as $i => $c){
 
-            $sqlSousCateg = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT.dbo.Categories WHERE CatSort > 0 AND CatIDParent = :id ORDER BY CatSort";
+            $sqlSousCateg = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT_V2.dbo.Categories WHERE CatSort > 0 AND CatIDParent = :id ORDER BY CatSort";
 
             $conn = $connection->prepare($sqlSousCateg);
             $conn->bindValue("id", $c['CatID']);
@@ -46,7 +39,7 @@ class HomeController extends AbstractController
             foreach ($cat as $j => $sC){
 
                 $sqlRayons = "SELECT CatID, CatTitre, CatLien, CatTitreReq, CatDescription, 'Produits.asp?Theme='+CatTitreReq AS URL
-                                FROM CENTRALE_ACHAT.dbo.Categories
+                                FROM CENTRALE_ACHAT_V2.dbo.Categories
                                 WHERE CatSort > 0 AND CatIDParent = :id AND CatLien = 'produit_centrale'
                                 ORDER BY CatSort";
 
@@ -62,8 +55,8 @@ class HomeController extends AbstractController
         }
 
         $sqlEspacePrive = "SELECT CatID, CatTitre, CatLien, CatTitreReq, CatDescription
-                        FROM dbo.PARAM_FIXES
-                        INNER JOIN CENTRALE_ACHAT.dbo.Categories ON PF_ESPACE_PRIVE = CatIDParent
+                        FROM CENTRALE_ACHAT_V2.dbo.PARAM_FIXES
+                        INNER JOIN CENTRALE_ACHAT_V2.dbo.Categories ON PF_ESPACE_PRIVE = CatIDParent
                         WHERE CatSort > 0
                         ORDER BY CatSort";
 
@@ -73,7 +66,7 @@ class HomeController extends AbstractController
 
 
 
-        $sqlSlider = "SELECT *  FROM CENTRALE_ACHAT.dbo.SLIDERS  WHERE SL_STATUS = 0  ORDER BY SL_ORDRE";
+        $sqlSlider = "SELECT *  FROM CENTRALE_ACHAT_V2.dbo.SLIDERS  WHERE SL_STATUS = 0  ORDER BY SL_ORDRE";
 
         $conn = $connection->prepare($sqlSlider);
         $conn->execute();
@@ -81,11 +74,38 @@ class HomeController extends AbstractController
 
 
 
+        $sqlPromoListe = "SELECT *  FROM CENTRALE_ACHAT_V2.dbo.PRODUITS_PROMO_CAT  ORDER BY PPC_ORDRE, PPC_DESCR";
+
+        $conn = $connection->prepare($sqlPromoListe);
+        $conn->execute();
+        $PromoListe = $conn->fetchAll();
+
+        $Produits = $PromoListe;
+
+
+        foreach($PromoListe as $i => $promo){
+
+            $sqlProduit = "SELECT * FROM CENTRALE_ACHAT_V2.dbo.PRODUITS_PROMO INNER JOIN CENTRALE_PRODUITS.dbo.PRODUITS ON PRODUITS_PROMO.PR_ID = PRODUITS.PR_ID INNER JOIN CENTRALE_PRODUITS.dbo.RAYONS ON PRODUITS.RA_ID = RAYONS.RA_ID INNER JOIN CENTRALE_ACHAT_V2.dbo.CATEG_RAYONS ON RAYONS.RA_ID = CATEG_RAYONS.RA_ID INNER JOIN CENTRALE_ACHAT_V2.dbo.Categories ON CATEG_RAYONS.CatID = Categories.CatID WHERE PRODUITS.SO_ID = 1 AND PR_STATUS = 0 AND PPC_ID = :id ORDER BY PP_ORDRE";
+
+
+
+            $conn = $connection->prepare($sqlProduit);
+            $conn->bindValue("id", $promo["PPC_ID"]);
+            $conn->execute();
+            $produit = $conn->fetchAll();
+            $Produits[$i]["produits"] = $produit;
+        }
+
+
+
+
+        dump($Produits);
 
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
             "espacePrive" => $espacesPrive,
             "slider" => $slider,
+            "produits" => $Produits,
 
         ]);
     }
