@@ -5,8 +5,10 @@
 
 
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
 
 {% endblock %}
 
@@ -23,10 +25,11 @@
         <div class="welcome-container">
             <div class="columns">
                 <div class="column is-four-fifths">
-                    <h1>Bienvenue <b>Laurent Guiochet</b></h1>
+                    <h1>Bienvenue <b>{{ app.user.ccNom }} {{ app.user.ccPrenom }}</b></h1>
                 </div>
                 <div class="column">
-                    <img src="http://v2.achatcentrale.fr/UploadFichiers/Uploads/CLIENT_1260/a-and-a-logo-1.png" alt="Logo" width="50px" height="50" style="margin-left: 55%;">
+                    <img src="http://v2.achatcentrale.fr/UploadFichiers/Uploads/CLIENT_1260/a-and-a-logo-1.png"
+                         alt="Logo" width="50px" height="50" style="margin-left: 55%;">
                 </div>
             </div>
         </div>
@@ -36,11 +39,10 @@
             <div class="your-class">
                 {% for s in slider %}
                     <div>
-                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/SLIDERS/{{ s["SL_SLIDE"] }}" alt="">
+                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/SLIDERS/{{ s["SL_SLIDE"] }}"
+                             alt="">
                     </div>
                 {% endfor %}
-
-
             </div>
         </div>
 
@@ -64,98 +66,152 @@
                                 <div class="ligne"></div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="product-promo">
 
 
-                        <div class="columns">
-                            <div class="slider-categ">
+                        <div data-cat="{{ loop.index0 }}" class="fleche-droite">
+                            <img src="//v2.achatcentrale.fr/Images/Promo_FlecheDroite.png" alt="">
+                        </div>
+                        <div data-cat="{{ loop.index0 }}" class="fleche-gauche">
+                            <img src="//v2.achatcentrale.fr/Images/Promo_FlecheGauche.png" alt="">
+                        </div>
+                        <div id="main-wrap" class="main-wrap gallery-mode" style="width: 100%;">
+                            <div id="gallery-item">
+                                <div id="list-items" class="clearfix temp-height lazy-load">
 
-                                <div id="main-wrap" class="main-wrap gallery-mode">
-                                    <div id="gallery-item">
-                                        <div id="list-items" class="clearfix temp-height lazy-load">
+                                    <ul class="util-clearfix son-list ">
 
-                                            <ul class="util-clearfix son-list ">
-                                                {% for produit in p["produits"] %}
 
-                                                    <li class="list-item list-item-first ">
+                                        {% for produit in p["produits"] %}
 
-                                                        <div class="item">
-                                                            <div class="img img-border">
-                                                                <div class="pic">
-                                                                    <a class="picRind " href="" target="_blank">
-                                                                        <img class="picCore pic-Core-v" src="{{ produit["PR_ID"] | product_pic }}" alt="">
-                                                                    </a>
-                                                                </div>
+
+                                            <li id="item-{{ loop.index0 }}" class="list-item list-item-first {% if loop.index0 > 3 %} hide-vignette {% endif %} item-categ-{{ loop.parent.loop.index0 }}">
+
+                                                <div class="item">
+
+
+
+                                                    <div class="container_nouveaute">
+                                                        <div class="Nouveautes">
+                                                            <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="img img-border">
+                                                        <div>
+                                                            <div class="ref">
+                                                                <p align="center" style="color: #df4e92;">Réf : Kite-xpo</p>
                                                             </div>
-
-                                                            <div class="has-sku-image">
-                                                                <a class="" href="" title="" target="_blank" >4 Couleurs Disponibles</a>
-                                                            </div>
-
-                                                            <div class="info">
-
-                                                                <h3>
-                                                                    <a class="product " href="" target="_blank" >{{ produit["PR_NOM"] | raw }}</a>
-                                                                </h3>
-
-                                                                <span class="price price-m">
-                                                                    <span class="value" itemprop="price">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
-                                                                    <span class="separator">/</span>
-                                                                    <span class="unit">{{ produit["PR_CONDT"] }}</span>
-                                                                </span>
-                                                                <div class="has-sku-image">
-                                                                    {% if produit["PR_TYPE_LIEN"] == 'ACHETER' %}
-                                                                        <a class="" href="" title="" target="_blank" >ACHETER</a>
-                                                                    {% elseif produit["PR_TYPE_LIEN"] == 'DEVIS' %}
-                                                                        <a class="" href="" title="" target="_blank" >DEVIS</a>
-                                                                    {% elseif produit["PR_TYPE_LIEN"] == 'WEB' %}
-                                                                        <a class="" href="" title="" target="_blank" >WEB</a>
-                                                                    {% endif%}
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="info-more">
-                                                                {% if produit["PR_DECLINAISON"] %}
-
-                                                                    {{ produit["PR_ID"] | declinaison }}
-                                                                {% else %}
-                                                                    <p>Il n'y a pas de déclinaisons</p>
-
-
-                                                                {% endif%}
-
-                                                               <p><small>{{ produit["PR_DESCR_COURTE"] | raw }}</small></p>
+                                                            <div class="reductions">
+                                                                <span>-<b>30</b>%</span>
                                                             </div>
                                                         </div>
+                                                        <div class="pic">
+                                                            <a class="picRind " href="" target="_blank">
+                                                                <img class="picCore pic-Core-v" src="{{ produit["PR_ID"] | product_pic }}" alt="">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="has-sku-image">
+                                                        <a class="" href="" title="" target="_blank">
+                                                            <div align="center" class="">Prix de vente min. conseillé: <span
+                                                                        class="Bleu Gras">219 € TTC</span><br></div>
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="info">
+                                                        <h3>
+                                                            <a class="product " href="" target="_blank" >{{ produit["PR_NOM"] | raw }}</a>
+                                                        </h3>
+
+                                                        <span class="price price-m">
+                                                                <span class="value" itemprop="price">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
+                                                                <span class="separator">/</span>
+                                                                <span class="unit">{{ produit["PR_CONDT"] }}</span>
+                                                            </span>
 
 
-                                                    </li>
+                                                        <div class="has_stock">
+                                                            <p><img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock"
+                                                                    width="15">&nbsp;en stock</p>
+                                                        </div>
 
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
+                                                        <form class="add_to_cart" action="Produits_Promo.asp" method="get" name="PR_54792" id="PR_54792">
+                                                            <table border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                <tbody><tr>
+                                                                    <td>
+                                                                        <input name="Req" type="hidden" id="Req" value="Theme=Les_offres_du_moment_$$Cat0=41$$Cat1=42$$Cat2=80">
+                                                                        <input name="Action" type="hidden" id="Action" value="PANIER_INS">
+                                                                        <input name="CC_ID" type="hidden" id="CC_ID" value="601">
+                                                                        <input name="CL_ID" type="hidden" id="CL_ID" value="1260">
+                                                                        <input name="PR_ID" type="hidden" id="PR_ID" value="54792">
+                                                                        <input name="FO_ID" type="hidden" id="FO_ID" value="49">
+                                                                        <input type="button" id="moins_1" value="-" onclick="moins(54792,1);" style="width:32px; height:26px;">
+                                                                        <input name="PT_QTE" type="text" id="QTE_54792" value="1" style="width:25px; text-align:center" readonly="readonly">
+                                                                        <input type="button" id="plus_1" value="+" onclick="plus(54792,1);" style="width:32px; height:26px;"></td>
+                                                                    <td style="padding-left:2px;"><img src="http://v2.achatcentrale.fr/Images/Charte/Picto_Fleche_Commander.png" alt="Commander" width="13" height="15" border="0" onclick="this.form.submit();" title="Delfosse"></td>
+                                                                    <td>
+                                                                        <input type="button" name="Submit" value="PANIER" class="F_Cabin" style="border:none; background:none; cursor:pointer;" onclick="loadMy(&quot;services/Panier_INS2.asp?CC_ID=601&amp;CL_ID=1260&amp;PR_ID=54792&amp;FO_ID=49&amp;PT_QTE=&quot;+this.form.PT_QTE.value+&quot;&amp;Action=PANIER_INS&quot;);">
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
+
+
+
+
+                                                        <div class="info-more">
+                                                            <br>
+                                                            <div class="description">
+                                                                {{ produit["PR_DESCR_COURTE"] | raw }}
+                                                            </div>
+                                                            <br>
+
+                                                            <p align="center" class="F_Ubuntu FondRose Blanc" style="border-style:none; border-radius:5px; cursor:pointer; padding:5px;background-color: #DE359F;color: #FFFFFF;">Information Produits</p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </li>
+
+                                        {% endfor %}
+
+                                    </ul>
+
                                 </div>
-
-
                             </div>
                         </div>
+
+
+
                     </div>
+
+
                 </div>
             {% endfor %}
 
 
-
         </div>
-
-
-
     </div>
+
+
+
 
 {% endblock %}
 
 
 {% block javascripts %}
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="{{ asset('assets/js/Slider.js') }}"></script>
 {% endblock %}

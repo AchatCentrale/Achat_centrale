@@ -2,10 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Users;
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -99,7 +97,7 @@ class HomeController extends AbstractController
 
 
 
-        dump($Produits);
+//        dump($Produits);
 
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
