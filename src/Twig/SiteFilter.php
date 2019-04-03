@@ -28,7 +28,7 @@ class SiteFilter extends AbstractExtension
 
     public function encodingFromDatabase($value){
 
-        dump(mb_detect_encoding($value, mb_detect_order(), true));
+        dump(mb_detect_encoding($value, mb_detect_order()));
 
         return mb_detect_encoding($value, mb_detect_order(), true) === 'UTF-8' ? $value : mb_convert_encoding($value, 'UTF-8');
 
