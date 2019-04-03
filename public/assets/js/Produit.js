@@ -13,17 +13,19 @@ flecheDroite.on('click', function (e) {
 
     let cat = $(this).data('cat');
 
-
-
     let items = $('.item-categ-'+ cat);
 
 
+    let visible = $(".item-categ-"+ cat+":not('.hide-vignette')");
 
-    let to_hide = items.slice( start , end );
+
+    console.log(visible);
+
+
     let to_show = items.slice( end , end + 4 );
 
 
-    hide(to_hide);
+    hide(visible);
     show(to_show);
 
 
@@ -35,7 +37,10 @@ flecheDroite.on('click', function (e) {
 
 
 function hide(arrayElem) {
+
     arrayElem.each(function ( index, elem) {
+
+        console.log(elem);
         elem.classList.add("hide-vignette");
     })
 }
