@@ -11,6 +11,7 @@ class SiteFilter extends AbstractExtension
     {
         return [
             new TwigFilter('categHome', [$this, 'formatCategHome']),
+            new TwigFilter('encodingFrom', [$this, 'encodingFromDatabase']),
         ];
     }
 
@@ -22,5 +23,13 @@ class SiteFilter extends AbstractExtension
         $tpl = "<span class='Promo_Mot1'>".substr($promoDescr, 0, $pos)."</span><span class='Promo_Mot2'> ".substr($promoDescr, $pos+1, strlen($promoDescr))."</span>";
 
         return $tpl;
+    }
+
+
+    public function encodingFromDatabase($value){
+
+
+        return mb_detect_encoding($value, mb_detect_order(), true) === 'UTF-8' ? $value : mb_convert_encoding($value, 'UTF-8');
+
     }
 }
