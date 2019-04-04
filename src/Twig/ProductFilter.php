@@ -24,13 +24,14 @@ class ProductFilter extends AbstractExtension
         return [
             new TwigFilter('product_pic', [$this, 'getProductPic']),
             new TwigFilter('declinaison', [$this, 'getDeclinaison']),
+            new TwigFilter('picFrs', [$this, 'getProfilePicFrs']),
         ];
     }
 
     public function getProductPic($id)
     {
 
-        $sql = "SELECT * FROM CENTRALE_PRODUITS.dbo.PRODUITS_PHOTOS WHERE PR_ID = :id AND PP_TYPE = 'PRINCIPALE'";
+        $sql = "SELECT PP_FICHIER FROM CENTRALE_PRODUITS.dbo.PRODUITS_PHOTOS WHERE PR_ID = :id AND PP_TYPE = 'PRINCIPALE'";
 
         $conn = $this->connection->prepare($sql);
         $conn->bindValue("id", $id);
@@ -58,9 +59,25 @@ class ProductFilter extends AbstractExtension
         $conn->execute();
         $declinaison = $conn->fetchAll();
 
-        dump($declinaison);
 
         return $declinaison[0]["DE_DESCR"];
     }
+
+    public function getProfilePicFrs($id)
+    {
+
+        $sql = "SELECT FO_LOGO FROM CENTRALE_PRODUITS.dbo.FOURNISSEURS WHERE FO_ID = :id";
+
+        $conn = $this->connection->prepare($sql);
+        $conn->bindValue("id", $id);
+        $conn->execute();
+        $pic = $conn->fetchAll();
+
+
+        return "http://secure.achatcentrale.fr/UploadFichiers/Uploads/FOURN_".$id."/".$pic[0]["FO_LOGO"];
+
+
+    }
+
 
 }

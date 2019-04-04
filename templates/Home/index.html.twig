@@ -83,21 +83,27 @@
 
                                     <ul class="util-clearfix son-list ">
 
+                                        {% set iteration = 0 %}
 
                                         {% for produit in p["produits"] %}
 
 
-                                            <li id="item-{{ loop.index0 }}" class="list-item list-item-first {% if loop.index0 > 3 %} hide-vignette {% endif %} item-categ-{{ loop.parent.loop.index0 }}">
+                                            <li id="item-{{ loop.index0 }}" {% if loop.index0 % 4 == 0 %}{% set iteration = iteration | default(0) + 1 %}data-iteration="{{ iteration }}"{% else %}data-iteration="{{ iteration }}" {% endif %} class="list-item list-item-first {% if loop.index0 > 3 %} hide-vignette {% endif %} item-categ-{{ loop.parent.loop.index0 }}">
+
+
+                                                <div class="container-img-frs">
+                                                    <img src="{{ produit["FO_ID"] | picFrs }}" alt="">
+                                                </div>
 
                                                 <div class="item">
 
 
 
-                                                    <div class="container_nouveaute">
-                                                        <div class="Nouveautes">
-                                                            <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>
-                                                        </div>
-                                                    </div>
+{#                                                    <div class="container_nouveaute">#}
+{#                                                        <div class="Nouveautes">#}
+{#                                                            <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
 
 
                                                     <div class="img img-border">
@@ -116,12 +122,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="has-sku-image">
-                                                        <a class="" href="" title="" target="_blank">
-                                                            <div align="center" class="">Prix de vente min. conseillé: <span
-                                                                        class="Bleu Gras">219 € TTC</span><br></div>
-                                                        </a>
-                                                    </div>
+
 
                                                     <div class="info">
                                                         <h3>
