@@ -607,6 +607,8 @@ input[type=number]::-webkit-outer-spin-button {
     box-shadow: 6px 6px 5px rgba(0,0,0,.4);
     box-shadow: 2px 2px 4px rgba(0,0,0,.13);
     z-index: 200;
+    position: absolute;
+    margin-left: 30px;
 }
 
 .list-item .item {
@@ -731,11 +733,17 @@ input[type=number]::-webkit-outer-spin-button {
 .list-item .img {
     width: 220px;
     position: relative;
-    height: 275px;
+    height: 250px;
     margin: 0 auto;
     float: none
 }
 
+.container-type-lien{
+    border: 1px solid #EFEFE0;
+    padding: 4px;
+    background-color: #efefef;
+    padding-left: 22px;
+}
 
 
 .list-item .img .pic {
@@ -832,11 +840,7 @@ input[type=number]::-webkit-outer-spin-button {
     border: 0
 }
 
-.gallery-mode .aplus-i {
-    height: 20px;
-    overflow: hidden;
-    cursor: pointer
-}
+
 
 .gallery-mode .store-name-chat {
     padding-top: 5px;
@@ -902,7 +906,6 @@ input[type=number]::-webkit-outer-spin-button {
     float: none;
     width: auto;
     z-index: 999;
-    margin-top: 30px;
 }
 
 
@@ -943,6 +946,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .list-item:hover .info-more {
     display: block;
+    padding: 10px 0;
 }
 
 
@@ -979,6 +983,13 @@ input[type=number]::-webkit-outer-spin-button {
     height: 55px;
 }
 
+
+.info-more h4 {
+    color: black;
+    text-decoration: underline;
+    padding: 5px 0;
+    font-size: 14pt;
+}
 
 .container-economie {
     background-color: white;
@@ -1065,6 +1076,7 @@ input[type=number]::-webkit-outer-spin-button {
 .container-img-frs {
     width: 35%;
     margin: auto;
+    height: 55px;
 }
 
 .container-img-frs img {
@@ -1075,4 +1087,17 @@ input[type=number]::-webkit-outer-spin-button {
 span.value-barre {
     font-size: 9pt;
     text-decoration: line-through;
+}
+
+.remise{
+    width: 73%;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 37px;
+    height: 35px;
+    padding-top: 6px;
+    background-color: #df5194;
+    color: white;
+    font-size: 13pt;
+    font-weight: 900;
 }
