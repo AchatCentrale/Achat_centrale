@@ -119,7 +119,7 @@
         <div class="menu-general">
             <ul class="menu-general-range">
                 {% for r in espacePrive %}
-                    <li><a href="">{{ r["CatTitre"] }}</a></li>
+                    <li><a href="">{{ r["CatTitre"] | raw }}</a></li>
 
 
                 {% endfor %}
@@ -131,7 +131,7 @@
 
                 {% for c in rayons %}
                     <li class="menu_item" data-key="rayons-{{ loop.index }}">
-                        <a href="">{{ c["CatTitre"] }}</a>
+                        <a href="">{{ c["CatTitre"] | raw }}</a>
                         <div id="rayons-{{ loop.index }}" class="rayons-content" style="display: none;">
                             <div class="columns">
                                 <div class="column is-four-fifths">

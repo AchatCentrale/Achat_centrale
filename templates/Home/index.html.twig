@@ -130,38 +130,50 @@
                                                         </h3>
 
                                                         <span class="price price-m">
-                                                                <span class="value" itemprop="price">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
-                                                                <span class="separator">/</span>
-                                                                <span class="unit">{{ produit["PR_CONDT"] }}</span>
-                                                            </span>
+                                                                {% if produit["PR_CONDT"] | replace({' ': ''}) == "àpartirde" %}
+                                                                        <span class="unit">{{ produit["PR_CONDT"] }}</span>
+                                                                        <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] }} €</span>
+                                                                        <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
+                                                                    {% else %}
+                                                                        <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
+                                                                        <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] }} €</span>
+                                                                        <span class="separator">/</span>
+                                                                        <span class="unit">{{ produit["PR_CONDT"] }}</span>
+                                                                {% endif %}
+                                                        </span>
 
+{#                                                        si prix public < 0 afficher prix sur devis#}
 
                                                         <div class="has_stock">
-                                                            <p><img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock"
-                                                                    width="15">&nbsp;en stock</p>
+                                                            <p>
+                                                                <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">
+                                                                &nbsp;en stock
+                                                            </p>
                                                         </div>
 
-                                                        <form class="add_to_cart" action="Produits_Promo.asp" method="get" name="PR_54792" id="PR_54792">
-                                                            <table border="0" align="center" cellpadding="0" cellspacing="0">
-                                                                <tbody><tr>
-                                                                    <td>
-                                                                        <input name="Req" type="hidden" id="Req" value="Theme=Les_offres_du_moment_$$Cat0=41$$Cat1=42$$Cat2=80">
-                                                                        <input name="Action" type="hidden" id="Action" value="PANIER_INS">
-                                                                        <input name="CC_ID" type="hidden" id="CC_ID" value="601">
-                                                                        <input name="CL_ID" type="hidden" id="CL_ID" value="1260">
-                                                                        <input name="PR_ID" type="hidden" id="PR_ID" value="54792">
-                                                                        <input name="FO_ID" type="hidden" id="FO_ID" value="49">
-                                                                        <input type="button" id="moins_1" value="-" onclick="moins(54792,1);" style="width:32px; height:26px;">
-                                                                        <input name="PT_QTE" type="text" id="QTE_54792" value="1" style="width:25px; text-align:center" readonly="readonly">
-                                                                        <input type="button" id="plus_1" value="+" onclick="plus(54792,1);" style="width:32px; height:26px;"></td>
-                                                                    <td style="padding-left:2px;"><img src="http://v2.achatcentrale.fr/Images/Charte/Picto_Fleche_Commander.png" alt="Commander" width="13" height="15" border="0" onclick="this.form.submit();" title="Delfosse"></td>
-                                                                    <td>
-                                                                        <input type="button" name="Submit" value="PANIER" class="F_Cabin" style="border:none; background:none; cursor:pointer;" onclick="loadMy(&quot;services/Panier_INS2.asp?CC_ID=601&amp;CL_ID=1260&amp;PR_ID=54792&amp;FO_ID=49&amp;PT_QTE=&quot;+this.form.PT_QTE.value+&quot;&amp;Action=PANIER_INS&quot;);">
-                                                                    </td>
-                                                                </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </form>
+
+                                                            <form class="add_to_cart" action="Produits_Promo.asp" method="get" name="PR_54792" id="PR_54792">
+                                                                <table border="0" align="center" cellpadding="0" cellspacing="0">
+                                                                    <tbody><tr>
+                                                                        <td>
+                                                                            <input name="Req" type="hidden" id="Req" value="Theme=Les_offres_du_moment_$$Cat0=41$$Cat1=42$$Cat2=80">
+                                                                            <input name="Action" type="hidden" id="Action" value="PANIER_INS">
+                                                                            <input name="CC_ID" type="hidden" id="CC_ID" value="601">
+                                                                            <input name="CL_ID" type="hidden" id="CL_ID" value="1260">
+                                                                            <input name="PR_ID" type="hidden" id="PR_ID" value="54792">
+                                                                            <input name="FO_ID" type="hidden" id="FO_ID" value="49">
+                                                                            <input type="button" id="moins_1" value="-" onclick="moins(54792,1);" style="width:32px; height:26px;">
+                                                                            <input name="PT_QTE" type="text" id="QTE_54792" value="1" style="width:25px; text-align:center" readonly="readonly">
+                                                                            <input type="button" id="plus_1" value="+" onclick="plus(54792,1);" style="width:32px; height:26px;"></td>
+                                                                        <td style="padding-left:2px;"><img src="http://v2.achatcentrale.fr/Images/Charte/Picto_Fleche_Commander.png" alt="Commander" width="13" height="15" border="0" onclick="this.form.submit();" title="Delfosse"></td>
+                                                                        <td>
+                                                                            <input type="button" name="Submit" value="PANIER" class="F_Cabin" style="border:none; background:none; cursor:pointer;" onclick="loadMy(&quot;services/Panier_INS2.asp?CC_ID=601&amp;CL_ID=1260&amp;PR_ID=54792&amp;FO_ID=49&amp;PT_QTE=&quot;+this.form.PT_QTE.value+&quot;&amp;Action=PANIER_INS&quot;);">
+                                                                        </td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </form>
+
 
 
 
@@ -173,7 +185,7 @@
                                                             </div>
                                                             <br>
 
-                                                            <p align="center" class="F_Ubuntu FondRose Blanc" style="border-style:none; border-radius:5px; cursor:pointer; padding:5px;background-color: #DE359F;color: #FFFFFF;">Information Produits</p>
+                                                            <p class="F_Ubuntu FondRose Blanc" style="border-style:none; border-radius:5px; cursor:pointer; padding:5px;background-color: #DE359F;color: #FFFFFF;text-align: center">Information Produits</p>
                                                         </div>
 
                                                     </div>
