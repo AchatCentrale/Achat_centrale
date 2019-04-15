@@ -118,4 +118,14 @@ class HomeController extends AbstractController
     }
 
 
+
+    /**
+     * @Route("/test_encodage", name="encodage")
+     */
+    public function testEncodage()
+    {
+        return $this->render('Home/index.html.twig');
+    }
+
+
 }

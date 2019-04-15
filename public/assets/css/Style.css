@@ -487,12 +487,13 @@ a.sub-menu-link {
 }
 
 .btn_add_to_cart {
-    width: 100%;
-    height: 30px;
-    background-color: #c2e1f0;
-    border-radius: 5px;
-    color: black;
-    border: 0px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    background-color: #e37a55;
+    padding: 9px;
+    color: white;
+    font-weight: bold;
 }
 
 
@@ -601,14 +602,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 .list-item:hover .item {
-    z-index: 2;
     background: #fff;
     border: 1px solid #ccc;
     box-shadow: 6px 6px 5px rgba(0,0,0,.4);
     box-shadow: 2px 2px 4px rgba(0,0,0,.13);
     z-index: 200;
-    position: absolute;
-    margin-left: 30px;
 }
 
 .list-item .item {
@@ -630,6 +628,7 @@ input[type=number]::-webkit-outer-spin-button {
     min-height: 410px;
     padding: 5px 25px;
     margin-right: 25px;
+    position: absolute;
 }
 
 
@@ -706,6 +705,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .son-list {
     position: relative;
+    zoom: 1;
 }
 
 .list-item {
@@ -733,17 +733,11 @@ input[type=number]::-webkit-outer-spin-button {
 .list-item .img {
     width: 220px;
     position: relative;
-    height: 250px;
+    height: 275px;
     margin: 0 auto;
     float: none
 }
 
-.container-type-lien{
-    border: 1px solid #EFEFE0;
-    padding: 4px;
-    background-color: #efefef;
-    padding-left: 22px;
-}
 
 
 .list-item .img .pic {
@@ -768,7 +762,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .list-item .info {
-    width: 220px;
+    width: 245px;
     padding-top: 10px;
     margin: 0 auto;
     text-align: center;
@@ -840,7 +834,11 @@ input[type=number]::-webkit-outer-spin-button {
     border: 0
 }
 
-
+.gallery-mode .aplus-i {
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer
+}
 
 .gallery-mode .store-name-chat {
     padding-top: 5px;
@@ -906,6 +904,7 @@ input[type=number]::-webkit-outer-spin-button {
     float: none;
     width: auto;
     z-index: 999;
+    margin-top: 30px;
 }
 
 
@@ -946,7 +945,6 @@ input[type=number]::-webkit-outer-spin-button {
 
 .list-item:hover .info-more {
     display: block;
-    padding: 10px 0;
 }
 
 
@@ -983,13 +981,6 @@ input[type=number]::-webkit-outer-spin-button {
     height: 55px;
 }
 
-
-.info-more h4 {
-    color: black;
-    text-decoration: underline;
-    padding: 5px 0;
-    font-size: 14pt;
-}
 
 .container-economie {
     background-color: white;
@@ -1033,10 +1024,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .picto_commande{
-    width: 65%;
+    width: 90%;
     float: right;
-    padding-top: 5px;
 }
+
 
 .picto_no_currency img{
     width: 65%;
@@ -1076,7 +1067,6 @@ input[type=number]::-webkit-outer-spin-button {
 .container-img-frs {
     width: 35%;
     margin: auto;
-    height: 55px;
 }
 
 .container-img-frs img {
@@ -1087,6 +1077,10 @@ input[type=number]::-webkit-outer-spin-button {
 span.value-barre {
     font-size: 9pt;
     text-decoration: line-through;
+}
+
+.promo {
+    padding: 75px 0px;
 }
 
 .remise{
@@ -1100,4 +1094,92 @@ span.value-barre {
     color: white;
     font-size: 13pt;
     font-weight: 900;
+}
+
+
+.p-quantity-modified {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 30px;
+    padding: 0 25px;
+    background-color: #fff;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.p-quantity-modified input {
+    border: 0 none;
+    display: block;
+    width: 60px;
+    line-height: 14px;
+    margin-top: 6px;
+    text-align: center
+}
+
+.p-quantity-modified i {
+    position: absolute;
+    top: 4px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    background: url(https://i.alicdn.com/ae-detail-ui/planb/img/detail-sprite.6538cf88.png) no-repeat -145px -90px;
+    cursor: pointer
+}
+
+.p-quantity-modified i.p-quantity-decrease {
+    left: 3px
+}
+
+.p-quantity-modified i.p-quantity-increase {
+    background-position: -145px -45px;
+    right: 3px
+}
+
+.p-quantity-info .p-unit {
+    margin-left: 5px
+}
+
+.p-quantity-info .p-available-stock,.p-quantity-info .p-unit {
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #999
+}
+
+.p-quantity-info .p-available-stock {
+    display: none
+}
+
+.p-total-price .p-item-main {
+    padding-top: 4px
+}
+
+.p-total-price .p-price-tips {
+    color: #999;
+    display: none;
+    padding-top: 3px
+}
+
+.p-total-price .p-total-price-info {
+    display: none
+}
+
+.p-total-price .total-price-show {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 5px
+}
+
+.p-total-price .multi-currency-total-price {
+    display: none;
+    color: #999
+}
+
+.container-type-lien {
+    margin-top: 20px;
 }

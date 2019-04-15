@@ -148,6 +148,9 @@
 
 {#                                                        si prix public < 0 afficher prix sur devis#}
 
+
+
+
                                                         <div class="has_stock">
                                                             <p>
                                                                 <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">&nbsp;en stock
@@ -158,37 +161,33 @@
                                                         <div class="container-type-lien">
                                                             {% if produit["PR_TYPE_LIEN"] == "ACHETER" %}
 
-                                                                <form action="Produits_Promo.asp" method="get" name="PR_54792" id="PR_54792">
-                                                                    <table border="0" align="center" cellpadding="0" cellspacing="0">
-                                                                        <tbody><tr>
-                                                                            <td>
-                                                                                <input name="Req" type="hidden" id="Req" value="Theme=Les_offres_du_moment_$$Cat0=41$$Cat1=42$$Cat2=80">
-                                                                                <input name="Action" type="hidden" id="Action" value="PANIER_INS">
-                                                                                <input name="CC_ID" type="hidden" id="CC_ID" value="601">
-                                                                                <input name="CL_ID" type="hidden" id="CL_ID" value="1260">
-                                                                                <input name="PR_ID" type="hidden" id="PR_ID" value="54792">
-                                                                                <input name="FO_ID" type="hidden" id="FO_ID" value="49">
-                                                                                <input type="button" id="moins_1" value="-" onclick="moins(54792,1);" style="width:32px; height:26px;">
-                                                                                <input name="PT_QTE" type="text" id="QTE_54792" value="1" style="width:25px; text-align:center" readonly="readonly">
-                                                                                <input type="button" id="plus_1" value="+" onclick="plus(54792,1);" style="width:32px; height:26px;"></td>
-                                                                            <td style="padding-left:2px;"><img src="http://v2.achatcentrale.fr/Images/Charte/Picto_Fleche_Commander.png" alt="Commander" width="13" height="15" border="0" onclick="this.form.submit();" title="Delfosse"></td>
-                                                                            <td>
-                                                                                <input type="button" name="Submit" value="PANIER" class="F_Cabin" style="border:none; background:none; cursor:pointer;" onclick="loadMy(&quot;services/Panier_INS2.asp?CC_ID=601&amp;CL_ID=1260&amp;PR_ID=54792&amp;FO_ID=49&amp;PT_QTE=&quot;+this.form.PT_QTE.value+&quot;&amp;Action=PANIER_INS&quot;);">
-                                                                            </td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
+                                                                <form action="">
+                                                                    <div class="columns">
+                                                                        <div class="column">
+                                                                            <span class="p-quantity-modified">
+                                                                                <i class="p-quantity-decrease" data-role="decrease"></i>
+                                                                                <input data-role="quantity-input" class="p-quantity-input" id="j-p-quantity-input" name="quantity" type="text" value="{{ produit["PR_QTE_CMDE"] }}" maxlength="5" autocomplete="off" >
+                                                                                <i data-role="increase" class="p-quantity-increase"></i>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="column">
+                                                                            <input class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;" >
+                                                                        </div>
+                                                                    </div>
                                                                 </form>
+
+
 
                                                             {% elseif produit["PR_TYPE_LIEN"] == "WEB" %}
 
-                                                                <p>J'y vais</p>
+                                                                <input class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="J'y vais" style=" cursor:pointer;" >
+
 
 
                                                             {% elseif produit["PR_TYPE_LIEN"] == "DEVIS" %}
 
-                                                                <p>Devis</p>
 
+                                                                <input class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="Devis" style=" cursor:pointer;" >
 
 
                                                             {% endif %}
