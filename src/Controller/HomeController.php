@@ -18,7 +18,6 @@ class HomeController extends AbstractController
         $conn = $connection->prepare($sqlCatParent);
         $conn->execute();
         $catParent = $conn->fetchAll();
-
         $Categories = $catParent;
 
         foreach ($Categories as $i => $c){
@@ -124,6 +123,9 @@ class HomeController extends AbstractController
      */
     public function testEncodage()
     {
+
+
+
         return $this->render('encodage.html.twig');
     }
 
