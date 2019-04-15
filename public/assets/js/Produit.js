@@ -68,9 +68,8 @@ moins.on('click', function (e) {
     let qty = $(this).parent().data('qty');
 
     let value =  $('#'+idElement+' .p-quantity-input').val();
-    console.log(value);
 
-    if (parseInt(value) ===  0){
+    if (parseInt(value) ===  parseInt(qty)){
         return;
     }else {
         let nextValue = parseInt(value) - parseInt(qty);
