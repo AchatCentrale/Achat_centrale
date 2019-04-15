@@ -28,8 +28,7 @@
                     <h1>Bienvenue <b>{{ app.user.ccNom }} {{ app.user.ccPrenom }}</b></h1>
                 </div>
                 <div class="column">
-                    <img src="http://v2.achatcentrale.fr/UploadFichiers/Uploads/CLIENT_1260/a-and-a-logo-1.png"
-                         alt="Logo" width="50px" height="50" style="margin-left: 55%;">
+                    <img src="http://v2.achatcentrale.fr/UploadFichiers/Uploads/CLIENT_1260/a-and-a-logo-1.png" alt="Logo" width="50px" height="50" style="margin-left: 55%;">
                 </div>
             </div>
         </div>
@@ -39,8 +38,7 @@
             <div class="your-class">
                 {% for s in slider %}
                     <div>
-                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/SLIDERS/{{ s["SL_SLIDE"] }}"
-                             alt="">
+                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/SLIDERS/{{ s["SL_SLIDE"] }}" alt="">
                     </div>
                 {% endfor %}
             </div>
@@ -130,7 +128,7 @@
 
                                                     <div class="info">
                                                         <h3>
-                                                            <a class="product " href="" target="_blank" >{{ produit["PR_NOM"] | raw }}</a>
+                                                            <a class="product " href="" target="_blank" >{{ produit["PR_NOM"] | encodingFrom | raw }}</a>
                                                         </h3>
 
                                                         <span class="price price-m">
@@ -206,7 +204,7 @@
 
                                                                 <h4>Decription du produit :</h4>
                                                                 <div class="description">
-                                                                    {{ produit["PR_DESCR_COURTE"] | raw }}
+                                                                    {{ produit["PR_DESCR_COURTE"] | encodingFrom | raw }}
                                                                 </div>
 
                                                             {% endif %}
@@ -215,7 +213,7 @@
                                                             {% if produit["PR_INFO_TXT"] %}
 
                                                                 <div class="container-info-produit">
-                                                                    <a class="F_Ubuntu FondRose Blanc" style="border-style:none; border-radius:5px; cursor:pointer; padding:5px;background-color: #DE359F;color: #FFFFFF;text-align: center" href="{{ produit["PR_INFO_LIEN"] }}">{{ produit["PR_INFO_TXT"] }}</a>
+                                                                    <a class="F_Ubuntu FondRose Blanc" style="border-style:none; border-radius:5px; cursor:pointer; padding:5px;background-color: #DE359F;color: #FFFFFF;text-align: center" href="{{ produit["PR_INFO_LIEN"] }}">{{ produit["PR_INFO_TXT"] | encodingFrom }}</a>
 
                                                                 </div>
                                                             {% endif %}
