@@ -13,6 +13,12 @@ class HomeController extends AbstractController
      */
     public function index(Connection $connection)
     {
+
+        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+        header("Cache-Control: post-check=0, pre-check=0", false);
+        header("Pragma: no-cache");
+
+
         $sqlCatParent = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT_V2.dbo.Categories WHERE CatSort > 0 AND CatIDParent = 0 ORDER BY CatSort";
 
         $conn = $connection->prepare($sqlCatParent);
@@ -107,27 +113,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-
-    /**
-     * @Route("/bruneau", name="home_b")
-     */
-    public function bruneau()
-    {
-        return $this->render('Home/header.html.twig');
-    }
-
-
-
-    /**
-     * @Route("/test_encodage", name="encodage")
-     */
-    public function testEncodage()
-    {
-
-
-
-        return $this->render('encodage.html.twig');
-    }
 
 
 }

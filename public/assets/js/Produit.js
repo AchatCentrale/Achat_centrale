@@ -37,3 +37,48 @@ flecheDroite.on('click', function (e) {
     invisible.removeClass( "hide-vignette" ).fadeIn('slow');
 
 });
+
+
+let moins = $('.p-quantity-decrease');
+let plus = $('.p-quantity-increase');
+
+plus.on('click', function (e) {
+    console.log("ok");
+
+
+    let idElement = $(this).parent().attr('id');
+
+    let qty = $(this).parent().data('qty');
+
+    let value =  $('#'+idElement+' .p-quantity-input').val();
+
+    let nextValue = parseInt(value) + parseInt(qty);
+
+    $('#'+idElement+' .p-quantity-input').val(nextValue);
+
+
+});
+
+
+moins.on('click', function (e) {
+
+
+    let idElement = $(this).parent().attr('id');
+
+    let qty = $(this).parent().data('qty');
+
+    let value =  $('#'+idElement+' .p-quantity-input').val();
+    console.log(value);
+
+    if (parseInt(value) ===  0){
+        return;
+    }else {
+        let nextValue = parseInt(value) - parseInt(qty);
+        $('#'+idElement+' .p-quantity-input').val(nextValue);
+    }
+
+
+
+
+
+});
