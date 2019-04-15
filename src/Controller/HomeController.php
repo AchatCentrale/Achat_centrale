@@ -124,7 +124,7 @@ class HomeController extends AbstractController
      */
     public function testEncodage()
     {
-        return $this->render('Home/index.html.twig');
+        return $this->render('encodage.html.twig');
     }
 
 
