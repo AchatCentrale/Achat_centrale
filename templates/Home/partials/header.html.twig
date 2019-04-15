@@ -141,11 +141,11 @@
                                         {% for sc in c["sousCategories"] %}
                                             <div class="column">
                                                 <h3>
-                                                    <a class="sub-menu-link" href="">{{ sc["CatTitre"] }}</a>
+                                                    <a class="sub-menu-link" href="">{{ sc["CatTitre"] | encodingFrom }}</a>
                                                 </h3>
                                                 <ul class="sub-cat">
                                                     {% for ra in sc["rayon"] %}
-                                                        <li><a href="{{ ra["URL"] }}">{{ ra["CatTitre"] }}</a></li>
+                                                        <li><a href="{{ ra["URL"] }}">{{ ra["CatTitre"] | encodingFrom }}</a></li>
                                                     {% endfor %}
                                                 </ul>
                                             </div>
