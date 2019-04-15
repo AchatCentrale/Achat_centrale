@@ -12,6 +12,7 @@ class SiteFilter extends AbstractExtension
         return [
             new TwigFilter('categHome', [$this, 'formatCategHome']),
             new TwigFilter('encodingFrom', [$this, 'encodingFromDatabase']),
+            new TwigFilter('IsInfoExist', [$this, 'IsInfoExist']),
         ];
     }
 
@@ -22,17 +23,21 @@ class SiteFilter extends AbstractExtension
     {
         $findme   = ' ';
         $pos = strpos($promoDescr, $findme);
-
         $tpl = "<span class='Promo_Mot1'>".substr($promoDescr, 0, $pos)."</span><span class='Promo_Mot2'> ".substr($promoDescr, $pos+1, strlen($promoDescr))."</span>";
-
         return $tpl;
     }
 
 
     public function encodingFromDatabase($value){
-
-
         return utf8_encode($value);
+    }
 
+    public function IsInfoExist(String $string) : Bool
+    {
+        if(strpos($string, "http://") !== false){
+            return true;
+        }else {
+            return false;
+        }
     }
 }

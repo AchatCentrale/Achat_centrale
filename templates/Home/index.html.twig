@@ -209,7 +209,7 @@
                                                             {% endif %}
                                                             <br>
 
-                                                            {% if produit["PR_INFO_TXT"] %}
+                                                            {% if produit["PR_INFO_LIEN"] | spaceless | IsInfoExist %}
 
                                                                 <div class="container-info-produit">
                                                                     <a class="F_Ubuntu FondRose Blanc" style="border-style:none; border-radius:5px; cursor:pointer; padding:5px;background-color: #DE359F;color: #FFFFFF;text-align: center" href="{{ produit["PR_INFO_LIEN"] }}">{{ produit["PR_INFO_TXT"] | encodingFrom }}</a>
