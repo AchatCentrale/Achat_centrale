@@ -133,18 +133,17 @@
 
                                                         <span class="price price-m">
                                                                 {% if produit["PR_CONDT"] | replace({' ': ''}) == "àpartirde" %}
-                                                                        <span class="unit">{{ produit["PR_CONDT"] }}</span>
+                                                                        <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
                                                                         <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] }} €</span>
                                                                         <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
                                                                     {% else %}
                                                                         <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
                                                                         <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] }} €</span>
                                                                         <span class="separator">/</span>
-                                                                        <span class="unit">{{ produit["PR_CONDT"] }}</span>
+                                                                        <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
                                                                 {% endif %}
                                                         </span>
 
-{#                                                        si prix public < 0 afficher prix sur devis#}
 
 
 
