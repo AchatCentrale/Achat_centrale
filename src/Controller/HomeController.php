@@ -14,11 +14,6 @@ class HomeController extends AbstractController
     public function index(Connection $connection)
     {
 
-        header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-        header("Cache-Control: post-check=0, pre-check=0", false);
-        header("Pragma: no-cache");
-
-
         $sqlCatParent = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT_V2.dbo.Categories WHERE CatSort > 0 AND CatIDParent = 0 ORDER BY CatSort";
 
         $conn = $connection->prepare($sqlCatParent);
@@ -69,7 +64,7 @@ class HomeController extends AbstractController
 
 
 
-        $sqlSlider = "SELECT *  FROM CENTRALE_ACHAT_V2.dbo.SLIDERS  WHERE SL_STATUS = 0  ORDER BY SL_ORDRE";
+        $sqlSlider = "SELECT *  FROM CENTRALE_ACHAT.dbo.SLIDERS  WHERE SL_STATUS = 0  ORDER BY SL_ORDRE";
 
         $conn = $connection->prepare($sqlSlider);
         $conn->execute();

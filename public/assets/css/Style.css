@@ -238,7 +238,7 @@
 .menu-general ul li {
     display: inline;
     background-color: #f3f3f3;
-    padding: 17px 17px 14px 17px;
+    padding: 17px 80px 14px 55px;
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -261,7 +261,7 @@
     height: 40px;
     color: white;
     width: 100%;
-    margin-top: 22px;
+    margin-top: 20px;
 }
 
 
@@ -293,7 +293,7 @@ ul.liste-rayon {
     border-left: 1px solid;
     height: 14px;
     top: 10px;
-    padding: 12px 18px;
+    padding: 12px 16px;
     vertical-align: baseline;
 }
 
@@ -489,11 +489,12 @@ a.sub-menu-link {
 .btn_add_to_cart {
     border: none;
     background: none;
-    cursor: pointer;
     background-color: #e37a55;
     padding: 9px;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
+    border-radius: 6px;
+    font-size: 13pt;
 }
 
 
@@ -627,8 +628,8 @@ input[type=number]::-webkit-outer-spin-button {
 .item {
     min-height: 410px;
     padding: 5px 25px;
-    margin-right: 25px;
     position: absolute;
+    margin: 0 auto;
 }
 
 
@@ -976,9 +977,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*vignette produits*/
 
-.subHeader{
-    background-color: #F5F5F5;
-    height: 55px;
+.subHeader {
+    height: 40px;
+    background-color: #fafafa;
 }
 
 
@@ -989,23 +990,23 @@ input[type=number]::-webkit-outer-spin-button {
     margin-left: 35px;
     text-align: center;
     border: 1px solid #b5b5b5;
-    height: 45px;
+    height: 30px;
     margin-top: -7px;
 }
 
 
 .value-economie{
-    background-color: #c2e1f0;
     border-style: solid;
     border-width: 1px;
-    border-color: #cccccc;
     border-radius: 25px;
-    height: 35px;
+    height: 26px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 5px;
     color: white;
     font-weight: 800;
+    background-color: #e37954;
+    position: relative;
+    top: -2px;
 }
 
 .pseudo_user{
@@ -1023,14 +1024,13 @@ input[type=number]::-webkit-outer-spin-button {
     padding-top: 5px;
 }
 
-.picto_commande{
-    width: 90%;
-    float: right;
+.picto_commande {
+    width: 42px;
 }
 
 
 .picto_no_currency img{
-    width: 65%;
+    width: 26px;
     padding-top: 3px;
     float: right;
 }
@@ -1065,13 +1065,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .container-img-frs {
-    width: 35%;
+    width: 55%;
     margin: auto;
+    max-height: 43px;
 }
 
 .container-img-frs img {
-    max-height: 50px;
-    max-width: 150px;
+    max-height: 45px;
+    max-width: 100px;
 }
 
 span.value-barre {
@@ -1103,7 +1104,7 @@ span.value-barre {
     vertical-align: middle;
     border: 1px solid #ccc;
     border-radius: 2px;
-    height: 30px;
+    height: 40px;
     padding: 0 25px;
     background-color: #fff;
     -moz-user-select: none;
@@ -1114,15 +1115,15 @@ span.value-barre {
 .p-quantity-modified input {
     border: 0 none;
     display: block;
-    width: 60px;
+    width: 24px;
     line-height: 14px;
-    margin-top: 6px;
-    text-align: center
+    margin-top: 11px;
+    text-align: center;
 }
 
 .p-quantity-modified i {
     position: absolute;
-    top: 4px;
+    top: 9px;
     display: block;
     width: 20px;
     height: 20px;

@@ -92,22 +92,14 @@
                                                 <div class="container-img-frs">
                                                     <img src="{{ produit["FO_ID"] | picFrs }}" alt="">
                                                 </div>
-{#                                                <div class="remise">#}
-{#                                                    <p>{{ produit["PR_REMISE"] }}</p>#}
-{#                                                </div>#}
+
 
                                                 <div class="item">
-
-
-
-                                                    {#                                                    <div class="container_nouveaute">#}
-                                                    {#                                                        <div class="Nouveautes">#}
-                                                    {#                                                            <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>#}
-                                                    {#                                                        </div>#}
-                                                    {#                                                    </div>#}
-
-
-
+                                                    <div class="container_nouveaute">
+                                                        <div class="Nouveautes">
+                                                            <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>
+                                                        </div>
+                                                    </div>
 
                                                     <div class="img img-border">
 
@@ -163,12 +155,14 @@
                                                                         <div class="column">
                                                                             <span class="p-quantity-modified" id="produit-{{ produit["PR_ID"] }}" data-qty="{{ produit["PR_QTE_CMDE"] }}">
                                                                                 <i class="p-quantity-decrease" data-role="decrease"></i>
-                                                                                <input data-role="quantity-input" class="p-quantity-input" id="j-p-quantity-input" name="quantity" type="text" value="{{ produit["PR_QTE_CMDE"] }}" maxlength="5" autocomplete="off" >
+                                                                                <input data-role="quantity-input" class="p-quantity-input" id="j-p-quantity-input" name="quantity" type="text" value="{{ produit["PR_QTE_CMDE"] }}" maxlength="5" >
                                                                                 <i data-role="increase" class="p-quantity-increase"></i>
                                                                             </span>
                                                                         </div>
                                                                         <div class="column">
-                                                                            <input class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;" >
+                                                                            <button class="btn_add_to_cart F_Cabin" data-prid="{{ produit["PR_ID"] }}" data-price="{{ produit["PR_PRIX_VC"] }}" data-anchor="#produit-{{ produit["PR_ID"] }}" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
+                                                                                <p style="white-space: nowrap;">Ajouter au panier</p><i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
+                                                                            </button>
                                                                         </div>
                                                                     </div>
                                                                 </form>
