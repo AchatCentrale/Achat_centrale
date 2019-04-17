@@ -1316,3 +1316,15 @@ span.value-barre {
 
 
 
+.header-cart-menu-empty {
+    text-align: center;
+    color: #999;
+    padding: 25px 20px;
+    line-height: 22px;
+    font-size: 17px;
+}
+
+.header-cart-menu-empty a {
+    color: black;
+    text-decoration: underline;
+}

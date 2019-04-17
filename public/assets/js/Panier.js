@@ -36,7 +36,7 @@
         $(this).children(':last').show();
 
 
-        let url = "http://dev.achatcentrale.fr/cart/new";
+        let url = "http://localhost:8000/cart/new";
 
         postRequest(url, {prid: produit_id, qty: quantity, prix: price})
             .then(data =>{
@@ -54,10 +54,15 @@
 
     document.getElementById('header-cart').addEventListener('mouseleave', function () {
         $('.header-cart-menu').hide();
+        $(".mask-menu").hide();
+
+
     });
 
     document.getElementById('header-cart').addEventListener('mouseenter', function () {
         $('.header-cart-menu').show();
+        $(".mask-menu").show();
+
     });
     
 

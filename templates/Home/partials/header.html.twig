@@ -93,18 +93,28 @@
             <div id="header-cart-button">
                 <a href="#" style="text-decoration:none;" rel="nofollow">
                     <span class="img-header-cart"></span>
-                    <span class="total-product">18</span>
+                    <span class="total-product">{{ panier_count() }}</span>
                     <p class="title">PANIER</p>
                     <p class="sub-title"> 1 200 € </p>
                 </a>
             </div>
             <div class="header-cart-menu arrow-box" style="display: none;">
-                <div></div>
-                <div class="header-cart-menu-bottom">
-                    <a class="button is-black" href="">
-                        <span><i class="fas fa-chevron-right "></i>   &nbsp;Voir mon panier</span>
-                    </a>
-                </div>
+                {% if panier_count() > 0 %}
+                    <div></div>
+                    <div class="header-cart-menu-bottom">
+                        <a class="button is-black" href="">
+                            <span><i class="fas fa-chevron-right "></i>   &nbsp;Voir mon panier</span>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="header-cart-menu-empty">
+                            <span>Panier vide...</span>
+                            <br>
+                            <a href="/myaccount/personalize-product/profile" data-connexion="actif" rel="nofollow">
+                                Découvrez nos bons plans
+                            </a>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
