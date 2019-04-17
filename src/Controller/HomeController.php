@@ -97,7 +97,6 @@ class HomeController extends AbstractController
 
 
 
-        dump($Produits);
 
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
