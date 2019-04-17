@@ -33,6 +33,7 @@ class PanierController extends AbstractController
         $quantity = $data["qty"];
         $prix = $data["prix"];
 
+
         if( $client_id !== '' && $contact_id !== '' && $produit_id !== '' && $quantity !== '' && $prix !== ''){
             $sqlInsertNewCart = "INSERT INTO CENTRALE_ACHAT_v2.dbo.PANIER_TEMP (CL_ID, CC_ID, FO_ID, PR_ID, PT_DATE, PT_QTE, PT_DETAIL, PT_PRIX_VC, INS_DATE, INS_USER, MAJ_DATE, MAJ_USER) VALUES (:clid, :ccid, :foid, :prid, GETDATE(), :qty, '',:prix, GETDATE(),  :user_auth, GETDATE(), :user_auth  )";
 

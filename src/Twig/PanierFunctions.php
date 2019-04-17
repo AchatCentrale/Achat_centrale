@@ -29,6 +29,7 @@ class PanierFunctions extends AbstractExtension
 
         return [
             new TwigFunction('panier_count', [$this, 'getPanierCount']),
+            new TwigFunction('panier_total', [$this, 'getPanierTotal']),
         ];
     }
 
@@ -40,8 +41,6 @@ class PanierFunctions extends AbstractExtension
 
         $user_id = $token->getUser()->getCcId();
 
-
-
         $sqlCount = "SELECT count(*) as COUNT FROM CENTRALE_ACHAT_v2.dbo.PANIER_TEMP WHERE CC_ID = :id AND ME_ID = 0";
 
         $conn = $this->connection->prepare($sqlCount);
@@ -49,11 +48,32 @@ class PanierFunctions extends AbstractExtension
         $conn->execute();
         $panierCount = $conn->fetchAll();
 
-
-
-
         return $panierCount[0]['COUNT'];
+    }
 
+    public function getPanierTotal()
+    {
+        if (null === $token = $this->tokenStorage->getToken()) {
+            return array();
+        }
+
+        $user_id = $token->getUser()->getCcId();
+
+        $sqlTotal = "SELECT (SELECT sum(PR_PRIX_CA) FROM CENTRALE_PRODUITS.dbo.PRODUITS WHERE PRODUITS.PR_ID = PANIER_TEMP.PR_ID) as TOTAL FROM CENTRALE_ACHAT_v2.dbo.PANIER_TEMP WHERE CC_ID = :id AND ME_ID = 0";
+
+        $conn = $this->connection->prepare($sqlTotal);
+        $conn->bindValue("id", $user_id);
+        $conn->execute();
+        $panierTotal = $conn->fetchAll();
+
+
+        $result = 0;
+
+        foreach ($panierTotal as $k => $subArray) {
+           $result += $subArray["TOTAL"];
+        }
+
+        return $result;
     }
 
 

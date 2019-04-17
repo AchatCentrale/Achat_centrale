@@ -1328,3 +1328,8 @@ span.value-barre {
     color: black;
     text-decoration: underline;
 }
+
+.header-cart-menu-titre {
+    font-size: 17pt;
+    text-align: center;
+}

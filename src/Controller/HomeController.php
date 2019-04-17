@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Services\PanierService;
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,8 +12,12 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(Connection $connection)
+    public function index(Connection $connection, PanierService $panierService)
     {
+
+
+        $contact_id = $this->getUser()->getCcId();
+
 
         $sqlCatParent = "SELECT CatID, CatTitre, CatLien, CatDescription FROM CENTRALE_ACHAT_V2.dbo.Categories WHERE CatSort > 0 AND CatIDParent = 0 ORDER BY CatSort";
 
@@ -96,6 +101,8 @@ class HomeController extends AbstractController
 
 
 
+        $panier = $panierService->getPanierContent($contact_id);
+
 
 
         return $this->render('Home/index.html.twig', [
@@ -103,7 +110,7 @@ class HomeController extends AbstractController
             "espacePrive" => $espacesPrive,
             "slider" => $slider,
             "produits" => $Produits,
-
+            "panier" => $panier
         ]);
     }
 
