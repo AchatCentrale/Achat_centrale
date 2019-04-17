@@ -51,4 +51,14 @@
     });
 
 
+
+    document.getElementById('header-cart').addEventListener('mouseleave', function () {
+        $('.header-cart-menu').hide();
+    });
+
+    document.getElementById('header-cart').addEventListener('mouseenter', function () {
+        $('.header-cart-menu').show();
+    });
+    
+
 })(document);
