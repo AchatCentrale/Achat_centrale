@@ -73,7 +73,20 @@
                 <a href="#" style="text-decoration:none;" data-connexion="actif" rel="nofollow">
                     <span class="img-header-account"></span>
                     <p class="title">MON COMPTE</p>
+                    <p class="sub-title">{{ app.user.CCPrenom | capitalize }}  {{ app.user.CCNom | upper }}</p>
                 </a>
+            </div>
+            <div class="header-account-menu arrow-account-box" style="display: none;">
+                <div class="header-account-menu-top">
+                    <p><i class="fas fa-user"></i>    &nbsp;{{ app.user.CCPrenom }}  {{ app.user.CCNom }}</p>
+                </div>
+                <div class="header-account-menu-detail">
+                    <ul class="header-account-menu-liste">
+                        <li><a href="">Mon espace client</a></li>
+                        <li><a href="">Mes factures</a></li>
+                        <li><a href="">Gérer mes utilisateurs</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="header-cart">
@@ -89,7 +102,7 @@
                 <div></div>
                 <div class="header-cart-menu-bottom">
                     <a class="button is-black" href="">
-                        <span><i class="fas fa-chevron-right"></i>Voir mon panier</span>
+                        <span><i class="fas fa-chevron-right "></i>   &nbsp;Voir mon panier</span>
                     </a>
                 </div>
             </div>

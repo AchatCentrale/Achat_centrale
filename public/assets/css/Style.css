@@ -182,6 +182,16 @@
 }
 
 
+#header-account-button .sub-title, #header-cart-button .sub-title {
+    line-height: 14px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
 
 #header-account-button,
 #header-cart-button {
@@ -1246,6 +1256,63 @@ span.value-barre {
     width: 2px;
 }
 
-.header-cart-menu:before{
+
+
+.header-account-menu {
+    width: 300px;
+    position: absolute;
+    background-color: #f3f3f3;
+    left: 71.5%;
+    top: 19%;
+    border-radius: 3px;
+    border: 4px solid #787878;
+    border-color: rgba(0,0,0,.5);
+    z-index: 999;
+}
+
+
+.arrow-account-box:after, .arrow-account-box:before {
+    bottom: 100%;
+    left: 48%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+
+.arrow-account-box:before {
+    border-color: transparent;
+    border-bottom-color: #787878;
+    border-bottom-color: rgba(0,0,0,.5);
+    border-width: 13px;
+    margin-left: -16px;
+    width: 4px;
+}
+
+.arrow-account-box:after {
+    border-color: transparent;
+    border-bottom-color: #fff;
+    border-width: 9px;
+    margin-left: -11px;
+    width: 2px;
+}
+
+.header-account-menu-top {
+    width: 100%;
+    background-color: #e8e8e8;
+    height: 45px;
+    padding-top: 10px;
+    border-radius: 4px;
+    padding-left: 18px;
 
 }
+
+.header-account-menu-detail {
+    padding: 10px;
+}
+
+
+
