@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -113,6 +114,34 @@ class HomeController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/apiABM", name="api_")
+     */
+    public function testAPIAbm()
+    {
 
+
+        $header = [
+            "ID" => "ACHAT_CENTRALE",
+            "PWD" => "abm2019TEST"
+        ];
+
+        $url = "77.158.78.46:36639/APIWCF/orthop_test/SWOM_Clients.svc";
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $data = curl_exec($curl);
+        curl_close($curl);
+        if($httpCode == 200) {
+            return new Response($data, 200);
+        }
+
+
+        return new Response("ok");
+    }
 
 }
