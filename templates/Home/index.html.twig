@@ -112,7 +112,7 @@
 
                                                     <div class="has-sku-image">
                                                         <a class="" href="" title="" target="_blank">
-                                                            <p align="center" style="color: #df4e92;">Réf : {{ produit["PR_REF"] }}</p>
+                                                            <p align="center" style="color: #df4e92;">Réf : {{ produit["PR_TRIPTYQUE"] }}</p>
                                                         </a>
                                                     </div>
 
@@ -124,15 +124,22 @@
                                                         </h3>
 
                                                         <span class="price price-m">
-                                                                {% if produit["PR_CONDT"] | replace({' ': ''}) == "àpartirde" %}
-                                                                    <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
-                                                                    <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] }} €</span>
-                                                                    <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
+                                                                {% if produit["PR_PRIX_PUBLIC"] == 0 %}
+
+                                                                    <p>Prix sur devis</p>
                                                                     {% else %}
-                                                                    <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] }} €</span>
-                                                                    <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] }} €</span>
-                                                                    <span class="separator">/</span>
-                                                                    <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
+                                                                        {% if produit["PR_CONDT"] | replace({' ': ''}) == "àpartirde" %}
+                                                                                <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
+                                                                                <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"]| number_format(2, ',', ' ') }}&nbsp;€</span>
+                                                                                <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] | number_format(2, ',', ' ') }}&nbsp;€</span>
+                                                                            {% else %}
+                                                                                <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] | number_format(2, ',', ' ') }}&nbsp;€</span>
+                                                                                <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] | number_format(2, ',', ' ') }}&nbsp;€</span>
+                                                                                <span class="separator">/</span>
+                                                                                <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
+                                                                        {% endif %}
+
+
                                                                 {% endif %}
                                                         </span>
 
@@ -150,7 +157,6 @@
                                                         <div class="container-type-lien">
                                                             {% if produit["PR_TYPE_LIEN"] == "ACHETER" %}
 
-                                                                <form action="">
                                                                     <div class="columns">
                                                                         <div class="column">
                                                                             <span class="p-quantity-modified" id="produit-{{ produit["PR_ID"] }}" data-qty="{{ produit["PR_QTE_CMDE"] }}">
@@ -165,13 +171,12 @@
                                                                             </button>
                                                                         </div>
                                                                     </div>
-                                                                </form>
 
 
 
                                                             {% elseif produit["PR_TYPE_LIEN"] == "WEB" %}
 
-                                                                <input class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="J'y vais" style=" cursor:pointer;" >
+                                                                <a href="{{ produit["PR_LIEN"] }}" class="btn_add_to_cart F_Cabin" type="button" name="Submit"  style=" cursor:pointer;">J'y vais</a>
 
                                                             {% elseif produit["PR_TYPE_LIEN"] == "DEVIS" %}
 
@@ -187,18 +192,31 @@
 
 
                                                         <div class="info-more">
-                                                            <br>
 
+                                                            {% if produit["declinaison"] %}
+
+                                                                <br>
+                                                                <div class="select declinaison-produits">
+                                                                    <select>
+                                                                {% for key, value in produit["declinaison"] %}
+                                                                        <option>{{ key }}: sélection... </option>
+                                                                        {% for d in value %}
+                                                                            <option>{{ key }} : {{ d }}</option>
+                                                                        {% endfor %}
+                                                                {% endfor %}
+                                                                    </select>
+                                                                </div>
+                                                                &nbsp;
+                                                                <br>
+                                                            {% endif %}
 
                                                             {% if produit["PR_DESCR_COURTE"]  %}
-
-                                                                <h4><b>Decription du produit </b>:</h4>
                                                                 <div class="description">
                                                                     {{ produit["PR_DESCR_COURTE"] | encodingFrom | raw }}
                                                                 </div>
 
                                                             {% endif %}
-                                                            <br>
+
 
                                                             {% if produit["PR_INFO_LIEN"] | spaceless | IsInfoExist %}
 

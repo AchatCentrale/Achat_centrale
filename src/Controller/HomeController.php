@@ -89,22 +89,75 @@ class HomeController extends AbstractController
 
         foreach($PromoListe as $i => $promo){
 
-            $sqlProduit = "SELECT * FROM CENTRALE_ACHAT_V2.dbo.PRODUITS_PROMO INNER JOIN CENTRALE_PRODUITS.dbo.PRODUITS ON PRODUITS_PROMO.PR_ID = PRODUITS.PR_ID INNER JOIN CENTRALE_PRODUITS.dbo.RAYONS ON PRODUITS.RA_ID = RAYONS.RA_ID INNER JOIN CENTRALE_ACHAT_V2.dbo.CATEG_RAYONS ON RAYONS.RA_ID = CATEG_RAYONS.RA_ID INNER JOIN CENTRALE_ACHAT_V2.dbo.Categories ON CATEG_RAYONS.CatID = Categories.CatID WHERE PRODUITS.SO_ID = 1 AND PR_STATUS = 0 AND PPC_ID = :id ORDER BY PP_ORDRE";
-
+            $sqlProduit = "SELECT
+                                * 
+                            FROM 
+                                CENTRALE_ACHAT_V2.dbo.PRODUITS_PROMO 
+                            INNER JOIN 
+                                CENTRALE_PRODUITS.dbo.PRODUITS ON PRODUITS_PROMO.PR_ID = PRODUITS.PR_ID
+                            INNER JOIN CENTRALE_PRODUITS.dbo.RAYONS ON PRODUITS.RA_ID = RAYONS.RA_ID 
+                            INNER JOIN CENTRALE_ACHAT_V2.dbo.CATEG_RAYONS ON RAYONS.RA_ID = CATEG_RAYONS.RA_ID 
+                            INNER JOIN CENTRALE_ACHAT_V2.dbo.Categories ON CATEG_RAYONS.CatID = Categories.CatID 
+                            WHERE 
+                                PRODUITS.SO_ID = 1 
+                            AND PR_STATUS = 0 
+                            AND PPC_ID = :id 
+                            ORDER BY PP_ORDRE";
 
 
             $conn = $connection->prepare($sqlProduit);
             $conn->bindValue("id", $promo["PPC_ID"]);
             $conn->execute();
             $produit = $conn->fetchAll();
+
+
+
+
+            foreach ($produit as $index => $p){
+
+                $sqlIsDeclinaison = "SELECT count(DD_ID) count FROM CENTRALE_PRODUITS.dbo.PRODUITS_DECLIN WHERE PR_ID = :id";
+
+
+                $conn = $connection->prepare($sqlIsDeclinaison);
+                $conn->bindValue("id", $p["PR_ID"]);
+                $conn->execute();
+                $isDeclinaison = $conn->fetchAll();
+
+                if ($isDeclinaison[0]["count"]){
+
+                    $sqlDeclinaison = "SELECT
+                                            (SELECT DE_DESCR FROM CENTRALE_PRODUITS.dbo.DECLINAISONS WHERE PRODUITS_DECLIN.DE_ID = DECLINAISONS.DE_ID) DECLINAISONS,
+                                            (SELECT DD_DESCR FROM CENTRALE_PRODUITS.dbo.DECLINAISONS_DETAIL WHERE DECLINAISONS_DETAIL.DD_ID = PRODUITS_DECLIN.DD_ID) DETAIL
+                                        FROM
+                                            CENTRALE_PRODUITS.dbo.PRODUITS_DECLIN
+                                        WHERE PR_ID = 24502";
+
+                    $conn = $connection->prepare($sqlDeclinaison);
+                    $conn->bindValue("id", $p["PR_ID"]);
+                    $conn->execute();
+                    $declinaison = $conn->fetchAll();
+
+                    $resultDeclinaison = [];
+                    foreach ($declinaison as $element) {
+                        $resultDeclinaison[$element['DECLINAISONS']][] = $element["DETAIL"];
+                    }
+                    $produit[$index]["declinaison"] = $resultDeclinaison;
+                }else {
+                    $produit[$index]["declinaison"] = [];
+                }
+            }
+
+            dump($produit);
             $Produits[$i]["produits"] = $produit;
         }
+
 
 
 
         $panier = $panierService->getPanierContent($contact_id);
 
 
+        dump($Produits);
 
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
@@ -115,34 +168,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/apiABM", name="api_")
-     */
-    public function testAPIAbm()
-    {
 
-
-        $header = [
-            "ID" => "ACHAT_CENTRALE",
-            "PWD" => "abm2019TEST"
-        ];
-
-        $url = "77.158.78.46:36639/APIWCF/orthop_test/SWOM_Clients.svc";
-
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HEADER, false);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
-        $httpCode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-        $data = curl_exec($curl);
-        curl_close($curl);
-        if($httpCode == 200) {
-            return new Response($data, 200);
-        }
-
-
-        return new Response("ok");
-    }
 
 }
