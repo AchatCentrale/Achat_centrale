@@ -79,12 +79,9 @@ class ProductFilter extends AbstractExtension
 
     }
 
-
     public function getDiscountPercentage($prix_ac, $prix_public)
     {
-
         return ($prix_public - $prix_ac) / $prix_public * 100;
-
     }
 
 }
