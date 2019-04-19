@@ -1,16 +1,16 @@
 <header class="container_header">
     <div class="subHeader ">
         <div class="columns" style="width: 80%;;margin: auto;">
-            <div class="column is-4" style="border-right: 1px solid;height: 55px;">
+            <div class="column is-4" style="border-right: 1px solid;height: 40px;">
                 <div class="container-economie">
                     <div class="columns">
                         <div class="column is-6">
-                            <p style="font-size: 13pt;padding-top: 5px;">Vos économies sont de</p>
+                            <p style="font-size: 10pt;padding-top: 2px;font-weight: 600;">Vos économies sont de</p>
                         </div>
                         <div class="column is-3">
                             <p class="value-economie">39 €</p>
                         </div>
-                        <div class="column is-3" style="padding: 18px 12px;">
+                        <div class="column is-3" style="padding: 14px 12px;font-size: 9pt;font-weight: 700;">
                             <a href="">Voir détail</a>
                         </div>
                     </div>
@@ -18,50 +18,25 @@
             </div>
             <div class="column is-2">
                 <div class="columns">
-                    <div class="column is-4" style="padding-top: 8px;">
-                        <img class="picto_commande" src="http://www.centrale-funecap.fr/Images/Charte/Picto_MesCommandes.png" alt="">
-                    </div>
-                    <div class="column is-8 messageCommande" style="border-right: 1px solid;height: 55px;">
-                        <a href="">Messages & Commandes</a>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-2">
-                <div class="columns">
-                    <div class="column is-3">
+                    <div class="column is-3" style="padding-top: 5px;">
                         <img alt="" src="http://www.centrale-funecap.fr/Images/Charte/Picto_ContactCentrale.png">
                     </div>
-                    <div class="column is-9" style="border-right: 1px solid;height: 55px;">
+                    <div class="column is-9" style="border-right: 1px solid;height: 40px;padding-top: 9px;font-size: 11pt;font-weight: 600;">
                         <a href="">Contacter la centrale</a>
                     </div>
                 </div>
             </div>
-            <div class="column is-1">
+            <div class="column is-2">
                 <div class="columns">
-                    <div class="column is-5 ">
+                    <div class="column is-5" style="padding-top: 5px;">
                         <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_Autres.png" alt="">
                     </div>
-                    <div class="column is-7 " style="border-right: 1px solid;height: 55px;padding: 13px 0px;">
-                        <a href="">Autres</a>
+                    <div class="column is-7 " style="border-right: 1px solid;height: 40px;padding-top: 7px;">
+                        <a href="">Autres </a>&nbsp;<i class="fas fa-chevron-down"></i>
                     </div>
                 </div>
             </div>
             <div class="column is-2">
-                <div class="container-user-avatar">
-                    <div class="columns">
-                        <div class="column">
-                            <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_TeteUser.png" alt="" style="float: right;">
-                        </div>
-                        <div class="column">
-                            <p class="pseudo_user" >{{ app.user.ccNom }} {{ app.user.ccPrenom }}</p>
-                        </div>
-                        <div class="column" style="border-right: 1px solid;height: 55px;padding-top: 20px;">
-                            <img src="http://www.centrale-funecap.fr/Images/Charte/Picto_FlecheBasOrange.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-1">
                <div class="columns">
                    <div class="column picto_no_currency"  >
                        <img src="http://www.centrale-funecap.fr/Images/euro_barre.png" alt="">
@@ -98,19 +73,65 @@
                 <a href="#" style="text-decoration:none;" data-connexion="actif" rel="nofollow">
                     <span class="img-header-account"></span>
                     <p class="title">MON COMPTE</p>
+                    <p class="sub-title">{{ app.user.CCPrenom | capitalize }}  {{ app.user.CCNom | upper }}</p>
                 </a>
+            </div>
+            <div class="header-account-menu arrow-account-box" style="display: none;">
+                <div class="header-account-menu-top">
+                    <p><i class="fas fa-user"></i>    &nbsp;{{ app.user.CCPrenom }}  {{ app.user.CCNom }}</p>
+                </div>
+                <div class="header-account-menu-detail">
+                    <ul class="header-account-menu-liste">
+                        <li><a href="">Mon espace client</a></li>
+                        <li><a href="">Mes factures</a></li>
+                        <li><a href="">Gérer mes utilisateurs</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="header-cart">
             <div id="header-cart-button">
                 <a href="#" style="text-decoration:none;" rel="nofollow">
                     <span class="img-header-cart"></span>
-                    <span class="total-product">18</span>
+                    <span class="total-product">{{ panier_count() }}</span>
                     <p class="title">PANIER</p>
-                    <p class="sub-title"> 1 200 € </p>
+                    <p class="sub-title"> {{ panier_total()| number_format(2, ',', ' ') }}&nbsp;€ </p>
                 </a>
             </div>
+            <div class="header-cart-menu arrow-box" style="display: none;">
+                {% if panier_count() > 0 %}
+                    <div>
+                        <div class="header-cart-menu-titre">
+                            Vous avez <b>{{ panier_count() }}</b> produits dans votre panier
+                        </div>
+                        <div class="header-cart-menu-contenu">
 
+                            <ul>
+                                {% for p in panier %}
+                                    <li>
+                                        <img width="70px" src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/PRODUIT_{{ p["PR_ID"] }}/{{ p["LOGO"] }}" alt="">
+                                        <a href="#">{{ p["NOM_PRODUITS"] | raw }}</a>
+                                        <span>{{ p["PRIX"]| number_format(2, ',', ' ') }}&nbsp;€ </span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-cart-menu-bottom">
+                        <a class="button is-black" href="">
+                            <span><i class="fas fa-chevron-right "></i>   &nbsp;Voir mon panier</span>
+                        </a>
+                    </div>
+                    {% else %}
+                    <div class="header-cart-menu-empty">
+                            <span>Panier vide...</span>
+                            <br>
+                            <a href="/" data-connexion="actif" rel="nofollow">
+                                Découvrez nos bons plans
+                            </a>
+                    </div>
+                {% endif %}
+            </div>
         </div>
     </div>
 

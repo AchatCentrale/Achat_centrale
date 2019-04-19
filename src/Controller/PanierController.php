@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Services\SiteService;
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,19 +20,41 @@ class PanierController extends AbstractController
     /**
      * @Route("/new", name="new", methods={"POST"})
      */
-    public function new(Connection $connection, Request $request)
+    public function new(Connection $connection, Request $request, SiteService $helper)
     {
 
+        $data = $data = json_decode($request->getContent(), true);
+
+        $client_id = $helper->getClientFromCCID($this->getUser()->getCcId());
+        $contact_id = $this->getUser()->getCcId();
+
+        $produit_id = $data["prid"];
+        $fourn_id = $helper->getFournFromProduct($produit_id);
+        $quantity = $data["qty"];
+        $prix = $data["prix"];
 
 
-        $client_id = $request->get("clid");
+        if( $client_id !== '' && $contact_id !== '' && $produit_id !== '' && $quantity !== '' && $prix !== ''){
+            $sqlInsertNewCart = "INSERT INTO CENTRALE_ACHAT_v2.dbo.PANIER_TEMP (CL_ID, CC_ID, FO_ID, PR_ID, PT_DATE, PT_QTE, PT_DETAIL, PT_PRIX_VC, INS_DATE, INS_USER, MAJ_DATE, MAJ_USER) VALUES (:clid, :ccid, :foid, :prid, GETDATE(), :qty, '',:prix, GETDATE(),  :user_auth, GETDATE(), :user_auth  )";
 
+            $conn = $connection->prepare($sqlInsertNewCart);
+            $conn->bindValue("clid", $client_id["CL_ID"]);
+            $conn->bindValue("ccid", $contact_id);
+            $conn->bindValue("foid", $fourn_id["FO_ID"]);
+            $conn->bindValue("prid", $produit_id);
+            $conn->bindValue("qty", $quantity);
+            $conn->bindValue("prix", $prix);
+            $conn->bindValue("user_auth", $this->getUser()->getCcMail());
+            $panier = $conn->execute();
 
-        dump($client_id);
-
-        return $this->json($client_id);
-
+            return $this->json($panier);
+        } else {
+            return $this->json("Error");
+        }
     }
+
+
+
 
 
 }
