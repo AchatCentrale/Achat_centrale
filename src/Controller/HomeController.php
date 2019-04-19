@@ -123,7 +123,15 @@ class HomeController extends AbstractController
                 $conn->execute();
                 $isDeclinaison = $conn->fetchAll();
 
-                if ($isDeclinaison[0]["count"]){
+                $sqlNouveaute = "SELECT count(*) count FROM CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR INNER JOIN CENTRALE_PRODUITS.dbo.NOUVEAUTES ON CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR.NO_ID = CENTRALE_PRODUITS.dbo.NOUVEAUTES.NO_ID WHERE PR_ID = :id";
+
+                $conn = $connection->prepare($sqlNouveaute);
+                $conn->bindValue("id", $p["PR_ID"]);
+                $conn->execute();
+                $isNouveaute = $conn->fetchAll();
+
+
+                if ($isDeclinaison[0]["count"] || $isNouveaute[0]["count"]){
 
                     $sqlDeclinaison = "SELECT
                                             (SELECT DE_DESCR FROM CENTRALE_PRODUITS.dbo.DECLINAISONS WHERE PRODUITS_DECLIN.DE_ID = DECLINAISONS.DE_ID) DECLINAISONS,
@@ -141,9 +149,21 @@ class HomeController extends AbstractController
                     foreach ($declinaison as $element) {
                         $resultDeclinaison[$element['DECLINAISONS']][] = $element["DETAIL"];
                     }
+
+                    $sqlNouveaute = "SELECT *  FROM CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR INNER JOIN CENTRALE_PRODUITS.dbo.NOUVEAUTES ON CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR.NO_ID = CENTRALE_PRODUITS.dbo.NOUVEAUTES.NO_ID WHERE PR_ID = :id";
+
+                    $conn = $connection->prepare($sqlNouveaute);
+                    $conn->bindValue("id", $p["PR_ID"]);
+                    $conn->execute();
+                    $nouveaute = $conn->fetchAll();
+
+
+
                     $produit[$index]["declinaison"] = $resultDeclinaison;
+                    $produit[$index]["nouveaute"] = $nouveaute;
                 }else {
                     $produit[$index]["declinaison"] = [];
+                    $produit[$index]["nouveaute"] = [];
                 }
             }
 

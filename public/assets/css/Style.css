@@ -601,7 +601,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .container_nouveaute {
-    height: 24px;
+    height: 25px;
 }
 
 .add_to_cart{
@@ -1344,4 +1344,14 @@ span.value-barre {
 
 .container-info-produit {
     padding: 20px 0px 5px 0px;
+}
+
+.container-remise {
+    background-color: #EBF6EB;
+    width: 72%;
+    text-align: center;
+    padding: 5px 0px;
+    margin-left: 18px;
+    color: #61B240;
+    font-weight: 800;
 }

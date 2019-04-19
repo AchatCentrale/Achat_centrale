@@ -93,13 +93,24 @@
                                                     <img src="{{ produit["FO_ID"] | picFrs }}" alt="">
                                                 </div>
 
+                                                <div class="container-remise">
+                                                    <p>{{ produit["PR_PRIX_CA"] | remise(produit["PR_PRIX_PUBLIC"]) | round }} %</p>
+                                                </div>
 
                                                 <div class="item">
-                                                    <div class="container_nouveaute">
-                                                        <div class="Nouveautes">
-                                                            <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>
+                                                    {% if produit["nouveaute"] %}
+                                                        <div class="container_nouveaute">
+                                                            <div class="Nouveautes">
+                                                                <p align="center" class="F_Cabin NouveautesTxt">Incontournable</p>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        {% else %}
+
+                                                            <div class="container_nouveaute">
+
+                                                            </div>
+
+                                                    {% endif %}
 
                                                     <div class="img img-border">
 
