@@ -391,7 +391,7 @@ a.sub-menu-link {
 .site-content {
     width: 74%;
     margin: auto;
-    margin-top: 50px;
+    padding-bottom: 60px;
 }
 
 .site-content h1 {
@@ -989,20 +989,18 @@ input[type=number]::-webkit-outer-spin-button {
 /*vignette produits*/
 
 .subHeader {
-    height: 40px;
-    background-color: #fafafa;
+    height: 55px;
+    background-color: #F5F5F5;
 }
 
 
 .container-economie {
     background-color: white;
-    padding: 3px 5px;
+    padding: 3px 35px;
     border-radius: 20px;
-    margin-left: 35px;
-    text-align: center;
     border: 1px solid #b5b5b5;
-    height: 30px;
-    margin-top: -7px;
+    height: 40px;
+    margin-top: 7px;
 }
 
 
@@ -1017,7 +1015,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-weight: 800;
     background-color: #e37954;
     position: relative;
-    top: -2px;
+    top: 2px;
 }
 
 .pseudo_user{
@@ -1332,4 +1330,17 @@ span.value-barre {
 .header-cart-menu-titre {
     font-size: 17pt;
     text-align: center;
+}
+
+.title_footer{
+    font-family: Cabin;
+    letter-spacing: 1.4px;
+    font-size: 15pt;
+    padding: 12px 0px;
+}
+
+footer {
+    background-color: #f6f6f6;
+    height: 345px;
+    padding-top: 60px;
 }
