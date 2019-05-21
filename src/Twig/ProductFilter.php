@@ -25,6 +25,7 @@ class ProductFilter extends AbstractExtension
             new TwigFilter('product_pic', [$this, 'getProductPic']),
             new TwigFilter('declinaison', [$this, 'getDeclinaison']),
             new TwigFilter('picFrs', [$this, 'getProfilePicFrs']),
+            new TwigFilter('remise', [$this, 'getDiscountPercentage']),
         ];
     }
 
@@ -42,7 +43,6 @@ class ProductFilter extends AbstractExtension
 
         return $result;
     }
-
 
     public function getDeclinaison($id){
 
@@ -79,5 +79,9 @@ class ProductFilter extends AbstractExtension
 
     }
 
+    public function getDiscountPercentage($prix_ac, $prix_public)
+    {
+        return ($prix_public - $prix_ac) / $prix_public * 100;
+    }
 
 }

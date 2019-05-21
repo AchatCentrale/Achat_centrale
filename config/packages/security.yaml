@@ -19,10 +19,16 @@ security:
                 path: app_logout
                 target: /login
             anonymous:    true
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 86400
+                path:     /
+                always_remember_me: true
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
     access_control:
         - { path: /login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /apiABM, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/, roles: ROLE_USER }
 

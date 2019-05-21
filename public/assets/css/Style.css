@@ -249,7 +249,7 @@
 .menu-general ul li {
     display: inline;
     background-color: #f3f3f3;
-    padding: 17px 80px 14px 55px;
+    padding: 17px 20px 14px 20px;
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -601,7 +601,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .container_nouveaute {
-    height: 24px;
+    height: 25px;
 }
 
 .add_to_cart{
@@ -784,7 +784,8 @@ input[type=number]::-webkit-outer-spin-button {
 .info-more {
     width: 220px;
     margin: 0 auto;
-    display: none
+    display: none;
+    padding: 20px 0px 20px 0px;
 }
 
 .list-item .price {
@@ -1074,9 +1075,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .container-img-frs {
-    width: 55%;
-    margin: auto;
     max-height: 43px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    padding-right: 90px;
 }
 
 .container-img-frs img {
@@ -1142,7 +1146,7 @@ span.value-barre {
 }
 
 .p-quantity-modified i.p-quantity-decrease {
-    left: 3px
+    left: 5px
 }
 
 .p-quantity-modified i.p-quantity-increase {
@@ -1343,4 +1347,22 @@ footer {
     background-color: #f6f6f6;
     height: 345px;
     padding-top: 60px;
+
+}
+.select.declinaison-produits {
+    margin: 15px auto;
+}
+
+.container-info-produit {
+    padding: 20px 0px 5px 0px;
+}
+
+.container-remise {
+    background-color: #EBF6EB;
+    width: 72%;
+    text-align: center;
+    padding: 5px 0px;
+    margin-left: 18px;
+    color: #61B240;
+    font-weight: 800;
 }

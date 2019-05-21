@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Services\PanierService;
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
@@ -88,22 +89,95 @@ class HomeController extends AbstractController
 
         foreach($PromoListe as $i => $promo){
 
-            $sqlProduit = "SELECT * FROM CENTRALE_ACHAT_V2.dbo.PRODUITS_PROMO INNER JOIN CENTRALE_PRODUITS.dbo.PRODUITS ON PRODUITS_PROMO.PR_ID = PRODUITS.PR_ID INNER JOIN CENTRALE_PRODUITS.dbo.RAYONS ON PRODUITS.RA_ID = RAYONS.RA_ID INNER JOIN CENTRALE_ACHAT_V2.dbo.CATEG_RAYONS ON RAYONS.RA_ID = CATEG_RAYONS.RA_ID INNER JOIN CENTRALE_ACHAT_V2.dbo.Categories ON CATEG_RAYONS.CatID = Categories.CatID WHERE PRODUITS.SO_ID = 1 AND PR_STATUS = 0 AND PPC_ID = :id ORDER BY PP_ORDRE";
-
+            $sqlProduit = "SELECT
+                                * 
+                            FROM 
+                                CENTRALE_ACHAT_V2.dbo.PRODUITS_PROMO 
+                            INNER JOIN 
+                                CENTRALE_PRODUITS.dbo.PRODUITS ON PRODUITS_PROMO.PR_ID = PRODUITS.PR_ID
+                            INNER JOIN CENTRALE_PRODUITS.dbo.RAYONS ON PRODUITS.RA_ID = RAYONS.RA_ID 
+                            INNER JOIN CENTRALE_ACHAT_V2.dbo.CATEG_RAYONS ON RAYONS.RA_ID = CATEG_RAYONS.RA_ID 
+                            INNER JOIN CENTRALE_ACHAT_V2.dbo.Categories ON CATEG_RAYONS.CatID = Categories.CatID 
+                            WHERE 
+                                PRODUITS.SO_ID = 1 
+                            AND PR_STATUS = 0 
+                            AND PPC_ID = :id 
+                            ORDER BY PP_ORDRE";
 
 
             $conn = $connection->prepare($sqlProduit);
             $conn->bindValue("id", $promo["PPC_ID"]);
             $conn->execute();
             $produit = $conn->fetchAll();
+
+
+
+
+            foreach ($produit as $index => $p){
+
+                $sqlIsDeclinaison = "SELECT count(DD_ID) count FROM CENTRALE_PRODUITS.dbo.PRODUITS_DECLIN WHERE PR_ID = :id";
+
+
+                $conn = $connection->prepare($sqlIsDeclinaison);
+                $conn->bindValue("id", $p["PR_ID"]);
+                $conn->execute();
+                $isDeclinaison = $conn->fetchAll();
+
+                $sqlNouveaute = "SELECT count(*) count FROM CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR INNER JOIN CENTRALE_PRODUITS.dbo.NOUVEAUTES ON CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR.NO_ID = CENTRALE_PRODUITS.dbo.NOUVEAUTES.NO_ID WHERE PR_ID = :id";
+
+                $conn = $connection->prepare($sqlNouveaute);
+                $conn->bindValue("id", $p["PR_ID"]);
+                $conn->execute();
+                $isNouveaute = $conn->fetchAll();
+
+
+                if ($isDeclinaison[0]["count"] || $isNouveaute[0]["count"]){
+
+                    $sqlDeclinaison = "SELECT
+                                            (SELECT DE_DESCR FROM CENTRALE_PRODUITS.dbo.DECLINAISONS WHERE PRODUITS_DECLIN.DE_ID = DECLINAISONS.DE_ID) DECLINAISONS,
+                                            (SELECT DD_DESCR FROM CENTRALE_PRODUITS.dbo.DECLINAISONS_DETAIL WHERE DECLINAISONS_DETAIL.DD_ID = PRODUITS_DECLIN.DD_ID) DETAIL
+                                        FROM
+                                            CENTRALE_PRODUITS.dbo.PRODUITS_DECLIN
+                                        WHERE PR_ID = 24502";
+
+                    $conn = $connection->prepare($sqlDeclinaison);
+                    $conn->bindValue("id", $p["PR_ID"]);
+                    $conn->execute();
+                    $declinaison = $conn->fetchAll();
+
+                    $resultDeclinaison = [];
+                    foreach ($declinaison as $element) {
+                        $resultDeclinaison[$element['DECLINAISONS']][] = $element["DETAIL"];
+                    }
+
+                    $sqlNouveaute = "SELECT *  FROM CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR INNER JOIN CENTRALE_PRODUITS.dbo.NOUVEAUTES ON CENTRALE_PRODUITS.dbo.NOUVEAUTES_PR.NO_ID = CENTRALE_PRODUITS.dbo.NOUVEAUTES.NO_ID WHERE PR_ID = :id";
+
+                    $conn = $connection->prepare($sqlNouveaute);
+                    $conn->bindValue("id", $p["PR_ID"]);
+                    $conn->execute();
+                    $nouveaute = $conn->fetchAll();
+
+
+
+                    $produit[$index]["declinaison"] = $resultDeclinaison;
+                    $produit[$index]["nouveaute"] = $nouveaute;
+                }else {
+                    $produit[$index]["declinaison"] = [];
+                    $produit[$index]["nouveaute"] = [];
+                }
+            }
+
+            dump($produit);
             $Produits[$i]["produits"] = $produit;
         }
+
 
 
 
         $panier = $panierService->getPanierContent($contact_id);
 
 
+        dump($Produits);
 
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
