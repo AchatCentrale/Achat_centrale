@@ -1,0 +1,91 @@
+/* Tablet Landscape size to small browser (devices and browsers) */
+@media only screen and (min-width: 1024px) and (max-width: 1229px)
+{
+	/*<-- Général--> */
+	body p, body{font-size: 0.875em;}
+	img {width:100%;height: auto;}
+	.baseline{display: none;}
+	#presentation .photo-dirigeant{margin-bottom: 20px;}
+	#presentation img{width: 200px;height: 300px;display: inline-block;}
+	#interlocuteur img{width: 200px;height: 200px;display: inline-block;}
+	.loginBloc .logoLogin img{position: absolute;bottom: 0;left: 50%;margin-left: -100px;width:182px;}
+}
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+{
+	/*<-- Général--> */
+	body p, body{font-size: 0.875em;}
+	#presentation .photo-dirigeant{margin-bottom: 20px;}
+	#presentation img{width: 200px;height: 300px;display: inline-block;}
+	.baseline{display: none;}
+	.column_6{width: 100%;margin: 0;padding: 0 3em;}
+	.column_4{width: 48%;margin: 0;padding: 0 3em;}
+	.column_6 img{width:100%;height: auto;margin-bottom:0;}
+	.column_4 img{width:100%;height: auto;margin-bottom:0;}
+	.line {background: #dbdbd6;height: 1px;width: 89% !important;margin: 2em 42px !important;}
+
+	.contact #contact-form p{width:49%;}
+	.contact #contact-form p.message{width:100%;}
+	.subfooter{padding:0 3em;}
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 481px) and (max-width: 767px)
+{
+	/*<-- Général--> */
+	.baseline{display: none;}
+	#presentation .photo-dirigeant{margin-bottom: 20px;}
+	#presentation img{width: 200px;height: 300px;display: inline-block;}
+	#interlocuteur img{width: 200px;height: 200px;display: inline-block;}
+	#header .column_2{width: 30%;}
+	#header .column_2 img{width: auto;height: 40px;}
+	#header .column_10{width: 70%;}
+	.menu_responsive{margin: 0.9em 0;}
+	.loginBloc .logoLogin{display: none;}
+	.loginBloc{height: 300px;margin-top: -60px;}
+	.loginBloc h1{margin-top: 0;}
+	.button{width:100%;}
+	.scroll{display: none;}
+	body.page-interne  header{height:89px;}
+	img{width: 100%;height: auto;}
+	/*<-- Header / Menu--> */
+	#header .column_4 img{margin:0;width:auto;height:auto;}
+	/*<-- Slider--> */
+	/*<-- Contact--> */
+	.subfooter p{text-align:center !important;width:100%;float:none;}
+	/*<-- Page Cuvée -- >*/
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 480px)
+{
+	/*<-- Général--> */
+	.baseline{display: none;}
+	#presentation .photo-dirigeant{margin-bottom: 20px;}
+	#presentation img{width: 200px;height: 300px;display: inline-block;}
+	#interlocuteur img{width: 200px;height: 200px;display: inline-block;}
+	/*<-- Header / Menu--> */
+	#header .column_2{width: 30%;}
+	#header .column_2 img{width: 100%;height: auto;}
+	#header .column_10{width: 70%;}
+	.menu_responsive{margin: 1.3em 0;}
+	.loginBloc{width: 100%;left: 0;margin-left: 0;}
+	.loginBloc .logoLogin img{position: absolute;bottom: 0;left: 50%;width:60%; height:auto;}
+	.button{width:100%;}
+	body.page-interne  header{height:89px!important;}
+	img{width: 100%;height: auto;}
+	.scroll{display: none;}
+	/*<-- Contact--> */
+	.contact #contact-form p{margin:0;width:100%;}
+	.subfooter p{text-align:center !important;width:100%;float:none;}
+	.contact #contact-form p.message{width:100%;}
+
+}
+/* En dessous de 768px on affiche le menu */
+@media screen and (max-width: 768px)
+{
+	.menu_responsive{display: block;}
+	nav{display: none;}
+}

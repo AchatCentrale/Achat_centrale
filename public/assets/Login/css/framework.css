@@ -1,0 +1,282 @@
+/*-----------------------------------------------------------------------------------*/
+/* 	RESET
+/*-----------------------------------------------------------------------------------*/
+
+body a,body a:hover,body a:visited:,body a:active,body a:-webkit-any-link{color:inherit;text-decoration: none;}
+ul{list-style: none;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	COLOR
+/*-----------------------------------------------------------------------------------*/
+
+.colorTheme {color:#E5014C;}
+.bgTheme {background:#E5014C;}
+.bgDarkTheme {background:#CF0145;}
+.colorWhite {color:#fff;}
+.bgWhite{background:#fff;}
+.colorDarkGrey{color:#292828;}
+.colorGrey{color:#959595;}
+.noBackground{background:none;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	Small line
+/*-----------------------------------------------------------------------------------*/
+
+.line{width: 90px;height: 1px;margin: 5px auto;display: block;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	LOWER CASE  / UPPER CASE
+/*-----------------------------------------------------------------------------------*/
+
+.up{text-transform:uppercase;}
+.low{text-transform:lowercase;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	ITALIC
+/*-----------------------------------------------------------------------------------*/
+
+.italic{font-style: oblique;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	BOLD AND LIGHT
+/*-----------------------------------------------------------------------------------*/
+
+.bold900{font-weight:900;}
+.bold800{font-weight:800;}
+.bold700{font-weight:700;}
+.bold600{font-weight:600;}
+.bold500{font-weight:500;}
+.bold400{font-weight:400;}
+.bold300{font-weight:300;}
+.bold200{font-weight:200;}
+.bold100{font-weight:100;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	FONT
+/*-----------------------------------------------------------------------------------*/
+
+.font0_5em{font-size:0.5em }
+.font0_8em{font-size:0.8em }
+.font0_9em{font-size:0.9em }
+.font1em{font-size:1em }
+.font1_2em{font-size:1.2em }
+.font1_3em{font-size:1.3em }
+.font1_5em{font-size:1.5em }
+.font2em{font-size:2em }
+.font3em{font-size:3em}
+.font4em{font-size:4em}
+.font5em{font-size:5em%}
+.font6em{font-size:6em%}
+.font7em{font-size:7em%}
+
+.font14px{font-size:14px;}
+/*-----------------------------------------------------------------------------------*/
+/* 	ALIGNEMENT
+/*-----------------------------------------------------------------------------------*/
+
+.floatL{float:left;}
+.floatR{float:right;}
+.middle{margin:auto;}
+.txtCenter{text-align:center;}
+.txtCenterImportant{text-align:center !important;}
+.txtRight{text-align:right;}
+.txtLeft{text-align:left;}
+.txtJustify{text-align:justify;}
+
+
+.block{display:block;}
+.blockImportant{display:block !important;}
+.inline{display:inline;}
+.inlineBlock{display:inline-block;}
+.inlineTable{display:inline-table;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	LISTES
+/*-----------------------------------------------------------------------------------*/
+
+ .squareInside{list-style: square inside;}
+ .squareOutside{list-style: square inside;}
+ 
+
+/*-----------------------------------------------------------------------------------*/
+/* 	POSITION
+/*-----------------------------------------------------------------------------------*/
+
+.absolute{position:absolute;}
+.relative{position:relative;}
+.fixed{position:fixed;}
+.static{position:static;}
+.staticImportant{position:static !important;}
+
+.top0{top:0;}
+.top1{top:1em;}
+.top2{top:2em;}
+.top3{top:3em;}
+
+.left1{left:1em;}
+.left2{left:2em;}
+.left3{left:3em;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	BORDER
+/*-----------------------------------------------------------------------------------*/
+
+.borderRight{border-right:solid 1px;}
+.borderRightX2{border-right:solid 2px;}
+.borderLeft{border-left:solid 1px;}
+.borderLeftX2{border-left:solid 2px;}
+.borderTop{border-top:solid 1px;}
+.borderTopX2{border-top:solid 2px;}
+.borderBottom{border-bottom:solid 1px;}
+.borderBottomX2{border-bottom:solid 2px;}
+.borderBottomX5{border-bottom:solid 5px;}
+
+.borderDottedRight{border-right:dotted 1px;}
+.borderDottedRightX2{border-right:dotted 2px;}
+.borderDottedLeft{border-left:dotted 1px;}
+.borderDottedLeftX2{border-left:dotted 2px;}
+.borderDottedTop{border-top:dotted 1px;}
+.borderDottedTopX2{border-top:dotted 2px;}
+.borderDottedBottom{border-bottom:dotted 1px;}
+.borderDottedBottomX2{border-bottom:dotted 2px;}
+
+.borderDashedRight{border-right:dashed 1px;}
+.borderDashedRightX2{border-right:dashed 2px;}
+.borderDashedLeft{border-left:dashed 1px;}
+.borderDashedLeftX2{border-left:dashed 2px;}
+.borderDashedTop{border-top:dashed 1px;}
+.borderDashedTopX2{border-top:dashed 2px;}
+.borderDashedBottom{border-bottom:dashed 1px;}
+.borderDashedBottomX2{border-bottom:dashed 2px;}
+
+.noBorder{border:none;}
+
+.borderX1{border:1px solid;}
+.borderX2{border:2px solid;}
+.borderX3{border:3px solid;}
+.borderX4{border:4px solid;}
+.borderX5{border:5px solid;}
+
+.borderTheme {border-color:#E5014C;}
+.borderWhite {border-color:#fff;}
+.borderGrey {border-color:#c4c2c2;}
+
+/*-----------------------------------------------------------------------------------*/
+/*	MARGIN 	
+/*-----------------------------------------------------------------------------------*/
+
+.noMargin{margin:0;}
+.noMarginImportant{margin:0 !important;}
+.noMarginTop{margin-top:0;}
+.noMarginBottom{margin-bottom:0;}
+.noMarginBottomImportant{margin-bottom:0 !important;}
+.noMarginLeft{margin-left:0;}
+.noMarginRight{margin-right:0;}
+.noMarginR_L{margin-right:0;margin-left: 0;}
+.noMarginT_B{margin-top:0;margin-bottom:0;}
+.marginBottomX0_25{margin-bottom:0.25em;}
+.marginBottomX0_5{margin-bottom:0.5em;}
+.marginBottomX1{margin-bottom:1em;}
+.marginBottomX1_5{margin-bottom:1.5em;}
+.marginBottomX1Important{margin-bottom:1em !important;}
+.marginBottomX1_5Important{margin-bottom:1.5em !important;}
+.marginBottomX2{margin-bottom:2em;}
+.marginBottomX3{margin-bottom:3em;}
+.marginTopX0_5{margin-top:0.5em;}
+.marginTopX1{margin-top:1em;}
+.marginTopX2{margin-top:2em;}
+.marginTopX3{margin-top:3em;}
+.marginLeftX0_8{margin-left:0.8em;}
+.marginLeftX1{margin-left:1em;}
+.marginLeftX2{margin-left:2em;}
+.marginLeftX2_Important{margin-left:2em !important;}
+.marginLeftX3{margin-left:3em;}
+.marginLeftX4{margin-left:4em;}
+.marginLeftX5{margin-left:5em;}
+.marginRightX0_8{margin-right:0.8em;}
+.marginRightX1{margin-right:1em;}
+.marginRightX2{margin-right:2em;}
+.marginRight3{margin-right:3em;}
+
+/*-----------------------------------------------------------------------------------*/
+/*	PADDING
+/*-----------------------------------------------------------------------------------*/
+.noPadding{padding:0 !important;}
+.paddingX0_5{padding:0.5em;}
+.padding{padding:1em;}
+.paddingX1_5{padding:1.5em;}
+.paddingX2{padding:2em;}
+.paddingX3{padding:3em;}
+.paddingTopX0_5{padding-top:0.5em;}
+.paddingTopX1{padding-top:1em;}
+.paddingTopX2{padding-top:2em;}
+.paddingTopX3{padding-top:3em;}
+.noPaddingLeft{padding-left:0!important;}
+.paddingLeftX0_5{padding-left:0.5em;}
+.paddingLeftX1{padding-left:1em;}
+.paddingLeftX2{padding-left:2em;}
+.paddingLeftX3{padding-left:3em;}
+.noPaddingRight{padding-right:0!important;}
+.paddingRightX0_5{padding-right:0.5em;}
+.paddingRightX1{padding-right:1em;}
+.paddingRightX2{padding-right:2em;}
+.paddingRightX3{padding-right:3em;}
+.noPaddingBottom{padding-bottom:0!important;}
+.paddingBottomX0_25{padding-bottom:0.25em;}
+.paddingBottomX0_5{padding-bottom:0.5em;}
+.paddingBottomX0_75{padding-bottom:0.75em;}
+.paddingBottomX1{padding-bottom:1em;}
+.paddingBottomX2{padding-bottom:2em;}
+.paddingBottomX3{padding-bottom:3em;}
+.paddingBottomX4{padding-bottom:4em;}
+.paddingBottomX5{padding-bottom:5em;}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	LINE HEIGHT
+/*-----------------------------------------------------------------------------------*/
+.lineHeight{line-height:1em;}
+.lineHeightX1_5{line-height:1.5em;}
+.lineHeightX2{line-height:2em;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	WIDTH
+/*-----------------------------------------------------------------------------------*/
+.widthAuto{width:auto;}
+.width30{width:30%;}
+.width40{width:40%;}
+.width45{width:45%;}
+.width48{width:48%;}
+.width50{width:50%;}
+.width60{width:60%;}
+.width80{width:80%;}
+.width90{width:90%;}
+.width100{width:100%;}
+
+/*-----------------------------------------------------------------------------------*/
+/* 	Height
+/*-----------------------------------------------------------------------------------*/
+
+.heightAuto{height:auto;}
+.heightAutoImportant{height:auto !important;}
+.height50{height:50%;}
+.height45{height:45%;}
+.height100{height:100%;}
+
+/*-----------------------------------------------------------------------------------*/
+/*	CLEAR
+/*-----------------------------------------------------------------------------------*/
+.clear{overflow: hidden;}
+
+/*-----------------------------------------------------------------------------------*/
+/*  DIVIDER
+/*-----------------------------------------------------------------------------------*/
+.vertical-divider{width:1px;height:100%;background: #ffffff;background: -moz-linear-gradient(top,  #ffffff 0%, #c5c5c2 50%, #ffffff 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(50%,#c5c5c2), color-stop(100%,#ffffff));background: -webkit-linear-gradient(top,  #ffffff 0%,#c5c5c2 50%,#ffffff 100%);background: -o-linear-gradient(top,  #ffffff 0%,#c5c5c2 50%,#ffffff 100%);background: -ms-linear-gradient(top,  #ffffff 0%,#c5c5c2 50%,#ffffff 100%);background: linear-gradient(to bottom,  #ffffff 0%,#c5c5c2 50%,#ffffff 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );}
+
+/*-----------------------------------------------------------------------------------*/
+/*	Z-INDEX 	
+/*-----------------------------------------------------------------------------------*/
+.z0{z-index:0;}
+.z10{z-index:10;}
+.z100{z-index:100;}
+.z200{z-index:200;}

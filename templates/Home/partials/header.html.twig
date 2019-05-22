@@ -32,7 +32,7 @@
             <div class="level-right">
                 <p style="margin-right: 15px;" >Contacter la centrale</p>
                 <p class="level-item">
-                    <a href="Logout.asp" class="Texte_MenuHaut" title="Se déconnecter"><img src="http://bmshop.fr/Images/Charte/Picto_SeDeconnecter.png" alt="Se déconnecter" width="30" height="32" border="0"></a>
+                    <a href="/logout" class="Texte_MenuHaut" title="Se déconnecter"><img src="http://bmshop.fr/Images/Charte/Picto_SeDeconnecter.png" alt="Se déconnecter" width="30" height="32" border="0"></a>
                 </p>
             </div>
         </nav>
@@ -45,9 +45,7 @@
         <div id="header-logo">
             <h1>
                 <a title="Achat centrale" href="/">
-                    <img class="header-logo-picture"
-                         src="http://v2.achatcentrale.fr/Images/Charte/Logo_AchatCentrale.jpg"
-                         alt="Achat centrale">
+                    <img class="header-logo-picture" src="{{ absolute_url(asset('images/Logo/Logo_ac_home.png')) }}" alt="Achat centrale">
                 </a>
             </h1>
         </div>
@@ -59,6 +57,12 @@
                     <span class="img-header-loupe"></span>
                 </button>
             </form>
+        </div>
+        <div id="header-easy-shopping">
+            <div id="header-easy-shopping-button">
+                <span class="img-header-easy-shopping"></span>
+                <p class="title">PROMO</p>
+            </div>
         </div>
         <div id="header-account">
             <div id="header-account-button">

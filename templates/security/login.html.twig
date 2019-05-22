@@ -1,127 +1,125 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Log in!{% endblock %}
-
-
-{% block stylesheets %}
-
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/vendor/bootstrap/css/bootstrap.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/vendor/animate/animate.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/vendor/css-hamburgers/hamburgers.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/vendor/animsition/css/animsition.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/vendor/select2/select2.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/vendor/daterangepicker/daterangepicker.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/Login/css/main.css') }}">
-    <!--===============================================================================================-->
-
-{% endblock %}
-
-{% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-
-</form>
 
 
 
-    <div class="limiter">
-        <div class="container-login100">
-            <div class="wrap-login100 p-t-50 p-b-90">
-                <form method="post" class="login100-form validate-form flex-sb flex-w">
-					<span class="login100-form-title p-b-51">
-						Se connecter
-					</span>
-
-
-                    {#
-                        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                        See https://symfony.com/doc/current/security/remember_me.html
-
-                        <div class="checkbox mb-3">
-                            <label>
-                                <input type="checkbox" name="_remember_me"> Remember me
-                            </label>
-                        </div>
-                    #}
 
 
 
-                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
-                        <input class="input100" value="{{ last_username }}" name="usMail" id="inputUsMail" placeholder="Us Mail" required autofocus>
-                        <span class="focus-input100"></span>
-                    </div>
 
 
-                    <div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
-                        <input class="input100" type="password" name="password" id="inputPassword" placeholder="Password" required>
-                        <span class="focus-input100"></span>
-                    </div>
-                    <input type="hidden" name="_csrf_token"
-                           value="{{ csrf_token('authenticate') }}"
-                    >
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <title>Achat-centrale - Se connecter</title>
+    <meta name="description" content="Centrale d'achat / Centrale d'achat pour les entreprises">
+    <meta name="author" content="Achat Centrale">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/Login/css/tuktuk.css') }} ">
+    <link rel="stylesheet" href="{{ asset('assets/Login/css/tuktuk.icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Login/css/layout.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Login/css/framework.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Login/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/Login/css/jquery.maximage.min.css') }}">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,500,600,700,300' rel='stylesheet' type='text/css'>
+    <!-- Favicons -->
+    <link rel="icon" href="{{ asset('assets/Login/images/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('assets/Login/images/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/Login/images/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/Login/images/apple-touch-icon-114x114.png') }}">
 
-                    <div class="flex-sb-m w-full p-t-3 p-b-24">
-                        <div class="contact100-form-checkbox">
-                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-                            <label class="label-checkbox100" for="ckb1">
-                                Remember me
-                            </label>
-                        </div>
-                    </div>
 
-                    <div class="container-login100-form-btn m-t-17">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
-                    </div>
-
-                </form>
-            </div>
+</head>
+<body id="content">
+<header id="header">
+    <div class="row">
+        <div class="column_2">
+            <a class="logo txtCenter" href="./" alt="Retour à l'accueil" title="Retour à l'accueil">
+                <img class="marginTopX1_5 inline responsive" src="{{ absolute_url(asset('images/Logo/Logo_ac_home.png')) }}" alt="Achat centrale" title="Achat Centrale"  />
+            </a>
+        </div>
+        <div class="column_10">
+            <p class="baseline">Achat Centrale, <br />Regroupons nous pour mieux acheter</p>
+            <form method="post">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+            </form>
+            <nav>
+                <ul class="primary">
+                    <li><a class="scrollD" href="#connexion">Se connecter</a></li>
+                </ul>
+            </nav>
         </div>
     </div>
+</header>
+
+<!-- slider -->
+<section class="slider" id="connexion">
+    <div class="loginBloc txtCenter">
+        <div class="logoLogin">
+            <img class="inline" src="{{ absolute_url(asset('images/Logo/Logo_ac_home.png')) }}" alt="BMShop" title="BMShop" width="240" height="65" />
+        </div>
+        <h1>Connexion</h1>
+        <form method="post" id="login">
 
 
-    <div id="dropDownSelect1"></div>
 
 
-    </body>
-    </html>
 
-{% endblock %}
+            <div data-validate = "Username is required">
+                <input value="{{ last_username }}" name="usMail" type="text" placeholder="Us Mail" required autofocus>
+            </div>
 
-{% block javascripts %}
 
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/vendor/animsition/js/animsition.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/vendor/bootstrap/js/popper.js') }}"></script>
-    <script src="{{ asset('assets/Login/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/vendor/select2/select2.min.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/vendor/daterangepicker/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/Login/vendor/daterangepicker/daterangepicker.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/vendor/countdowntime/countdowntime.js') }}"></script>
-    <!--===============================================================================================-->
-    <script src="{{ asset('assets/Login/js/main.js') }}"></script>
-{% endblock %}
+            <div  data-validate = "Password is required">
+                <input id="PASS" type="password" name="password"  placeholder="Password" required>
+            </div>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+            <div class="remember_me">
+                <input name="remember-me" type="checkbox" id="remeberMe" value="true" />
+                <label for="remeberMe">Se souvenir de moi</label>
+            </div>
+
+
+
+
+            <div class="forgot_password">
+                <a href="Login.asp?Theme=Mot_de_passe_perdu" title="Mot de passe oublié" class="forgot">Mot de passe oublié</a>
+            </div>
+            <input type ="submit" id="loginButton" class="button" value="Se connecter">
+
+        </form>
+    </div>
+    <div id="maximage">
+        <div>
+            <img width="1920" height="1280" src="{{ absolute_url(asset('assets/Login/images/slider/funecap1.jpg')) }}" class="" alt="" />
+        </div>
+        <div>
+            <img width="1920" height="1280" src="{{ absolute_url(asset('assets/Login/images/slider/funecap2.jpg')) }}" class="" alt="" />
+        </div>
+        <div>
+            <img width="1920" height="1280" src="{{ absolute_url(asset('assets/Login/images/slider/funecap3.jpg')) }}" class="" alt="" />
+        </div>
+    </div>
+</section><!-- End slider -->
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/spin.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/jquery.scrollTo.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/jquery.spinjs.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/jquery.imagesloaded.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/tuktuk.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/jquery.sticky.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/jquery.cycle.all.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/jquery.maximage.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/Login/js/scripts.js') }}"></script>
+</body>
+</html>
+
+
+
