@@ -155,7 +155,7 @@
     margin-top: 45px;
     border: 4px solid #ccc;
     border-radius: 8px;
-    height: 55px;
+    height: 45px;
     position: relative;
     padding: 0 0 0 10px;
     background-color: #fff;
@@ -261,13 +261,13 @@
     margin-bottom: 0;
     height: 15px;
     list-style-type: none;
-		padding:0;
+    padding:0;
 }
 
 .menu-general ul li {
     display: inline;
     background-color: #d4d4d4;
-    padding: 17px 17px 14px 17px;
+    padding: 10px 17px 14px 17px;
     cursor: pointer;
     text-transform: uppercase;
 }
@@ -293,6 +293,10 @@
     margin-top: 20px;
 }
 
+.menu-general {
+    margin-left: 15%;
+}
+
 
 div.menu-general > ul > li:nth-child(1) {
     background-color: #ec591c;
@@ -302,18 +306,19 @@ div.menu-general > ul > li:nth-child(1) {
 div.menu-general > ul > li:nth-child(1) > a{
     color: white;
     text-decoration: none;
+    font-weight: 700;
 }
 
 div.menu-general li a{
     color: black;
     text-decoration: none;
     vertical-align: baseline;
-    font-weight: 600;
+    font-size: 11pt;
 
 }
 
 ul.liste-rayon {
-    margin-left: 12.9%;
+    margin-left: 15%;
 }
 
 
@@ -334,6 +339,35 @@ ul.liste-rayon {
     letter-spacing: -0.4px;
 }
 
+.menu-rayon > ul {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    width: 1240px;
+    border-left: 1px solid white;
+    min-height: 46px;
+    margin-bottom:0;
+}
+
+.menu-rayon > ul > li {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    position: relative;
+    padding: 5px 10px 5px 10px;
+    text-align: center;
+    border-right: 1px solid white;
+}
+
+.menu-case a {
+    color: white;
+}
+
+
+.menu-general li + li:hover{
+    background: #dbdbdb;
+}
 
 
 .menu-general li + li:hover{
@@ -344,9 +378,8 @@ ul.liste-rayon {
 
 
 .rayons-content{
-    position: absolute;
-    width: 1210px;
-    top: 40px;
+    width: 1240px;
+    top: 290px;
     height: 500px;
     z-index: 99999 !important;
     background-color: white;
@@ -355,6 +388,10 @@ ul.liste-rayon {
     -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    text-align: left;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .sub-menu {
@@ -407,9 +444,9 @@ a.sub-menu-link {
 
 
 .site-content {
-    width: 74%;
+    width: 1340px;
     margin: auto;
-    padding-bottom: 60px;
+    margin-bottom: 150px;
 }
 
 .site-content h1 {
@@ -459,7 +496,7 @@ a.sub-menu-link {
 .Promo_Mot2 {
     font-family: 'Tangerine';
     color: #888888;
-    font-size: 60px;
+    font-size: 55px;
 }
 
 
@@ -654,11 +691,13 @@ input[type=number]::-webkit-outer-spin-button {
     width: auto
 }
 
+
 .item {
     min-height: 410px;
     padding: 5px 25px;
     position: absolute;
     margin: 0 auto;
+    border: 1px solid #eaeaea;
 }
 
 
@@ -673,8 +712,9 @@ input[type=number]::-webkit-outer-spin-button {
 .list-item .img a img.picCore {
     max-width: 180px;
     max-height: 180px;
-    _width: 180px;
-    _height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .list-item ul li {

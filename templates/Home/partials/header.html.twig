@@ -148,7 +148,9 @@
 
                 {% for c in rayons %}
                     <li class="menu_item" data-key="rayons-{{ loop.index }}">
-                        <a href="">{{ c["CatTitre"] | encodingFrom | raw }}</a>
+                        <div class="menu-case">
+                            <a href="">{{ c["CatTitre"] | encodingFrom | raw }}</a>
+                        </div>
                         <div id="rayons-{{ loop.index }}" class="rayons-content" style="display: none;">
                             <div class="columns">
                                 <div class="column is-four-fifths">
