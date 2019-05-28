@@ -118,13 +118,13 @@
                             <span><i class="fas fa-chevron-right "></i>   &nbsp;Voir mon panier</span>
                         </a>
                     </div>
-                    {% else %}
+                {% else %}
                     <div class="header-cart-menu-empty">
-                            <span>Panier vide...</span>
-                            <br>
-                            <a href="/" data-connexion="actif" rel="nofollow">
-                                Découvrez nos bons plans
-                            </a>
+                        <span>Panier vide...</span>
+                        <br>
+                        <a href="/" data-connexion="actif" rel="nofollow">
+                            Découvrez nos bons plans
+                        </a>
                     </div>
                 {% endif %}
             </div>
@@ -142,48 +142,63 @@
                 {% endfor %}
             </ul>
         </div>
-        <div class="menu-rayon">
-            <ul class="liste-rayon">
+        <div id="site-menu">
+            <ul id="commercial-tree">
+
 
 
                 {% for c in rayons %}
-                    <li class="menu_item" data-key="rayons-{{ loop.index }}">
-                        <div class="menu-case">
-                            <a href="">{{ c["CatTitre"] | encodingFrom | raw }}</a>
-                        </div>
-                        <div id="rayons-{{ loop.index }}" class="rayons-content" style="display: none;">
-                            <div class="columns">
-                                <div class="column is-four-fifths">
-                                    <div class="columns sub-menu">
+                    <li id="commercial-tree-item-{{ loop.index }}" class="menu_item" data-key="1">
+                        <h2>
+                            <a href="/mobilier-bureau.htm" class="F_Cabin Majuscule" target="_self">
+                        <span>
+                            {{ c["CatTitre"] | encodingFrom | raw }}
+                        </span>
+                            </a>
+                        </h2>
+                        <div class="commercial-tree-content">
+                            <div id="catalog-menu-1">
+                                <div class="columns">
+                                    <div class="column is-four-fifths">
+                                        <div class="columns sub-menu">
 
 
-                                        {% for sc in c["sousCategories"] %}
-                                            <div class="column">
-                                                <h3>
-                                                    <a class="sub-menu-link" href="">{{ sc["CatTitre"] | encodingFrom }}</a>
-                                                </h3>
-                                                <ul class="sub-cat">
-                                                    {% for ra in sc["rayon"] %}
-                                                        <li><a href="{{ ra["URL"] }}">{{ ra["CatTitre"] | encodingFrom }}</a></li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </div>
-                                        {% endfor %}
+                                            {% for sc in c["sousCategories"] %}
+                                                <div class="column">
+                                                    <h3>
+                                                        <a class="sub-menu-link" href="">{{ sc["CatTitre"] | encodingFrom }}</a>
+                                                    </h3>
+                                                    <ul class="sub-cat">
+                                                        {% for ra in sc["rayon"] %}
+                                                            <li><a href="{{ ra["URL"] }}">{{ ra["CatTitre"] | encodingFrom }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            {% endfor %}
 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="column banners">
-                                    <a href="">
-                                        {#                                        <img src="https://fakeimg.pl/200x350/">#}
-                                    </a>
+                                    <div class="column banners">
+                                        <a href="">
+                                            <img src="https://fakeimg.pl/200x350/">
+                                        </a>
+                                    </div>
+                                    <span class="clear"></span>
                                 </div>
                             </div>
                         </div>
                     </li>
                 {% endfor %}
+
+
+
             </ul>
         </div>
     </div>
+
+
+
+
 
 </header>
 

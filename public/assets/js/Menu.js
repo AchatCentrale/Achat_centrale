@@ -1,28 +1,26 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     let elem = document.querySelectorAll(".menu_item");
 
     elem.forEach(function (e) {
-        e.addEventListener('mouseover', function () {
-            let key = e.dataset.key;
+        e.addEventListener('mouseover', function (e) {
 
-            document.getElementById(key).style.display = "block";
+
+            let elemToShow = document.querySelector("#"+this.id+" .commercial-tree-content");
+            console.log(this);
+            console.log(elemToShow);
+            elemToShow.style.display = "block";
             document.querySelector(".mask-menu").style.display = "block";
-            document.querySelector('li[data-key="' + key + '"] ').style.backgroundColor = "#e54b0d";
-
         });
+
 
         e.addEventListener('mouseleave', function () {
-            let key = e.dataset.key;
-
-            document.getElementById(key).style.display = 'none';
+            let elemToShow = document.querySelector("#"+this.id+" .commercial-tree-content");
+            elemToShow.style.display = "none";
             document.querySelector(".mask-menu").style.display = 'none';
-            document.querySelector('li[data-key="' + key + '"] ').style.backgroundColor = "unset";
-
         });
+
+
+
+
     });
 });
-
-
-
-
-
