@@ -167,7 +167,6 @@ class HomeController extends AbstractController
                 }
             }
 
-            dump($produit);
             $Produits[$i]["produits"] = $produit;
         }
 
@@ -177,7 +176,6 @@ class HomeController extends AbstractController
         $panier = $panierService->getPanierContent($contact_id);
 
 
-        dump($Produits);
 
         return $this->render('Home/index.html.twig', [
             "rayons" => $Categories,
