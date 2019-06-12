@@ -185,7 +185,14 @@
 
                                                             {% elseif produit["PR_TYPE_LIEN"] == "WEB" %}
 
-                                                                <a href="{{ produit["PR_LIEN"] }}" class="btn_add_to_cart F_Cabin" type="button" name="Submit"  style=" cursor:pointer;">J'y vais</a>
+{#                                                                <a href="{{ produit["PR_LIEN"] }}" class="btn_add_to_cart F_Cabin" type="button" name="Submit"  style=" cursor:pointer;">J'y vais</a>#}
+{#                                                                #}
+{#                                                                #}
+
+                                                                <button class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
+                                                                    <p style="white-space: nowrap;">J'y vais</p>
+                                                                    <i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
+                                                                </button>
 
                                                             {% elseif produit["PR_TYPE_LIEN"] == "DEVIS" %}
 
