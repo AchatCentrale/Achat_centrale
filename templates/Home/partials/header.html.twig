@@ -109,7 +109,7 @@
                 {% if panier_count() > 0 %}
                     <div>
                         <div class="header-cart-menu-titre">
-                            <b>Mon panier <span id="qty-panier-header">{{ panier_count() }}</span></b> {{ panier_count() >= 1 ? "articles" : "article" }}
+                            <b>Mon panier <span id="qty-panier-header-popup">{{ panier_count() }}</span></b> {{ panier_count() >= 1 ? "articles" : "article" }}
 
                         </div>
                         <div class="header-cart-menu-contenu">
@@ -139,7 +139,7 @@
                                             <p class="is-size-5" >Total HT</p>
                                         </div>
                                         <div class="column is-pulled-right" style="padding-top: 29px;">
-                                            <p  class="is-size-5"><b><span id="total_price_cart">{{ panier_total()| number_format(2, ',', ' ') }}</span>&nbsp;€</b></p>
+                                            <p  class="is-size-5"><b><span id="total_price_cart_popup">{{ panier_total()| number_format(2, ',', ' ') }}</span>&nbsp;€</b></p>
                                         </div>
                                     </div>
                                 </li>
