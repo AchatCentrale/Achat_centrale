@@ -24,6 +24,9 @@ class PanierService
     {
 
         $sqlTotal = "SELECT
+                            PT_ID,
+                            PT_QTE,
+                            PR_ID,
                             PR_ID,
                            (SELECT PR_NOM FROM CENTRALE_PRODUITS.dbo.PRODUITS WHERE PRODUITS.PR_ID = PANIER_TEMP.PR_ID) as NOM_PRODUITS,
                            (SELECT PR_PRIX_CA FROM CENTRALE_PRODUITS.dbo.PRODUITS WHERE PANIER_TEMP.PR_ID = PRODUITS.PR_ID) as PRIX,

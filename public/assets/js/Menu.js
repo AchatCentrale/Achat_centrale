@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             let elemToShow = document.querySelector("#"+this.id+" .commercial-tree-content");
-            console.log(this);
-            console.log(elemToShow);
             elemToShow.style.display = "block";
             document.querySelector(".mask-menu").style.display = "block";
         });

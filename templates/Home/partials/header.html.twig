@@ -24,15 +24,15 @@
                         <div class="column">
                             <img src="http://bmshop.fr/Images/Charte/Picto_Autres.png" alt="autres">
                         </div>
-                        <a href="" style="margin-top: 13px; color: #7f7d74;"><p>Autres</p></a>
+                        <a href="" style="margin-top: 20px; color: #7f7d74;"><p>Autres</p></a>
                     </div>
                 </div>
             </div>
 
             <div class="level-right">
-                <p style="margin-right: 15px;" >Contacter la centrale</p>
+                <p style="margin-right: 15px;margin-top: 10px;" ><a href="">Contacter la centrale</a></p>
                 <p class="level-item">
-                    <a href="/logout" class="Texte_MenuHaut" title="Se déconnecter"><img src="http://bmshop.fr/Images/Charte/Picto_SeDeconnecter.png" alt="Se déconnecter" width="30" height="32" border="0"></a>
+                    <a href="/logout" style="margin-top: 10px;" title="Se déconnecter"><img src="http://bmshop.fr/Images/Charte/Picto_SeDeconnecter.png" alt="Se déconnecter" width="30" height="32" border="0"></a>
                 </p>
             </div>
         </nav>
@@ -74,13 +74,24 @@
             </div>
             <div class="header-account-menu arrow-account-box" style="display: none;">
                 <div class="header-account-menu-top">
-                    <p><i class="fas fa-user"></i>    &nbsp;{{ app.user.CCPrenom }}  {{ app.user.CCNom }}</p>
+                    <div class="columns">
+                        <div class="column ">
+                            <p class="mon-compte-user-detail">Bonjour <b>{{ app.user.CCPrenom | capitalize }}  {{ app.user.CCNom | capitalize }}</b></p>
+                        </div>
+                        <div class="column is-two-fifths">
+                            <p><a href="/logout" class="mon-compte-user-logout">Déconnexion</a></p>
+                        </div>
+                    </div>
                 </div>
                 <div class="header-account-menu-detail">
                     <ul class="header-account-menu-liste">
-                        <li><a href="">Mon espace client</a></li>
-                        <li><a href="">Mes factures</a></li>
-                        <li><a href="">Gérer mes utilisateurs</a></li>
+                        <li class="mon-compte-border-li">
+                            <i class="fas fa-user-circle fa-xs"></i>&nbsp;<a href="">Mon espace client</a>
+                        </li>
+                        <li class="mon-compte-border-li" >
+                            <i class="fas fa-shopping-basket fa-xs"></i>&nbsp;<a href="">Mes commandes</a></li>
+                        <li class="mon-compte-border-li" >
+                            <i class="fas fa-user-lock fa-xs"></i>&nbsp;<a href="">Changer mon mot de passe</a></li>
                     </ul>
                 </div>
             </div>
@@ -89,42 +100,68 @@
             <div id="header-cart-button">
                 <a href="#" style="text-decoration:none;" rel="nofollow">
                     <span class="img-header-cart"></span>
-                    <span class="total-product">{{ panier_count() }}</span>
+                    <span id="qty-panier-header" class="total-product">{{ panier_count() }}</span>
                     <p class="title">PANIER</p>
-                    <p class="sub-title"> {{ panier_total()| number_format(2, ',', ' ') }}&nbsp;€ </p>
+                    <p class="sub-title"> <span id="total_price_cart">{{ panier_total()| number_format(2, ',', ' ') }}</span>&nbsp;€ </p>
                 </a>
             </div>
             <div class="header-cart-menu arrow-box" style="display: none;">
                 {% if panier_count() > 0 %}
                     <div>
                         <div class="header-cart-menu-titre">
-                            Vous avez <b>{{ panier_count() }}</b> produits dans votre panier
+                            <b>Mon panier <span id="qty-panier-header">{{ panier_count() }}</span></b> {{ panier_count() >= 1 ? "articles" : "article" }}
+
                         </div>
                         <div class="header-cart-menu-contenu">
-
                             <ul>
                                 {% for p in panier %}
-                                    <li>
-                                        <img width="70px" src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/PRODUIT_{{ p["PR_ID"] }}/{{ p["LOGO"] }}" alt="">
-                                        <a href="#">{{ p["NOM_PRODUITS"] | raw }}</a>
-                                        <span>{{ p["PRIX"]| number_format(2, ',', ' ') }}&nbsp;€ </span>
+                                    <li id="pt-{{ p["PT_ID"] }}">
+                                        <div class="case-panier">
+                                           <div class="columns">
+                                               <div class="column is-3">
+                                                   <img width="70px" style="transform: translate(50%);" src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/PRODUIT_{{ p["PR_ID"] }}/{{ p["LOGO"] }}" alt="">
+                                               </div>
+                                               <div class="column is-7 case-panier-contenu">
+                                                   <span><b>{{ p["PRIX"]| number_format(2, ',', ' ') }}&nbsp;€ </b></span> <span>Quantité : {{ p["PT_QTE"] }}</span>
+                                                   <br>
+                                                   <a class="case-panier-contenu-nom" href="#">{{ p["NOM_PRODUITS"] | raw }}</a>
+                                               </div>
+                                               <div class="column is-2" style="padding-top: 30px;">
+                                                   <i data-prid="{{ p["PT_ID"] }}" data-price="{{ p["PRIX"] }}" class="fas fa-trash fa-2x cursor remove-produit-panier"></i>
+                                               </div>
+                                           </div>
+                                        </div>
                                     </li>
                                 {% endfor %}
+                                <li>
+                                    <div class="columns">
+                                        <div class="column is-pulled-left" style="margin-left: 53px;padding: 30px;">
+                                            <p class="is-size-5" >Total HT</p>
+                                        </div>
+                                        <div class="column is-pulled-right" style="padding-top: 29px;">
+                                            <p  class="is-size-5"><b><span id="total_price_cart">{{ panier_total()| number_format(2, ',', ' ') }}</span>&nbsp;€</b></p>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
                     <div class="header-cart-menu-bottom">
                         <a class="button is-black" href="">
-                            <span><i class="fas fa-chevron-right "></i>   &nbsp;Voir mon panier</span>
+                            <span><i class="fas fa-chevron-right "></i>&nbsp;Voir mon panier</span>
                         </a>
                     </div>
                 {% else %}
                     <div class="header-cart-menu-empty">
-                        <span>Panier vide...</span>
+                        <i class="fas fa-shopping-cart"></i>
                         <br>
-                        <a href="/" data-connexion="actif" rel="nofollow">
-                            Découvrez nos bons plans
-                        </a>
+                        <span style="font-weight: 600; margin-top: 10px;">Panier vide...</span>
+                        <br>
+                       <div class="discover-promo-btn">
+                           <a href="/"  rel="nofollow">
+                               Découvrez nos bons plans
+                           </a>
+                       </div>
                     </div>
                 {% endif %}
             </div>
@@ -150,7 +187,7 @@
                 {% for c in rayons %}
                     <li id="commercial-tree-item-{{ loop.index }}" class="menu_item" data-key="1">
                         <h2>
-                            <a href="/mobilier-bureau.htm" class="F_Cabin Majuscule" target="_self">
+                            <a href="" class="F_Cabin Majuscule" target="_self">
                         <span>
                             {{ c["CatTitre"] | encodingFrom | raw }}
                         </span>

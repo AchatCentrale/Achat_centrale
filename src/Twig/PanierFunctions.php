@@ -58,6 +58,7 @@ class PanierFunctions extends AbstractExtension
         }
 
         $user_id = $token->getUser()->getCcId();
+        dump($token->getUser());
 
         $sqlTotal = "SELECT (SELECT sum(PR_PRIX_CA) FROM CENTRALE_PRODUITS.dbo.PRODUITS WHERE PRODUITS.PR_ID = PANIER_TEMP.PR_ID) as TOTAL FROM CENTRALE_ACHAT_v2.dbo.PANIER_TEMP WHERE CC_ID = :id AND ME_ID = 0";
 

@@ -54,6 +54,25 @@ class PanierController extends AbstractController
     }
 
 
+    /**
+     * @Route("/delete", name="remove_cart", methods={"POST"})
+     */
+    public function remove(Connection $connection, Request $request, SiteService $helper)
+    {
+
+        $data = $data = json_decode($request->getContent(), true);
+
+        $sqlInsertNewCart = "DELETE FROM CENTRALE_ACHAT_v2.dbo.PANIER_TEMP WHERE PT_ID = :id";
+
+        $conn = $connection->prepare($sqlInsertNewCart);
+        $conn->bindValue("id", $data["ptid"]);
+
+        $result = $conn->execute();
+
+
+
+        return $this->json(true);
+    }
 
 
 
