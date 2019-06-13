@@ -432,6 +432,8 @@ ul.liste-rayon {
 
 .sub-menu li a {
     color: #7a7a7a !important;
+    font-weight: 500;
+    font-size: 12pt;
 }
 
 
@@ -442,13 +444,12 @@ ul.liste-rayon {
 .sub-cat li {
     display: list-item !important;
     border: 0;
-    padding: 0px 6px;
+    padding: 3px 6px;
     cursor: auto !important;
     position: unset;
     text-transform: capitalize !important;
     height: unset;
 }
-
 
 a.sub-menu-link {
     color: black !important;

@@ -76,8 +76,12 @@ moins.on('click', function (e) {
         $('#'+idElement+' .p-quantity-input').val(nextValue);
     }
 
-
-
-
-
 });
+
+(function() {
+    //accordeons bulma - rayons produit
+    var accordions = bulmaAccordion.attach();
+
+})();
+
+
