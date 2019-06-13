@@ -1,6 +1,6 @@
 <ul class="menu-general-range">
     {% for r in espacePrive %}
-        <li><a href="">{{ r["CatTitre"] | raw }}</a></li>
+        <li><a href="">{{ r["CatTitre"] | encodingFrom | raw }}</a></li>
 
 
     {% endfor %}
