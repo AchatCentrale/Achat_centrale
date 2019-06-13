@@ -41,4 +41,24 @@ class PanierService
         return $panier;
     }
 
+    public function isProductExistInCart($prID, $ccID): Bool
+    {
+
+        $sql = "SELECT count(*) FROM CENTRALE_ACHAT_v2.dbo.PANIER_TEMP WHERE PR_ID = :id AND CC_ID = :cc_id";
+
+        $conn = $this->conn->prepare($sql);
+        $conn->bindValue("id", $prID);
+        $conn->bindValue("cc_id", $ccID);
+        $conn->execute();
+        $panier = $conn->fetchAll();
+
+        $count = $panier[0]["computed"];
+
+        if ($count > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

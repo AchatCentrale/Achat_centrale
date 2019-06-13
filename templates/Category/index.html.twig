@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Catégorie d'achat - Achat centrale{% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+
+    <div class="site-content">
+
+        <div class="welcome-container">
+            <div class="columns">
+                <div class="column is-four-fifths">
+                    <h1 class="title">{{ category["CatDescription"] }}</h1>
+                    <h2 class="subtitle">Tout les rayons</h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="columns is-centered">
+                {% for c in category["sousCategories"] %}
+                   
+                    <div class="column">
+                        <h2 class="is-size-4 has-text-weight-bold">{{ c["CatTitre"] }}</h2>
+                        <ul>
+                            {% for r in c["rayon"] %}
+                                <li>
+                                    <a href="{{ path('category_rayons_all', { "category" : c["CatTitreReq"], "rayon": r["CatTitreReq"] }) }}">{{ r["CatTitre"] }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+{% endblock %}
+
+

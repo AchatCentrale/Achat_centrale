@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Services\PanierService;
 use App\Services\SiteService;
 use Doctrine\DBAL\Connection;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,7 +21,7 @@ class PanierController extends AbstractController
     /**
      * @Route("/new", name="new", methods={"POST"})
      */
-    public function new(Connection $connection, Request $request, SiteService $helper)
+    public function new(Connection $connection, Request $request, SiteService $helper, PanierService $panierService)
     {
 
         $data = $data = json_decode($request->getContent(), true);
@@ -32,6 +33,11 @@ class PanierController extends AbstractController
         $fourn_id = $helper->getFournFromProduct($produit_id);
         $quantity = $data["qty"];
         $prix = $data["prix"];
+
+
+        if ($panierService->isProductExistInCart($produit_id, $this->getUser()->getCcId())){
+
+        }
 
 
         if( $client_id !== '' && $contact_id !== '' && $produit_id !== '' && $quantity !== '' && $prix !== ''){
@@ -74,6 +80,19 @@ class PanierController extends AbstractController
         return $this->json(true);
     }
 
+
+    public function displayCartHeader(PanierService $panierService)
+    {
+
+        $contact_id = $this->getUser()->getCcId();
+
+        $panier = $panierService->getPanierContent($contact_id);
+
+
+        return $this->render('partials/Panier_header.html.twig', ['panier' => $panier]);
+
+
+    }
 
 
 }

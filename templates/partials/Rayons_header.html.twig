@@ -1,0 +1,50 @@
+<ul id="commercial-tree">
+
+
+
+    {% for c in rayons %}
+        <li id="commercial-tree-item-{{ loop.index }}" class="menu_item" data-key="1">
+            <h2>
+                <a href="{{ path('category_categorie_all', { 'category' : c["CatTitreReq"] }) }}" class="F_Cabin Majuscule" target="_self">
+                        <span>
+                            {{ c["CatTitre"] | encodingFrom | raw }}
+                        </span>
+                </a>
+            </h2>
+            <div class="commercial-tree-content">
+                <div id="catalog-menu-1">
+                    <div class="columns">
+                        <div class="column is-four-fifths">
+                            <div class="columns sub-menu">
+
+
+                                {% for sc in c["sousCategories"] %}
+                                    <div class="column">
+                                        <h3>
+                                            <a class="sub-menu-link" href="">{{ sc["CatTitre"] | encodingFrom }}</a>
+                                        </h3>
+                                        <ul class="sub-cat">
+                                            {% for ra in sc["rayon"] %}
+                                                <li><a href="{{ path('category_rayons_all', {  'category' : c["CatTitreReq"], 'rayon' : ra["CatTitreReq"] }) }}">{{ ra["CatTitre"] | encodingFrom }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                        <div class="column banners">
+                            <a href="">
+                                <img src="https://fakeimg.pl/200x350/">
+                            </a>
+                        </div>
+                        <span class="clear"></span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+
+
+
+</ul>

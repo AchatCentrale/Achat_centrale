@@ -14,7 +14,7 @@
 {% block body %}
 
 
-    {% include 'Home/partials/header.html.twig' with {'rayons' : rayons, 'espacePrive' : espacePrive, 'panier' : panier} %}
+
 
 
 
@@ -92,7 +92,7 @@
                                                 </div>
 
                                                 <div class="container-remise">
-                                                    <p>{{ produit["PR_PRIX_CA"] | remise(produit["PR_PRIX_PUBLIC"]) | round }} %</p>
+                                                    <p>- {{ produit["PR_PRIX_CA"] | remise(produit["PR_PRIX_PUBLIC"]) | round }} %</p>
                                                 </div>
 
                                                 <div class="item">
@@ -157,9 +157,12 @@
 
 
                                                         <div class="has_stock">
-                                                            <p>
-                                                                <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">&nbsp;en stock
-                                                            </p>
+                                                            {% if produit["PR_STOCK_GEST"] > 0 %}
+                                                                <p>
+                                                                    <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">&nbsp;en stock
+                                                                </p>
+
+                                                            {% endif %}
                                                         </div>
 
 
@@ -280,7 +283,6 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="{{ asset('assets/js/Slider.js') }}"></script>
 {% endblock %}

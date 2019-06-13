@@ -1,0 +1,70 @@
+<div id="header-cart">
+    <div id="header-cart-button">
+        <a href="#" style="text-decoration:none;" rel="nofollow">
+            <span class="img-header-cart"></span>
+            <span id="qty-panier-header" class="total-product">{{ panier_count() }}</span>
+            <p class="title">PANIER</p>
+            <p class="sub-title"> <span id="total_price_cart">{{ panier_total()| number_format(2, ',', ' ') }}</span>&nbsp;€ </p>
+        </a>
+    </div>
+    <div class="header-cart-menu arrow-box" style="display: none;">
+        {% if panier_count() > 0 %}
+            <div>
+                <div class="header-cart-menu-titre">
+                    <b>Mon panier <span id="qty-panier-header-popup">{{ panier_count() }}</span></b> {{ panier_count() >= 1 ? "articles" : "article" }}
+
+                </div>
+                <div class="header-cart-menu-contenu">
+                    <ul>
+                        {% for p in panier %}
+                            <li id="pt-{{ p["PT_ID"] }}">
+                                <div class="case-panier">
+                                    <div class="columns">
+                                        <div class="column is-3">
+                                            <img width="70px" style="transform: translate(50%);" src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/PRODUIT_{{ p["PR_ID"] }}/{{ p["LOGO"] }}" alt="">
+                                        </div>
+                                        <div class="column is-7 case-panier-contenu">
+                                            <span><b>{{ p["PRIX"]| number_format(2, ',', ' ') }}&nbsp;€ </b></span> <span>Quantité : {{ p["PT_QTE"] }}</span>
+                                            <br>
+                                            <a class="case-panier-contenu-nom" href="#">{{ p["NOM_PRODUITS"] | raw }}</a>
+                                        </div>
+                                        <div class="column is-2" style="padding-top: 30px;">
+                                            <i data-prid="{{ p["PT_ID"] }}" data-price="{{ p["PRIX"] }}" class="fas fa-trash fa-2x cursor remove-produit-panier"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                        <li>
+                            <div class="columns">
+                                <div class="column is-pulled-left" style="margin-left: 53px;padding: 30px;">
+                                    <p class="is-size-5" >Total HT</p>
+                                </div>
+                                <div class="column is-pulled-right" style="padding-top: 29px;">
+                                    <p  class="is-size-5"><b><span id="total_price_cart_popup">{{ panier_total()| number_format(2, ',', ' ') }}</span>&nbsp;€</b></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="header-cart-menu-bottom">
+                <a class="button is-black" href="">
+                    <span><i class="fas fa-chevron-right "></i>&nbsp;Voir mon panier</span>
+                </a>
+            </div>
+        {% else %}
+            <div class="header-cart-menu-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <br>
+                <span style="font-weight: 600; margin-top: 10px;">Panier vide...</span>
+                <br>
+                <div class="discover-promo-btn">
+                    <a href="/" rel="nofollow">
+                        Découvrez nos bons plans
+                    </a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>

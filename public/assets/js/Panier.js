@@ -84,7 +84,7 @@
         postRequest(url, {ptid: ptID})
             .then(data => {
 
-                const valeur_totale_cart_val = parseFloat(valeur_totale_cart.text());
+                const valeur_totale_cart_val = valeur_totale_cart.text().replace(/ /g,'').replace(".", ",");
 
                 const nombre_article_panier_val = parseFloat(nombre_article_panier.text());
 
