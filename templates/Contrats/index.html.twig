@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Vos contrats - Achat centrale{% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+
+    <div class="site-content">
+
+        <div class="columns">
+            <div class="column is-4">
+                <h1 class="title">Vos contrats</h1>
+                <h2 class="subtitle">Vos prochaines échéances</h2>
+            </div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column is-2">
+                <div class="field">
+                    <p class="control has-icons-left">
+                        <input class="input" type="text" placeholder="Recherche">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </p>
+                </div>
+            </div>
+            <div class="column">
+
+                <a class="button is-success is-rounded">
+                    <span class="icon">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                    <span>Enregistrer un nouveau contrat</span>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column is-2">
+                <p style="margin: 10px 0;"><b>Trier par</b></p>
+                <div class="control">
+                    <div class="select">
+                        <select class="is-hovered">
+                            <option>Date croissante</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <p style="margin: 10px 0;"><b>Filtrer</b></p>
+                <div class="control">
+                    <div class="select">
+                        <select class="is-hovered">
+                            <option>Fournisseur</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="column is-2">
+                <p style="margin: 10px 0;"><b>Filtrer</b></p>
+                <div class="control">
+                    <div class="select">
+                        <select class="is-hovered">
+                            <option>Catégorie</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <article class="message">
+                <div class="message-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+            </article>
+            <article class="message is-danger">
+                <div class="message-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+            </article>
+            <article class="message is-warning">
+                <div class="message-body">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </div>
+            </article>
+        </div>
+
+
+    </div>
+
+
+
+
+{% endblock %}
+
+

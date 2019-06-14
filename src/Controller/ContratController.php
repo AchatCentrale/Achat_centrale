@@ -8,9 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * @Route("/Commandes", name="commande_")
+ * @Route("/Vos_contrats", name="contrat_")
  */
-class CommandeController extends AbstractController
+class ContratController extends AbstractController
 {
     /**
      * @Route("/", name="_index_all")
@@ -20,6 +20,6 @@ class CommandeController extends AbstractController
 
 
 
-        return $this->render('Commande/index.html.twig');
+        return $this->render('Contrats/index.html.twig');
     }
 }
