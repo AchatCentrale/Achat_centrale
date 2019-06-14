@@ -8,15 +8,15 @@ use Symfony\Component\Routing\Annotation\Route;
 
 
 /**
- * @Route("/Utilisateurs", name="utilisateur_")
+ * @Route("/Mes_identifiants", name="identifiant_")
  */
-class UtilisateurController extends AbstractController
+class IdentifiantController extends AbstractController
 {
     /**
      * @Route("/", name="_index_all")
      */
     public function index(): Response
     {
-        return $this->render('Utilisateur/index.html.twig');
+        return $this->render('Identifiant/index.html.twig');
     }
 }
