@@ -298,6 +298,7 @@
     padding: 10px 17px 14px 17px;
     cursor: pointer;
     text-transform: uppercase;
+    margin-right: 5px;
 }
 
 
@@ -434,6 +435,10 @@ ul.liste-rayon {
     color: #7a7a7a !important;
     font-weight: 500;
     font-size: 12pt;
+}
+
+.sub-menu li a:hover {
+    text-decoration: underline;
 }
 
 
@@ -2087,4 +2092,14 @@ footer {
 .container-remise p {
     font-size: 13pt;
     font-weight: 800;
+}
+
+.active_menu{
+    background-color: #ec591c;
+    color: white;
+}
+
+.no_active_menu{
+    background-color: #d4d4d4;
+    color: black;
 }
