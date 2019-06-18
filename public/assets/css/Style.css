@@ -84,7 +84,7 @@
 
 #header-logo {
     width: 25%;
-    margin-top: 40px;
+    margin-top: 53px;
 }
 
 
@@ -2102,4 +2102,88 @@ footer {
 .no_active_menu{
     background-color: #d4d4d4;
     color: black;
+}
+
+
+.produit_photo_principale{
+    background: url(../../images/Produits/Fiche_Photo.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 345px;
+    width: 370px;
+}
+
+
+.produit_container_info {
+    border-radius: 3px;
+    border: 1px solid #d7d9e4;
+    padding: 14px 12px;
+    position: relative;
+    text-align: center;
+    height: 130px;
+}
+
+
+.produit_photo_principale img {
+    width: 245px;
+    height: 260px;
+    padding-top: 25px;
+    margin-left: 25px;
+}
+
+.produit_valeur_reduction p {
+    font-family: 'Cabin', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    margin-top: 22px;
+}
+
+.produit_container_stock p {
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6BC45A;
+}
+
+.produit_container_description p {
+    color: #444645;
+    font-family: 'Cabin', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.produit_container_description {
+    width: 90%;
+    margin-top: 15px;
+}
+
+.produit_container_info_produit {
+    padding: 10px;
+    width: 100%;
+    margin-top: 16px;
+    height: 175px;
+}
+
+.produit_container_tabs {
+    margin-top: 40px;
+}
+
+.produit_price_info {
+    margin-top: 15px;
+}
+
+.tabs.is-toggle li.is-active a {
+    background-color: #ec591c;
+    border-color: #ec591c;
+    color: #fff;
+    z-index: 1;
+}
+
+.produit_container_nom_produit {
+    margin-bottom: 25px;
+}
+
+.produit_container_declinaison{
+    border: 1px solid #d7d9e4;
 }

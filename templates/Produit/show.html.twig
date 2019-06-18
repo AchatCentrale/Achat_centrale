@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Fiche produit  - Achat centrale{% endblock %}
+
+
+
+{% block body %}
+
+
+
+
+
+    <div class="site-content">
+
+        <div class="columns">
+            <div class="column is-4">
+                <h1 class="title">Fiche <b>Produit</b></h1>
+            </div>
+        </div>
+
+
+        <div class="columns">
+            <div class="column is-4">
+                <div class="produit_photo_principale">
+                   <div class="columns">
+                       <div class="column is-9">
+                            <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/PRODUIT_55022/PKC-2.jpg" alt="">
+                       </div>
+                       <div class="column is-2 produit_valeur_reduction">
+                           <p>10%</p>
+                       </div>
+                   </div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="produit_container_nom_produit">
+                    <h1 class="has-text-weight-bold is-size-3" >Plaque Altu rectangulaire - Avec portes-clés H20L22</h1>
+                </div>
+                <div class="columns">
+                    <div class="column is-5">
+                        <div class="produit_container_stock">
+                            <p>
+                                <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">&nbsp;en stock
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <p align="center" style="color: #df4e92;">Réf : PKC-2</p>
+                    </div>
+                </div>
+                <div class="produit_container_description">
+                    <p>Plaque en plexiglas blanc sur socle en granit noir avec 1 emplacement d inter et 1 porte-clés (cœur). Avec ce porte-clés, offrez ou gardez sur vous le souvenir de l être aimé.</p>
+                </div>
+            </div>
+            <div class="column produit_container_info">
+                <div class="columns">
+                    <div style="padding-top: 24px" class="column is-3">
+                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/FOURN_49/logogroupedelfosse.jpg" alt="Delfosse" style="max-height:100px; max-width:100px;">
+                    </div>
+                    <div style="padding-top: 24px" class="column is-5">
+                        <span class="price price-m">
+                                                                                                                                                                                                                            <span class="value-barre" itemprop="price_public">40,00&nbsp;€</span>
+                            <span class="value" style="font-size: 25px;" itemprop="price_centrale">36,00&nbsp;€</span>
+                            <span class="separator">/</span>
+                            <span class="unit">piÃ¨ce</span>
+                        </span>
+                        <p style="padding-bottom: 5px;padding-top: 15px;">Prix de vente min. conseillé: <b>449€TTC</b></p>
+                    </div>
+                    <div class="column is-4">
+                        <span class="p-quantity-modified" id="produit-54792" data-qty="1" style="margin: 10px 0;">
+                            <i class="p-quantity-decrease" data-role="decrease"></i>
+                            <input data-role="quantity-input" class="p-quantity-input" id="j-p-quantity-input" name="quantity" type="text" value="1" maxlength="5">
+                            <i data-role="increase" class="p-quantity-increase"></i>
+                        </span>
+                        <br>
+                        <button class="btn_add_to_cart F_Cabin" data-prid="54792" data-price="1086.6" data-anchor="#produit-54792" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
+                            <p style="white-space: nowrap;">Ajouter au panier</p><i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns produit_container_tabs">
+            <div class="tabs is-toggle is-fullwidth">
+                <ul>
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fas fa-search"></i></span>
+                            <span>Caractéristiques</span>
+                        </a>
+                    </li>
+                    <li class="is-active" >
+                        <a>
+                            <span class="icon"><i class="fas fa-cogs"></i></span>
+                            <span>Principe de fonctionnement</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="icon"><i class="fas fa-comments"></i></span>
+                            <span>Informations du fournisseur</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="produit_container_info_produit">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet enim esse est ex excepturi itaque nam odio odit officiis qui quisquam ratione repudiandae, rerum sit suscipit tempora temporibus totam ullam.</p>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}
+
+

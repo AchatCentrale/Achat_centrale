@@ -129,7 +129,7 @@
 
                                                     <div class="info">
                                                         <h3>
-                                                            <a class="product " href="" target="_blank" >{{ produit["PR_NOM"] | encodingFrom | raw }}</a>
+                                                            <a class="product " href="{{ path('produit__index', { 'ref' : produit["PR_REF"] }) }}" target="_blank" >{{ produit["PR_NOM"] | encodingFrom | raw }}</a>
                                                         </h3>
 
                                                         <span class="price price-m">
