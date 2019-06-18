@@ -13,105 +13,171 @@
 
     <div class="site-content">
 
-        <div class="columns">
+        <div class="columns" style=" padding-bottom: 25px; ">
             <div class="column is-4">
                 <h1 class="title">Fiche <b>Produit</b></h1>
             </div>
         </div>
 
-
         <div class="columns">
             <div class="column is-4">
                 <div class="produit_photo_principale">
-                   <div class="columns">
-                       <div class="column is-9">
-                            <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/PRODUIT_55022/PKC-2.jpg" alt="">
-                       </div>
-                       <div class="column is-2 produit_valeur_reduction">
-                           <p>10%</p>
-                       </div>
-                   </div>
+                    <div class="columns">
+                        <div class="column is-9">
+                            <img src="{{ produit["PR_ID"] | product_pic }}" alt="">
+                        </div>
+                        <div class="column is-3 produit_valeur_reduction">
+                            <p>- {{ produit["PR_PRIX_CA"] | remise(produit["PR_PRIX_PUBLIC"]) | round }} %</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column is-3">
                 <div class="produit_container_nom_produit">
-                    <h1 class="has-text-weight-bold is-size-3" >Plaque Altu rectangulaire - Avec portes-clés H20L22</h1>
+                    <h1 class="has-text-weight-bold is-size-3" >{{ produit["PR_NOM"] | raw }}</h1>
                 </div>
+
+
+                {% if produit["PR_STOCK_GEST"] > 0 %}
                 <div class="columns">
-                    <div class="column is-5">
+                    <div class="column is-4">
                         <div class="produit_container_stock">
-                            <p>
-                                <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">&nbsp;en stock
-                            </p>
+                                <p>
+                                    <img src="http://www.centrale-funecap.fr/Images/Picto_StockOK.png" alt="en stock" width="15">&nbsp;en stock
+                                </p>
                         </div>
                     </div>
-                    <div class="column">
-                        <p align="center" style="color: #df4e92;">Réf : PKC-2</p>
-                    </div>
                 </div>
+                {% endif %}
+
+
                 <div class="produit_container_description">
-                    <p>Plaque en plexiglas blanc sur socle en granit noir avec 1 emplacement d inter et 1 porte-clés (cœur). Avec ce porte-clés, offrez ou gardez sur vous le souvenir de l être aimé.</p>
+                    <p>{{ produit["PR_DESCR_COURTE"] | raw }}</p>
                 </div>
             </div>
             <div class="column produit_container_info">
                 <div class="columns">
                     <div style="padding-top: 24px" class="column is-3">
-                        <img src="http://secure.achatcentrale.fr/UploadFichiers/Uploads/FOURN_49/logogroupedelfosse.jpg" alt="Delfosse" style="max-height:100px; max-width:100px;">
+                        <img src="{{ produit["FO_ID"] | picFrs }}" alt="Delfosse" style="max-height:100px; max-width:100px;">
                     </div>
-                    <div style="padding-top: 24px" class="column is-5">
+                    <div  class="column is-5">
+
+
+                        <p style="color: #df4e92;text-align: center;background-color: #dbdbdd;padding: 5px 0;margin: 2px 0;">Réf : {{produit["PR_REF"]}}</p>
                         <span class="price price-m">
-                                                                                                                                                                                                                            <span class="value-barre" itemprop="price_public">40,00&nbsp;€</span>
-                            <span class="value" style="font-size: 25px;" itemprop="price_centrale">36,00&nbsp;€</span>
-                            <span class="separator">/</span>
-                            <span class="unit">piÃ¨ce</span>
+
+                        {% if produit["PR_PRIX_PUBLIC"] == 0 %}
+
+                            <p>Prix sur devis</p>
+                        {% else %}
+                            {% if produit["PR_CONDT"] | replace({' ': ''}) == "àpartirde" %}
+                                <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
+                                <span class="value" itemprop="price_centrale">{{ produit["PR_PRIX_CA"]| number_format(2, ',', ' ') }}&nbsp;€</span>
+                                <span class="value-barre" style="font-size: 20px;" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] | number_format(2, ',', ' ') }}&nbsp;€</span>
+                            {% else %}
+                                <span class="value-barre" itemprop="price_public">{{ produit["PR_PRIX_PUBLIC"] | number_format(2, ',', ' ') }}&nbsp;€</span>
+                                <span class="value" style="font-size: 20px;" itemprop="price_centrale">{{ produit["PR_PRIX_CA"] | number_format(2, ',', ' ') }}&nbsp;€</span>
+                                <span class="separator">/</span>
+                                <span class="unit">{{ produit["PR_CONDT"] | encodingFrom }}</span>
+                            {% endif %}
+                        {% endif %}
                         </span>
                         <p style="padding-bottom: 5px;padding-top: 15px;">Prix de vente min. conseillé: <b>449€TTC</b></p>
                     </div>
                     <div class="column is-4">
-                        <span class="p-quantity-modified" id="produit-54792" data-qty="1" style="margin: 10px 0;">
-                            <i class="p-quantity-decrease" data-role="decrease"></i>
-                            <input data-role="quantity-input" class="p-quantity-input" id="j-p-quantity-input" name="quantity" type="text" value="1" maxlength="5">
-                            <i data-role="increase" class="p-quantity-increase"></i>
-                        </span>
-                        <br>
-                        <button class="btn_add_to_cart F_Cabin" data-prid="54792" data-price="1086.6" data-anchor="#produit-54792" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
-                            <p style="white-space: nowrap;">Ajouter au panier</p><i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
-                        </button>
+                        {% if produit["PR_TYPE_LIEN"] == "ACHETER" %}
+
+                            <div class="columns">
+                                <div class="column">
+                                    <span class="p-quantity-modified" id="produit-{{ produit["PR_ID"] }}" data-qty="{{ produit["PR_QTE_CMDE"] }}">
+                                        <i class="p-quantity-decrease" data-role="decrease"></i>
+                                        <input data-role="quantity-input" class="p-quantity-input" id="j-p-quantity-input" name="quantity" type="text" value="{{ produit["PR_QTE_CMDE"] }}" maxlength="5" >
+                                        <i data-role="increase" class="p-quantity-increase"></i>
+                                    </span>
+                                </div>
+                                <div class="column">
+                                    <button class="btn_add_to_cart F_Cabin" data-prid="{{ produit["PR_ID"] }}" data-price="{{ produit["PR_PRIX_CA"] }}" data-anchor="#produit-{{ produit["PR_ID"] }}" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
+                                        <p style="white-space: nowrap;">Ajouter au panier</p><i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+
+
+                        {% elseif produit["PR_TYPE_LIEN"] == "WEB" %}
+                            <div class="container_btn_goto">
+                                <button class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
+                                    <p style="white-space: nowrap;">J'y vais</p>
+                                    <i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
+                                </button>
+                            </div>
+
+                        {% elseif produit["PR_TYPE_LIEN"] == "DEVIS" %}
+
+                            <div class="container_btn_goto">
+                                <button class="btn_add_to_cart F_Cabin" type="button" name="Submit" value="Ajouter au panier" style=" cursor:pointer;">
+                                    <p style="white-space: nowrap;">Devis</p>
+                                    <i class="fas fa-spinner fa-spin spin_btn_add_cart" style="display: none"></i>
+                                </button>
+                            </div>
+
+                        {% endif %}
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="columns produit_container_tabs">
-            <div class="tabs is-toggle is-fullwidth">
-                <ul>
-                    <li>
-                        <a>
-                            <span class="icon"><i class="fas fa-search"></i></span>
-                            <span>Caractéristiques</span>
-                        </a>
-                    </li>
-                    <li class="is-active" >
-                        <a>
-                            <span class="icon"><i class="fas fa-cogs"></i></span>
-                            <span>Principe de fonctionnement</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <span class="icon"><i class="fas fa-comments"></i></span>
-                            <span>Informations du fournisseur</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-        <div class="columns">
-            <div class="produit_container_info_produit">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet enim esse est ex excepturi itaque nam odio odit officiis qui quisquam ratione repudiandae, rerum sit suscipit tempora temporibus totam ullam.</p>
+
+        <section class="section">
+
+            <!-- entourer les tabs et leurs contenus correspondants d'un élément ayant la classe js-tabs-container. -->
+            <div class="container js-tabs-container">
+                        <!-- chaque item contient un attribut data-tab dont la valeur correspond à l'ID du contenu correspondant -->
+
+                <div class="tabs">
+                    <ul>
+                        <li class="is-active" data-tab="tab-caractéristiques">
+                            <a>
+                                <span class="icon"><i class="fas fa-search"></i></span>
+                                <span>Caractéristiques</span>
+                            </a>
+                        </li>
+                        <li data-tab="tab-fonctionnement">
+                            <a>
+                                <span class="icon"><i class="fas fa-cogs"></i></span>
+                                <span>Principe de fonctionnement</span>
+                            </a>
+                        </li>
+                        <li data-tab="tab-info-fourn">
+                            <a>
+                                <span class="icon"><i class="fas fa-comments"></i></span>
+                                <span>Informations du fournisseur</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- contenu de la tab "Photos" dont l'ID correspond à la valeur de l'attribut data-tab du lien associé -->
+                <!-- le contenu initialiement visible au chargement de la page ne porte pas la classe has-display-none -->
+                <!-- chacun des contenus porte la classe js-tab-content -->
+                <div class="js-tab-content" id="tab-caractéristiques">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad culpa cum, cumque delectus dignissimos eligendi illum, modi obcaecati perferendis quidem recusandae rerum tenetur vitae voluptate. Accusantium esse fugiat impedit!
+                </div>
+
+                <!-- contenu de la tab "Musique" -->
+                <div class="has-display-none js-tab-content" id="tab-fonctionnement">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis non provident quaerat quas reiciendis repudiandae ut! Alias aspernatur error ex fugit in nesciunt quas suscipit! Commodi culpa ducimus ipsum voluptas.
+                </div>
+
+                <!-- contenu de la tab "Vidéos" -->
+                <div class="has-display-none js-tab-content" id="tab-info-fourn">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consectetur doloribus eos et ex, ipsum laboriosam libero nisi obcaecati, quae quos sint voluptatem? Dolorum recusandae, sapiente. Aliquid illum saepe ut?
+                </div>
+
             </div>
-        </div>
+        </section>
 
 
 

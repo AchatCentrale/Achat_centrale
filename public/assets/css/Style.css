@@ -2111,6 +2111,7 @@ footer {
     background-position: top;
     height: 345px;
     width: 370px;
+    margin: 0 auto;
 }
 
 
@@ -2180,10 +2181,24 @@ footer {
     z-index: 1;
 }
 
+.tabs li.is-active a {
+    border-bottom-color: #ec591c;
+    color: #ec591c;
+}
+
 .produit_container_nom_produit {
-    margin-bottom: 25px;
+    margin-bottom: 3px;
 }
 
 .produit_container_declinaison{
     border: 1px solid #d7d9e4;
+}
+
+.container_btn_goto {
+    margin-top: 25px;
+}
+
+.has-display-none {
+    display: none;
+    visibility: hidden;
 }
